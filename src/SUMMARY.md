@@ -15,4 +15,5 @@
  - [Defining Components](./reference-defining-components.md)
  - [Defining Primitives](./reference-defining-primitives.md)
  - [Writing Expressions](./reference-writing-expressions.md)
+ - [Compilation Model](./reference-compilation-model.md)
 
