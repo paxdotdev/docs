@@ -8,15 +8,15 @@ The atomic unit of Pax is a `component definition`.  When you write Pax, you wil
 ## Host Codebase
 `Component definitions` attach to a host codebase — currently, a Rust codebase — which is where **properties** are declared and **imperative, side-effectful logic** occurs.
 
-The host codebase is also responsible for module definitions & imports — for example, using `<SomeComponent />` in a template requires that `SomeComponent` is available in the local file scope — for example:
+The host codebase is also responsible for module definitions & imports — for example, using `<SomeComponent />` in a template requires that `SomeComponent` is available to `rustc` in the local file scope — for example:
 
 ```rust
-use some_lib::SomeComponent;
+use some_lib::SomeComponent; //required import for template below
 
 #[pax(
     <SomeComponent /> //usable here because `some_lib::SomeComponent` is imported above.
 )]
-pub struct SomeApp {} //We are defining the Pax component `SomeApp` here, with the template declared above.
+pub struct SomeApp {} //We are defining the Pax component `SomeApp` here, with a single-element template (`<SomeComponent />`)
 ```
 
  
