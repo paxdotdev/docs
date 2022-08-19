@@ -11,12 +11,12 @@ The atomic unit of Pax is a `component definition`.  When you write Pax, you wil
 The host codebase is also responsible for module definitions & imports — for example, using `<SomeComponent />` in a template requires that `SomeComponent` is available to `rustc` in the local file scope — for example:
 
 ```rust
-use some_lib::SomeComponent; //required import for template below
+use some_lib::SomeComponent; //required import for use in template below
 
 #[pax(
-    <SomeComponent /> //usable here because `some_lib::SomeComponent` is imported above.
+    <SomeComponent />
 )]
-pub struct SomeApp {} //We are defining the Pax component `SomeApp` here, with a single-element template (`<SomeComponent />`)
+pub struct SomeHigherComponent {} //We are defining the Pax component `SomeHigherComponent` here
 ```
 
  
@@ -27,11 +27,16 @@ Most of Pax's included primitives are housed in the standard library (`pax-std`)
 
 **Using** primitives is easy.  Any place you can use a component in a template, you can use a `primitive` instance in exactly the same way.  For example, `<Stacker />` is a component, but `<Rectangle />` is a primitive.  They are consumed the same way.
 
-**Authoring** primitives is more advanced.  This should be better documented (TODO) — for now, refer to `pax-std/pax-std-primitives/src/*` and `pax-std/src/lib.rs`.  Primitives are authored in an "engine-adjacent" context, where certain imports are disallowed to avoid circular dependencies.  This complexity is due to Pax's compilation model.  Separately, primitives are exposed to userland (e.g. for importing and using `<Group />`) through the `pax_primitive` macro.  This macro
+**Authoring** primitives is more advanced.  This should be better documented (TODO) — for now, refer to `pax-std/pax-std-primitives/src/*` and `pax-std/src/lib.rs`.  Primitives are authored in an engine-adjacent context, where certain imports are disallowed to avoid circular dependencies.  
 
+This complexity is due to Pax's [compilation model](/reference-compilation-model), where the userland logic is ultimately a _dependency of_ the engine, instead of the other way around.  This is normally papered over when writing normal components and applications — the compiler handles this dependency inversion.  When writing primitives, it is useful to comprehend this distinction.
+
+Primitives are exposed to userland (e.g. for importing and using `<Group />`) through the `pax_primitive` macro — you can find examples of this in `pax-std/src/lib.rs`.
 
 
 ## Templates
+
+Templates declare the 
 
  - Expressions
  - Properties & Settings

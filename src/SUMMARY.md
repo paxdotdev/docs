@@ -10,13 +10,20 @@
 # Start Writing Pax    
  - [Installation](./start-installation.md)
  - [Creating a Project](./start-creating-a-project.md)
+ - [Writing Your First Pax Program](./start-writing-your-first-pax-program.md)
  - [File & Directory Structure](./start-file-and-directory-structure.md)
+ 
+ - [Writing Expressions](./reference-writing-expressions.md)
 
 # Reference 
  - [Concepts](./reference-concepts.md)
+ - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
+ - [Components](./reference-components.md)
+ - [Primitives](./reference-primitives.md)
+ - [Expressions](./reference-expressions.md)
+ - [Properties & Settings](./reference-properties-and-settings.md)
+ - [Pax Macros](./reference-pax-macros)
+ - [Host Codebase](./reference-host-codebase.md)
  - [Grammar](./reference-grammar.md)
- - [Defining Components](./reference-defining-components.md)
- - [Defining Primitives](./reference-defining-primitives.md)
- - [Writing Expressions](./reference-writing-expressions.md)
  - [Compilation Model](./reference-compilation-model.md)
-
+ - [Native Rendering Elements](./reference-native-rendering-elements.md)
