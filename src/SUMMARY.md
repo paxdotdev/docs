@@ -2,7 +2,7 @@
 
 # Introduction
  - [The Pax Language](./intro-the-pax-language.md)
- - [Examples](./intro-examples.md)
+ - [Example](./intro-example.md)
  - [Goals](./intro-goals.md)
  - [Prior Art](./intro-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
@@ -10,13 +10,10 @@
 # Start Writing Pax    
  - [Installation](./start-installation.md)
  - [Creating a Project](./start-creating-a-project.md)
- - [Writing Your First Pax Program](./start-writing-your-first-pax-program.md)
- - [File & Directory Structure](./start-file-and-directory-structure.md)
- 
- - [Writing Expressions](./reference-writing-expressions.md)
+ - [Anatomy of a Pax Program](./start-anatomy-of-a-pax-program.md)
+ - [Compiling & Packaging](./start-compiling-and-packaging.md)
 
 # Reference 
- - [Concepts](./reference-concepts.md)
  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
  - [Components](./reference-components.md)
  - [Primitives](./reference-primitives.md)
@@ -27,3 +24,4 @@
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
  - [Native Rendering Elements](./reference-native-rendering-elements.md)
+ - [Designability](./reference-designability.md)

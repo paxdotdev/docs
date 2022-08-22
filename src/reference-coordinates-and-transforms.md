@@ -52,21 +52,33 @@ This notion of hierarchy is hopefully intuitive — and once again, it abides by
 
  2. Matrix multiplication
 
-Often times, you will want to combine transformations on a single element, without using any sort of nesting.  In these cases, you need to do two things:
+Often times, you will want to combine transformations on a single element, without using any sort of nesting.  In these cases, you will want to _multiply transforms._  This entails two steps:
 
   1. use an expression (`{...}`) for the transform value, and
   2. multiply different affine operations within that expression
 
-The reason multiplication is the combinational operator for transformations stems from linear algebra, where _matrix multiplication_ describes the combination of multiple _affine transformation matrices._
+The reason multiplication is the combinational operator for transformations stems from linear algebra, where _matrix multiplication_ describes the sequential combination of _affine transformation matrices._
 
-Of note, 
-    you can combine the same operation multiple times (`scale() * scale()`)
-    order matters (`translate() * rotate()` will generally yield different behavior vs. `rotate() * translate(0`)
-    you can use properties freely in these operations, such as (`scale(self.current_multiplier) * rotate(self.current_rotation)`)
+An example of combining multiple transformations with matrix multiplication:
+
+```jsx
+<Rectangle width=100px height=200px transform={
+    rotate(100deg) *
+    translate(100px, 100px) *
+    scale(200%, 200%)
+} />
+```
+
+In the above, the 100px square will be rotated, then translated (moved), then scaled (resized).
+
+A few important notes about matrix multiplication:
+
+    1. Order matters — for example `translate() * rotate()` will generally yield different behavior vs. `rotate() * translate()`.
+    2. You can combine the same operation multiple times — for example `scale() * scale()` or `rotate() * scale() * rotate()`
+    3. Since these multiplications happen in an `expression` context, you may also use `properties` in these expressions — for example `rotate(self.base_rotation * self.rotation_multiplier)` or `scale(self.scale_mult) * rotate(self.active_rotation)`
 
 
-
-Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed 
+Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed transformations.  Finally, the use of layout components (such as `pax-std`'s `Stacker`, or components that you may author yourself) allow you to abstract complex positioning and resizing logic without needing to think too much about it.
 
 --
 
