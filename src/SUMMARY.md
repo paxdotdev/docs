@@ -10,7 +10,13 @@
 # Start Writing Pax    
  - [Installation](./start-installation.md)
  - [Creating a Project](./start-creating-a-project.md)
- - [Anatomy of a Pax Program](./start-anatomy-of-a-pax-program.md)
+ - [Key Concepts](./start-key-concepts.md)
+   - [Components](./start-key-concepts-components.md)
+   - [Templates](./start-key-concepts-templates.md)
+   - [Settings & Properties](./start-key-concepts-settings-properties.md)
+   - [Expressions](./start-key-concepts-expressions.md)
+   - [Event Bindings](./start-key-concepts-event-bindings.md)
+   - [Primitives](./start-key-concepts-primitives.md)
  - [Compiling & Packaging](./start-compiling-and-packaging.md)
 
 # Reference 
@@ -18,10 +24,11 @@
  - [Components](./reference-components.md)
  - [Primitives](./reference-primitives.md)
  - [Expressions](./reference-expressions.md)
- - [Properties & Settings](./reference-properties-and-settings.md)
+ - [Properties API](./reference-properties-api.md)
  - [Pax Macros](./reference-pax-macros)
  - [Host Codebase](./reference-host-codebase.md)
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
  - [Native Rendering Elements](./reference-native-rendering-elements.md)
  - [Designability](./reference-designability.md)
+

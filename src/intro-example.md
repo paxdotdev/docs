@@ -1,17 +1,15 @@
 # Example
 
-See the [Github Readme](https://www.github.com/pax-lang/pax-lang/README.md#Examples)
 
-This example of Pax covers the basic concepts, suitable for a first look.  You can find more examples [in the repository.](https://www.github.com/pax-lang/examples/)
+This example of Pax covers the basic concepts, suitable for a first look.  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/)
 
-See also: [Anatomy of a Pax Program](/start-anatomy-of-a-pax-program)
-
+For more detail on the various pieces of Pax, see: [Anatomy of a Pax Program](/start-anatomy-of-a-pax-program.html)
 
 ### Clickable square
 _Clickable square_ centers a square in the viewport and animates its rotation when clicked.  It includes:
-    - A [template]() definition
-    - A click binding and Rust handler
-    - An expression bound to the Rectangle's transform property (`{...}`)
+  - A [template]() definition
+  - A click [event binding]() and Rust handler
+  - An [expression]() bound to the Rectangle's [transform](/reference-coordinates-and-transforms.html) property (`{...}`)
 
 ```rust
 use pax::api::{Property, ArgsClick, Transform2D};
