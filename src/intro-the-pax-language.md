@@ -6,6 +6,6 @@ Pax is a Rust-based language for interactive graphics & GUIs.
 
 Even though Pax includes many of elements of a programming language, Pax is _not_ a general purpose programming language.  There are no notions of sequencing, assignment, or side-effects in Pax.  Specifically: Pax describes the **content** and **behavior** of a graphical scene or GUI.
 
-By attaching to a [host codebase](/reference-host-codebase.html), Pax can be augmented with imperative, Turing-complete, and side-effectful code to describe full applications.  This connection is similar in spirit to the connection between HTML/CSS and JavaScript on the World Wide Web.
+By attaching to a [host codebase](/reference-host-codebase.html), Pax can be controlled with imperative, Turing-complete, and side-effectful code.  This allows the creation of any GUI or interactive graphical application.
 
 This book will give a brief introduction to Pax — its goals, how to use it, and details of is design and implementation.

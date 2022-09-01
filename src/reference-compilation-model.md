@@ -2,7 +2,7 @@
 
 Pax's compilation model is inspired by the Nintendo Entertainment System.  For illustration, let's divide the Nintendo into four functional parts:
 
- - Screen & audio (output)
+ - Television (output)
  - Controller (input)
  - Console
  - Cartridge
@@ -15,26 +15,25 @@ Now consider Pax through the lens of those four pieces:
 
  - **Controller / Input** — In Pax, native events like touch and click are handled by the runtime, similarly to pressing controller buttons on the NES.  A platform-specific `chassis` (see next) is in charge of translating native OS events into Pax's common event model.
 
- - **Console** — Imagine that instead of a single Nintendo Entertainment System, there were six different kinds of NES, for six different kinds of alien televisions and six different kinds of alien controllers.  Despite the alien nature of the various consoles, however, there's a universal, shared cartridge format, which plugs into each of them.  These alien consoles are roughly the idea of platform-specific `chassis` in Pax (so-called because `console` already has specific meaning to developers.)  Like the Nintendo itself, these `chassis` act as the process entry-point for a given platform.
+ - **Console** — Imagine that instead of a single Nintendo Entertainment System, there were six different kinds of NES, for six different kinds of alien televisions and six different kinds of alien controllers.  Despite the alien nature of the various consoles, however, there's a shared cartridge format, which plugs into each of them.  These alien consoles are roughly the idea of platform-specific `chassis` in Pax (so-called because `console` already has specific meaning to developers.)  Like the Nintendo itself, these `chassis` act as the process entry-point for a given platform.
 
- - **Cartridge** — The cartridge contains compiled userland Pax code, as machine-code.  Anything written in Pax — templates, settings, expressions — get transpiled to Rust, in a specific format internally termed "RIL" or "Rust Intermediate Language".  That "cartridge definition" in RIL, akin to the integrated circuits of ROM and RAM in a Nintendo cartidge, gets compiled into platform-agnostic machine code, with an interface around the idea of "some user input" and "some rendering output."  That slug of machine code — again, the `cartridge` — gets imported as a dependency by the relevant platform `chassis`, and compiled together into the final executable.
+ - **Cartridge** — The cartridge contains compiled userland Pax code, as machine-code.  Anything written in Pax — templates, settings, expressions — get transpiled to Rust, in a specific format internally termed "RIL" or "Rust Intermediate Language".  That "cartridge definition" in RIL, akin to the integrated circuits of ROM and RAM in a Nintendo cartidge, gets compiled into platform-agnostic machine code, with an interface around the idea of "some user input" and "some rendering output."  That slug of machine code — again, the `cartridge` — gets imported as a dependency by the relevant platform `chassis` and compiled together into the final executable.
 
-Perhaps the most noteworthy piece of this approach is the _inversion of dependencies_ that it applies.  That is, when you write a Pax program, you are writing a `library` rather than a `binary`.  The Pax compiler is in charge of wrapping your `library` into the containing `binary` for distribution, and it is exactly this approach — the "alien NES console" approach — that enables Pax's cross-platform compilation of shared logic.
+Perhaps the most noteworthy piece of this approach is its _inversion of dependencies_.  When you write a Pax program, you write a `library` rather than a `binary`.  The Pax compiler is in charge of wrapping your `library` into the containing `binary` for distribution, and it is exactly this approach — the "alien NES console" approach — that enables Pax's cross-platform compilation around shared logic.
 
-
-### Recap
+#### Recap
 When you write a Pax program, you are authoring a `cartridge`, like an NES game.  When you compile a Pax program, the Pax compiler takes care of plugging that `cartridge` into a platform-specific `chassis`, compiling the whole thing, and producing a syndication-ready executable for the target platform, like an .exe for Windows or a .apk for Android.  
 
 At runtime, the `chassis` maps user inputs into Pax events, and maps Pax rendering commands to an operating system-native drawing context.
 
 
-# Compiler Internals
+# Compiler Sequence
 
 When you run `pax build` or `pax run`, the following sequence occurs:
 
 ### 0. Build the parser binary
 
-Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic parsing.  In order to do this, the `pax` macros are expanded.  These macros include generation of the necessary logic for the parser binary.
+Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic evaluation of Rust logic to finish parsing.  The parsing code is generated as part of the `pax` macros. 
 
 Roughly, when the parser binary is run, it:
     - Looks for root component definitions (via `pax_root`)
@@ -73,9 +72,9 @@ Now, when compiled through Xcode (for our macOS example,) we have a complete, na
 
 ### 4. Run or Finish
 
-Depending on whether you tasked the compiler with `run` or `build`, the compiler will either run the resulting executable, or write the executable to disk in the specified directory
+Depending on whether you tasked the compiler with `run` or `build`, the compiler will either run the resulting executable immediately, or write the executable to disk in the specified directory
 
 
 --
 
-[1] Author's note: this all would just be called "console," but the word "console" is already firmly claimed by a completely different, adjacent concept (think: terminal.)  Please embark on this mental gambol with me, where the metaphorical "NES Console" is the union of {"harness", "chassis"}
+[1] Author's note: this all would just be called "console," but the word "console" is already firmly claimed by a completely different, adjacent concept (think: terminal.)  The author emplores you to join him in this mental gambol, where the metaphorical "NES Console" is the union of {"harness", "chassis"}
