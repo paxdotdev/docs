@@ -1,11 +1,20 @@
 # The Pax Language
 
-Pax is a Rust-based language for interactive graphics & GUIs.
+Pax is a Rust-based language for interactive graphics & GUIs.  As of September 2022, Pax is [in alpha preview](./intro-current-status.md), after a year of initial development.
 
-[The Pax project](https://www.github.com/pax-lang/pax-lang) includes a grammar, a parser, a compiler, a runtime, native bindings for various target platforms, and a standard library of component building blocks (`pax-std`).
+Pax works as a companion language to Rust.  Here's a simple, static example:
 
-Even though Pax includes many of elements of a programming language, Pax is _not_ a general purpose programming language.  There are no notions of sequencing, assignment, or side-effects in Pax.  Specifically: Pax describes the **content** and **behavior** of a graphical scene or GUI.
+```rust
 
-By attaching to a [host codebase](/reference-host-codebase.html), Pax can be controlled with imperative, Turing-complete, and side-effectful code.  This allows the creation of any GUI or interactive graphical application.
+#[pax(
+    <Text>"Hello, world!"</Text> // pax
+)]
+pub struct HelloWorld {} // rust
+
+```
+
+The above compiles into a platform-specific executable, for example a `.app` for macOS or a `.wasm`-powered webpage for browsers.  Today, Pax supports only Web and macOS, though it is designed to be extensible to at least: iOS (90% complete), Android, Windows, and Linux.
+
+In addition to static content like the text example above, Pax supports 2D drawing, animations, composable responsive layouts, and (soon) form controls for GUIs.
 
 This book will give a brief introduction to Pax — its goals, how to use it, and details of is design and implementation.

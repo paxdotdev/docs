@@ -1,9 +1,6 @@
 # Example
 
-
 This example of Pax covers the basic concepts, suitable for a first look.  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/)
-
-For more detail on the various pieces of Pax, see: [Anatomy of a Pax Program](/start-anatomy-of-a-pax-program.html)
 
 ### Clickable square
 _Clickable square_ centers a square in the viewport and animates its rotation when clicked.  It includes:

@@ -6,9 +6,9 @@
  - [Goals](./intro-goals.md)
  - [Prior Art](./intro-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
+ - [Current Status](./intro-current-status.md)
 
 # Start Writing Pax    
- - [Installation](./start-installation.md)
  - [Creating a Project](./start-creating-a-project.md)
  - [Compiling & Packaging](./start-compiling-and-packaging.md)
  - [Key Concepts](./start-key-concepts.md)
@@ -19,13 +19,11 @@
    - [Event Handlers](./start-key-concepts-event-handlers.md)
    - [Primitives](./start-key-concepts-primitives.md)
  
-
 # Reference 
  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
  - [Pax Macros](./reference-pax-macros)
- - [Host Codebase](./reference-host-codebase.md)
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
+ - [PAXEL (Pax Expression Language)](./reference-paxel.md)
  - [Native Rendering Elements](./reference-native-rendering-elements.md)
  - [Designability](./reference-designability.md)
-

@@ -6,7 +6,7 @@
 
 Conversely, `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
-Though they are two sides of the same idea, defining _properties_ is quite different from defining _settings_: 
+Though they are two sides of the same idea, defining _properties_ looks quite different from defining _settings_: 
 
 ## Defining Properties
 
@@ -26,7 +26,7 @@ In the above example, the component `MyComponent` will expose the property `coun
 
 #### Property Defaults
 
-TODO: !!Not yet implemented!! Defaults can be set for a component by declaring a `@default{}` block, including a list of Pax settings.
+TODO: !!Not yet implemented!! Defaults can be set for a component by declaring a `@default{}` block, including a list of Pax settings.  A default value is the initial value for a property, in the case where no settings are applied.
 
 
 ```rust
@@ -36,7 +36,8 @@ use pax::api::*;
     //... some content
 
     @defaults { // !!@defaults support is not yet implemented!!
-        counter: 42 
+        counter: 42 // if a consumer of `<MyComponent />` doesn't set `counter`,
+                    // the value will default to 42
     }
 )]
 pub struct MyComponent {
@@ -94,8 +95,21 @@ When both an inline setting and a setting block define settings for the same pro
 ### Settings at Runtime
 
 TODO: runtime properties API:
- - `.set`
- - `.ease_to`
- - `.ease_to_later`
+#### `.set`
 
- nuance of requiring expressions to be compiled; cannot be summoned at runtime
+Set a property value at runtime
+
+#### `.ease_to`
+
+Set a property value with an easing curve (generally, for animation) at runtime
+
+#### `.ease_to_later`
+
+Same as `ease_to`, but enqueues the specified transition to occur after all currently enqueued transitions are completed.
+
+
+#### `.to_default` and `.ease_to_default` and `.ease_to_default_later`
+TODO !!Not yet implemented!! 
+Along with support for `@default` values, these methods will enable reverting / setting / easing to the default value for a property at runtime.
+
+

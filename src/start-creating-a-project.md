@@ -1,16 +1,67 @@
 # Creating a Project
 
+## First-time Installation
 
-A. Generate a new Pax project with the CLI
+1. Install Rust (>= 1.61.0) and Cargo
 
-```
-cargo install pax-cli
+2. Install the Pax CLI
+   ```bash
+   cargo install pax-cli
+   ```
+
+3. Optional — to compile for macOS and iOS:
+   - Be on a Mac
+   - Install xcode and xcode CLI tools
+
+4. Optional — to compile for Web:
+   - Install node (TODO: >= version) and yarn
+
+
+## Create a Project
+
+When starting a new Pax project, you have two choices: either use the `pax` CLI to generate a project, or manually add dependencies to an existing Rust project.
+
+#### A. Generate a new Pax project with the Pax CLI
+
+Using the CLI-generated project is the easiest way to start a Pax project
+
+```bash
 pax create new_pax_project
+cd new_pax_project && pax run
 ```
 
-B. Author Pax in an existing Rust codebase
+#### B. Add Pax to an existing Rust codebase
 
- - cargo.toml modifications
-    - deps: pax-lang + pax alias
-    - parser bin target
- - 
+This approach is more complex than using the generator, but it will sometimes be necessary to add Pax manually to an existing codebase.
+
+Note that Pax must be authored in a `lib` crate, rather than a `bin` crate. 
+
+Modify your `Cargo.toml` to include the following four dependencies, with the specified attributes:
+
+```toml
+[dependencies]
+pax = {package="pax-lang", features=["parser"]}
+pax-std = {features=["parser"]}
+pax-compiler = {optional = true}
+serde_json = {version = "1", optional = true}
+```
+
+Also add the following feature:
+
+```toml
+[features]
+parser = ["pax-std/parser", "dep:pax-compiler", "dep:serde_json"]
+```
+
+And the following target, which enables running the parser:
+
+```toml
+[[bin]]
+name = "parser"
+path = "src/lib.rs"
+required-features = ["parser"]
+```
+
+With the preceding additions to your Cargo.toml in place, you can now expose a `#[pax_root()]` component in your codebase at `src/lib.rs` and then use the pax compiler: `pax run` or `pax build`.
+
+TODO: the above modifications to Cargo.toml _should_ be automatable with something like `pax attach`

@@ -36,9 +36,9 @@ When you run `pax build` or `pax run`, the following sequence occurs:
 Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic evaluation of Rust logic to finish parsing.  The parsing code is generated as part of the `pax` macros. 
 
 Roughly, when the parser binary is run, it:
-    - Looks for root component definitions (via `pax_root`)
-    - For each of those roots, parses the template and discovers which dependencies are invoked, and parses properties to resolve names, types, and import paths
-    - Codegens recursive calls into Component dependencies' `parse_to_manifest` methods
+ - Looks for root component definitions (via `pax_root`)
+ - For each of those roots, parses the template and discovers which dependencies are invoked, and parses properties to resolve names, types, and import paths
+ - Codegens recursive calls into Component dependencies' `parse_to_manifest` methods
 
 Primarily, this approach solves the problem of "coordinating between macros," given that `rustc` makes no promises about when macros will be evaluated, and in practice evaluates macros seldom.  This model assures that `parse_to_manifest` always exists and is always as up-to-date as its attached Pax + Rust definitions.
 
@@ -64,7 +64,7 @@ Recall the "inversion of dependencies" described earlier in this chapter.  The f
 
 Now it's time to put the cartridge into the console — which means we must involve a different compiler.  For example, to build for macOS, `xcode` is invoked to build the Swift + C `dev harness` which embeds the macOS `chassis`, which in turn embeds the dynamic `cartridge` built by Pax.
 
-The `dev harness` is a macOS app, built in Swift and Xcode, intended for developing Pax.  The harness + the chassis is collectively our metaphorical console.  Not yet built at the time of this authoring is a `production harness`, which is a separate macOS app (or configuration of the same macOS app) tuned for production builds.[1]
+The `dev harness` is a nearly empty macOS app, built in Swift and Xcode, intended for developing Pax.  The harness + the chassis is collectively our metaphorical console.  Not yet built at the time of this authoring is a `production harness`, which is a separate macOS app (or configuration of the same macOS app) tuned for production builds.
 
 To pass the compiled, codegenned `cartridge` into this compilation chain, the Pax compiler uses the Cargo `patch` directive.  This swaps the "placeholder" definitions, the basic stubs included on Github for `pax-cartridge` and `pax-properties-coproduct`, for example, out for the new, freshly generated `cartridge` content.
 
@@ -74,7 +74,3 @@ Now, when compiled through Xcode (for our macOS example,) we have a complete, na
 
 Depending on whether you tasked the compiler with `run` or `build`, the compiler will either run the resulting executable immediately, or write the executable to disk in the specified directory
 
-
---
-
-[1] Author's note: this all would just be called "console," but the word "console" is already firmly claimed by a completely different, adjacent concept (think: terminal.)  The author emplores you to join him in this mental gambol, where the metaphorical "NES Console" is the union of {"harness", "chassis"}

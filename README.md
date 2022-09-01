@@ -1,6 +1,6 @@
 # Pax Docs
 
-Source code for the Pax docs, powered by `mdbook`.
+Source code for the [Pax docs](docs.pax-lang.org), powered by `mdbook`.
 
 
 ## Development
