@@ -1,7 +1,7 @@
 # Current Status
 
 ### Sept 1 2022
-Pax is currently in _alpha preview._  It is not yet fully functional, but is now being developed in the open, in hopes that others may find Pax interesting and choose to help push it forward.  See [TODO.md]() on Github for the backlog thus far.
+Pax is currently in _alpha preview._  It is not yet fully functional, but is now being developed in the open, in hopes that others may find Pax interesting and choose to help push it forward.  [Please help!]()
 
 #### Run demo
 As of this writing, you can run the Pax demo for macOS and Web on master, using the shell scripts `./run.sh` and `./run-web.sh`
@@ -34,7 +34,7 @@ impl MyStruct {
 ```
 
 #### Cross-platform++
-Further, significant work remains to run Pax on more screens.  To support a new platform (like Android,) a new `chassis` and `dev harness` must be built.  Thus far, two `(chassis, dev harness)` have been built:  see `pax-chassis-macos/` and `pax-chassis-web/`.
+Further work remains to run Pax on more screens.  To support a new platform (like Android,) a new `chassis` and `dev harness` must be built.  Thus far, two `(chassis, dev harness)` pairs have been built:  see `pax-chassis-macos/` and `pax-chassis-web/`.
 
 In order to support Linux, Windows, Android, and iOS, a `chassis` and `dev harness` will need to be written for each platform.  In good news, it's not a crazy amount of work — the bulk is in:
  1. writing a low-level bridge in a platform-native language (e.g. Swift on macOS) to accept the C structs that pass over the wire from the Pax engine, and
@@ -60,9 +60,9 @@ Some of the high-priority upcoming pieces:
 
 **Layouts & widgets**
  - Scroller (plus native scrolling hookups)
- - Drag & drop
 
 
-#### Contribution
+#### Interested in helping?
 
-If you would like to help push Pax forward, either check out [TODO.md](), search the codebase for the characters `TODO:`, or jump on [Discord]() and strike up a conversation.
+See the section on contribution [here](./intro-authors-contributors.md#contributing)
+

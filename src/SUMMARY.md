@@ -3,8 +3,7 @@
 # Introduction
  - [The Pax Language](./intro-the-pax-language.md)
  - [Example](./intro-example.md)
- - [Goals](./intro-goals.md)
- - [Prior Art](./intro-prior-art.md)
+ - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
  - [Current Status](./intro-current-status.md)
 
@@ -24,6 +23,6 @@
  - [Pax Macros](./reference-pax-macros)
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
- - [PAXEL (Pax Expression Language)](./reference-paxel.md)
+ - [Expression Internals](./reference-expression-internals.md)
  - [Native Rendering Elements](./reference-native-rendering-elements.md)
  - [Designability](./reference-designability.md)

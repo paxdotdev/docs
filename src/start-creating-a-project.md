@@ -19,7 +19,7 @@
 
 ## Create a Project
 
-When starting a new Pax project, you have two choices: either use the `pax` CLI to generate a project, or manually add dependencies to an existing Rust project.
+When starting a new Pax project, you have two choices: either use `pax` via CLI to generate a new Rust + Pax project, or manually add dependencies to an existing Rust project.
 
 #### A. Generate a new Pax project with the Pax CLI
 

@@ -6,7 +6,7 @@
 
 Conversely, `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
-Though they are two sides of the same idea, defining _properties_ looks quite different from defining _settings_: 
+Though they are two sides of the same idea, defining _properties_ looks quite different from applying _settings_: 
 
 ## Defining Properties
 
@@ -22,8 +22,8 @@ pub struct MyComponent {
     counter: Property<i64>,
 }
 ```
-In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but it _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper.
-
+In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper.
+<!--
 #### Property Defaults
 
 TODO: !!Not yet implemented!! Defaults can be set for a component by declaring a `@default{}` block, including a list of Pax settings.  A default value is the initial value for a property, in the case where no settings are applied.
@@ -44,8 +44,9 @@ pub struct MyComponent {
     counter: Property<i64>,
 }
 ```
+-->
 
-## Defining Settings
+## Applying Settings
 
 Let's use the above component inside a new component, `AnotherComponent`.
 
@@ -89,27 +90,28 @@ TODO: describe CSS-like "settings block" syntax, selectors, identifiers
 
 ### Settings precedence 
 
-When both an inline setting and a setting block define settings for the same property, the inline setting takes precedence.  This "cascading" behavior is inspired by HTML and CSS.  When a `property` is `set` at runtime, the latest set value takes precedence.  
+When both an inline setting and a setting block apply settings for the same property, the inline setting takes precedence.  This "cascading" behavior is inspired by HTML and CSS.  When a `property` is `set` at runtime, the latest set value takes precedence.  
 
 
 ### Settings at Runtime
 
-TODO: runtime properties API:
+For a `Property<T>`, the following API is exposed to Rust logic at runtime:
+
 #### `.set`
 
-Set a property value at runtime
+Set a property value
 
 #### `.ease_to`
 
-Set a property value with an easing curve (generally, for animation) at runtime
+Ease a property value over time with an easing curve (generally, for animation)
 
 #### `.ease_to_later`
 
 Same as `ease_to`, but enqueues the specified transition to occur after all currently enqueued transitions are completed.
 
-
-#### `.to_default` and `.ease_to_default` and `.ease_to_default_later`
+<!--
+#### `.to_default` | `.ease_to_default` | `.ease_to_default_later`
 TODO !!Not yet implemented!! 
 Along with support for `@default` values, these methods will enable reverting / setting / easing to the default value for a property at runtime.
-
+-->
 

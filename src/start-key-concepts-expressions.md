@@ -1,1 +1,33 @@
 # Expressions
+
+```
+<Rectangle transform={
+    rotate(engine.frames_elapsed / 200.0) *
+    translate(in.mouse_x, in.mouse_y)
+}/>
+```
+
+Consider the above snippet of Pax.  If you're familiar with a templating language like JSX, you might expect that the Expression code within the braces above `{ ... }` is inline Rust code.  It's not.
+
+That is PAXEL -- part of Pax, a special-purpose language for declaring computed properties in the spirit of spreadsheet formulas.
+
+Anytime you write in between `{}`s in Pax, you are writing PAXEL.  You can create a PAXEL Expression anywhere you can declare a settings value, in `template` definitions or in `@settings` blocks.
+
+For example the expression `self.activeColor.adjustBrightness(50%)` might live in a template:
+
+```
+<Rectangle fill={ self.activeColor.adjustBrightness(50%) } />
+```
+or in a settings block:
+```
+@settings {
+  #my_rectangle {
+    fill: { self.activeColor.adjustBrightness(50%) }
+  }
+}
+```
+
+Pax expressions are ultimately compiled to machine code (WASM or LLVM), and the Pax runtime manages each expression as its own compiled function in a vtable.
+
+Because Pax Expressions are pure, side-effect free functions, the Pax runtime can (one day) make aggressive optimizations: caching values
+and only recomputing when one of the stated inputs changes.  Expressions are also readily parallelizable, a prospective future performance optimization.

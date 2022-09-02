@@ -43,20 +43,6 @@ The primary components of a Pax program are:
 
 
 
-
-## Templates
-
-```
-<Group>
-    <Rectangle />
-</Group>
-```
-
-Each component declares a template in an XML-like syntax, which describes how its UI should be displayed.  Any element in that template can have its settings assigned as XML key-value pairs.
-
-A template describes the _content_ of a scene or GUI.
-
-
 ## Event handlers
 
 In the above example, `on_click=self.handle_click` binds a the `handle_click` method defined in the host codebase to the built-in `click` event which Pax fires when a user clicks the mouse on this element.  Events fire as "interrupts" and are allowed to execute arbitrary, side-effectful, imperative logic — anything you can write or use in Rust.
