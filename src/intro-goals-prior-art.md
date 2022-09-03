@@ -13,10 +13,10 @@ Support high-FPS (up to 120fps) rendering & animations and low-latency (<20ms) i
 Support accessibility (a11y) at least as well as the target operating system.
 
 #### Lightweight
-Keep a small footprint:
- - Disk: <100kB wasm / binary baseline
- - Memory: <10MB baseline, maybe better
- - CPU: target benchmark TBD, perhaps `(avg. % core) per megapixel`?
+Do more with less:
+ - **Disk**: <100kB wasm / binary baseline
+ - **Memory**: <10MB baseline, maybe better
+ - **CPU**: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}`
 
 #### Ergonomic & Familiar
 Whenever possible, build off of established conventions and ergonomics — strive to "feel familiar".

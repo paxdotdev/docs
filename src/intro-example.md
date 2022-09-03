@@ -6,7 +6,7 @@ This example of Pax covers the basic concepts, suitable for a first look.  You c
 _Clickable square_ centers a square in the viewport and animates its rotation when clicked.  It includes:
   - A [template](./start-key-concepts-templates.md) definition
   - A click [event binding](./start-key-concepts-event-handlers.md) and Rust handler
-  - An [expression](./start-key-concepts-expressions.md) bound to the Rectangle's [transform](/reference-coordinates-and-transforms.html) property (`{...}`)
+  - An [expression](./start-key-concepts-expressions.md) bound to the Rectangle's [transform](/reference-coordinates-and-transforms.html) property (`transform={...}`)
 
 ```rust
 use pax::api::{Property, ArgsClick};

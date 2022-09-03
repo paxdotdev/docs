@@ -13,9 +13,9 @@ pub struct HelloWorld {} // rust
 
 ```
 
-The Pax compiler builds programs into a platform-specific application executable, for example a `.app` for macOS or a `.wasm`-powered webpage for browsers.  Today, Pax supports only Web and macOS, though it is designed to be extensible to at least: iOS[1], Android, Windows, and Linux.
+In addition to static content like the text example above, Pax supports [high-performance](./intro-goals-prior-art.md) 2D drawing, dynamic expressions, animations, composable responsive layouts, and (soon) form controls for GUIs.
 
-In addition to static content like the text example above, Pax supports [high-performance](./intro-goals-prior-art.md) 2D drawing, animations, composable responsive layouts, and (soon) form controls for GUIs.
+The Pax compiler outputs platform-specific application executables, for example `.app`s for macOS or `.wasm`-powered webpages for browsers.  Today, Pax supports only Web and macOS, though it is planned to extend to: iOS[1], Android, Windows, and Linux.
 
 This book will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.
 

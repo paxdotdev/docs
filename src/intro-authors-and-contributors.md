@@ -28,7 +28,7 @@ Funds received will help cover administrative, service, and development costs. U
 Help write explanatory articles, demo videos, blog posts, anything that helps Pax become more accessible to more people.
 
 #### Design
-Pax needs a logo.  Its website could be vastly improved.  Collaboration with talented artists & designers would be very welcome!  [Chat with zb on Discord](https://discord.gg/5zXsskAzRB) if you'd like to help with design.
+Pax needs a logo.  Its website could be vastly improved.  Collaboration with talented artists & designers would be very welcome!  [Chat with zb on Discord](https://discord.gg/5zXsskAzRB) or [reach out by email](mailto:zack@pax-lang.org) if you'd like to help with design.
 
 
 

@@ -1,6 +1,6 @@
 # Expressions
 
-```
+```jsx
 <Rectangle transform={
     rotate(engine.frames_elapsed / 200.0) *
     translate(in.mouse_x, in.mouse_y)
@@ -31,3 +31,5 @@ Pax expressions are ultimately compiled to machine code (WASM or LLVM), and the 
 
 Because Pax Expressions are pure, side-effect free functions, the Pax runtime can (one day) make aggressive optimizations: caching values
 and only recomputing when one of the stated inputs changes.  Expressions are also readily parallelizable, a prospective future performance optimization.
+
+You can read more about PAXEL, the Pax Expression Language, [in this chapter](./reference-paxel.md).

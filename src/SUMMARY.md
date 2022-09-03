@@ -5,7 +5,9 @@
  - [Example](./intro-example.md)
  - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
- - [Status: September 2022](./intro-status-sept-2022.md)
+ 
+# Current Status
+- [September 2022](./status-sept-2022.md)
 
 # Start Writing Pax    
  - [Creating a Project](./start-creating-a-project.md)

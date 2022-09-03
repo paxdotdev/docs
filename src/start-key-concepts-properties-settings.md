@@ -64,11 +64,11 @@ pub struct AnotherComponent {
 
 In this example, `MyComponent` is used inside the template for `AnotherComponent`, then its property `counter` is _set_, in this case bound to an expression `{self.num_clicks * 2}`.
 
-#### Settings Syntax
+### Declarative Settings Syntax
 
-Settings can be written with two different syntaxes: `inline settings` or `settings block` syntax.  Each syntax has access to the exact same properties, and `expressions` can be bound in either place.
+Settings can be declared with two different syntaxes: `inline settings` or `settings block` syntax.  Each syntax has access to the exact same properties, and `expressions` can be bound in either place.
 
-### Inline Settings
+#### Inline Settings
 
 Inline settings are authored _inline_ into a template definition.  You might recognize this syntax as nearly identical to _XML attributes_.  Example:
 
@@ -83,17 +83,16 @@ Unlike XML, Pax's inline settings syntax supports values beyond string literals,
 <Rectangle width={self.current_width} height={self.current_width * 1.5} />
 ```
 
-### Settings blocks
+#### Settings blocks
 
 TODO: describe CSS-like "settings block" syntax, selectors, identifiers
 
-
-### Settings precedence 
+#### Settings precedence 
 
 When both an inline setting and a setting block apply settings for the same property, the inline setting takes precedence.  This "cascading" behavior is inspired by HTML and CSS.  When a `property` is `set` at runtime, the latest set value takes precedence.  
 
 
-### Settings at Runtime
+### Setting Properties at Runtime
 
 For a `Property<T>`, the following API is exposed to Rust logic at runtime:
 
