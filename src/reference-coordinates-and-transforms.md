@@ -11,9 +11,9 @@ The way elements get positioned, sized, and moved around in Pax is through the p
 Perhaps the easiest way to think about Pax's transform model is "design tool coordinates."  That is, when you select an element in a vector design tool like Figma, Sketch, or Illustrator, you can: _drag_ it (`translate`), _resize_ it (`scale`), _rotate_ it, and _shear_ it (with a combination of rotation and scale.)  Each of these operations can be expressed in Pax, as well.
 
 ```xml
-<Group id=a transform=Transform2D::rotate(150deg)>
-    <Rectangle id=b transform=Transform2D::translate(50px, 50px) />
-    <Rectangle id=c transform=Transform2D::scale(150%, 150%) />
+<Group id=a transform=rotate(150deg)>
+    <Rectangle id=b transform=translate(50px, 50px) />
+    <Rectangle id=c transform=scale(150%, 150%) />
 </Group>
 ```
 
@@ -73,9 +73,9 @@ In the above, the 100px square will be rotated, then translated (moved), then sc
 
 A few important notes about matrix multiplication:
 
-    1. Order matters — for example `translate() * rotate()` will generally yield different behavior vs. `rotate() * translate()`.
-    2. You can combine the same operation multiple times — for example `scale() * scale()` or `rotate() * scale() * rotate()`
-    3. Since these multiplications happen in an `expression` context, you may also use symbolic `properties` in these expressions — for example `rotate(self.base_rotation * self.rotation_multiplier)` or `scale(self.scale_mult) * rotate(self.active_rotation)`
+ 1. Order matters — for example `translate() * rotate()` will generally yield different behavior vs. `rotate() * translate()`.
+ 2. You can combine the same operation multiple times — for example `scale() * scale()` or `rotate() * scale() * rotate()`
+ 3. Since these multiplications happen in an `expression` context, you may also use symbolic `properties` in these expressions — for example `rotate(self.base_rotation * self.rotation_multiplier)` or `scale(self.scale_mult) * rotate(self.active_rotation)`
 
 
 Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed transformations.  Finally, the use of layout components (such as `pax-std`'s `Stacker`, or components that you may author yourself) allow abstraction of complex positioning and resizing logic.

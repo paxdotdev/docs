@@ -20,7 +20,8 @@
  
 # Reference 
  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
- - [Pax Macros](./reference-pax-macros)
+ - [Pax Standard Library](./reference-pax-std.md)
+ - [Pax Macros](./reference-pax-macros.md)
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
  - [PAXEL](./reference-paxel.md)
@@ -28,3 +29,5 @@
  - [Designability](./reference-designability.md)
  - [Embedding Pax]() <!--//iframe on web; currently entire apps only; future: UI components for e.g. React, SwiftUI-->
  - [Responsive Design with Pax]() <!-- "media query"-style settings blocks, `@windows {}` etc. -->
+
+

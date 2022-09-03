@@ -56,6 +56,7 @@ Some of the high-priority upcoming pieces:
  - Checkbox
  - Radio button list
  - File upload
+ - Date picker
  
 **Drawing primitives**
  - Path (bezier sequence)

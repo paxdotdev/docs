@@ -14,7 +14,7 @@ Support accessibility (a11y) at least as well as the target operating system.
 
 #### Lightweight
 Keep a small footprint:
- - Disk: <100kb wasm / binary baseline
+ - Disk: <100kB wasm / binary baseline
  - Memory: <10MB baseline, maybe better
  - CPU: target benchmark TBD, perhaps `(avg. % core) per megapixel`?
 

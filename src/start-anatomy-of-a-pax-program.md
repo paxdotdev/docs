@@ -10,7 +10,6 @@ For visual reference, consider the following example, which declares a component
 
 ```rust
 //Rust
-use pax::api::Transform2D::*;
 use pax_std::primitives::Rectangle;
 
 #[pax(
@@ -78,7 +77,7 @@ PAXEL expressions are noteworthy in a few ways:
 
 
 [*] PAXEL is similar to Google's Common Expression Language (CEL), but CEL was not a suitable fit for Pax due to its footprint — being written in Go, CEL adds
-a prohibitive overhead to compiled binaries (1-2MB) vs. Pax's total target footprint of <100KB.  Pax also has subtly distinct goals
+a prohibitive overhead to compiled binaries (1-2MB) vs. Pax's total target footprint of <100kB.  Pax also has subtly distinct goals
 vs CEL and is able to fine-tune its syntax to make it as ergonomic as possible for this particular domain.
 
 
