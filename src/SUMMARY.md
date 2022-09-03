@@ -5,7 +5,7 @@
  - [Example](./intro-example.md)
  - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
- - [Current Status](./intro-current-status.md)
+ - [Status: September 2022](./intro-status-sept-2022.md)
 
 # Start Writing Pax    
  - [Creating a Project](./start-creating-a-project.md)
@@ -23,6 +23,8 @@
  - [Pax Macros](./reference-pax-macros)
  - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
- - [Expression Internals](./reference-expression-internals.md)
- - [Native Rendering Elements](./reference-native-rendering-elements.md)
+ - [PAXEL](./reference-paxel.md)
+ - [Native Rendering](./reference-native-rendering.md)
  - [Designability](./reference-designability.md)
+ - [Embedding Pax]() <!--//iframe on web; currently entire apps only; future: UI components for e.g. React, SwiftUI-->
+ - [Responsive Design with Pax]() <!-- "media query"-style settings blocks, `@windows {}` etc. -->

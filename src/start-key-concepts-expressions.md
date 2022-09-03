@@ -7,9 +7,9 @@
 }/>
 ```
 
-Consider the above snippet of Pax.  If you're familiar with a templating language like JSX, you might expect that the Expression code within the braces above `{ ... }` is inline Rust code.  It's not.
+Consider the above snippet of Pax.  If you're familiar with a templating language like JSX, you might expect that the Expression code within the braces above `{ ... }` is inline Rust code.  In fact, this code has many syntactic similarities with Rust, but it is not Rust.
 
-That is PAXEL -- part of Pax, a special-purpose language for declaring computed properties in the spirit of spreadsheet formulas.
+It is PAXEL — part of Pax, a special-purpose language for declaring computed properties in the spirit of spreadsheet formulas.
 
 Anytime you write in between `{}`s in Pax, you are writing PAXEL.  You can create a PAXEL Expression anywhere you can declare a settings value, in `template` definitions or in `@settings` blocks.
 

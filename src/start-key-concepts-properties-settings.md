@@ -62,7 +62,7 @@ pub struct AnotherComponent {
 }
 ```
 
-In the above example, `MyComponent` is used inside the template for `AnotherComponent`, then its property `counter` is _set_, in this case bound to an expression `{self.num_clicks * 2}`.
+In this example, `MyComponent` is used inside the template for `AnotherComponent`, then its property `counter` is _set_, in this case bound to an expression `{self.num_clicks * 2}`.
 
 #### Settings Syntax
 

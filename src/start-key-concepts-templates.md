@@ -23,6 +23,7 @@ Templates are not just static -- they allow three kinds of control-flow, affecti
 
 ```rust
 use pax::api::*;
+use crate::{DetailsView, SummaryView};
 
 #[pax(
     <Group>

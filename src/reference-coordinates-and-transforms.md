@@ -6,7 +6,7 @@ TODO: image illustrating coordinate system
 
 ### Affine transforms (Transform2D)
 
-The way elements get positioned, sized, and moved around in Pax is through the powerful `transform` property.  This property is nearly ubiquitous across the landscape of GUI and graphical development tools (such as `matrix3d()` in CSS), but it is often not as front-and-center as it is in Pax.
+The way elements get positioned, sized, and moved around in Pax is through the powerful `transform` property.  This property is nearly ubiquitous across the landscape of GUI and graphical development tools (such as `matrix3d()` in CSS), but it is more front-and-center in game engines than it is in UI layout systems.
 
 Perhaps the easiest way to think about Pax's transform model is "design tool coordinates."  That is, when you select an element in a vector design tool like Figma, Sketch, or Illustrator, you can: _drag_ it (`translate`), _resize_ it (`scale`), _rotate_ it, and _shear_ it (with a combination of rotation and scale.)  Each of these operations can be expressed in Pax, as well.
 
@@ -21,11 +21,11 @@ In the above example, rectangle `b` will be moved 50px to the right and 50px dow
 
 
 ### Anchor & Align
-Pax's coordinate system also has a notion of `anchor` — letting you set the "origin point" for transformations to an element.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its centerpoint.  
+Pax's coordinate system also has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its centerpoint.  
 
 **TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example**
 
-Pax also includes a notion of `align` -- that is: where an element should be mounted on the screen, _relative to the parent_.  For example: "align this element's anchor point to the _top left_ of the parent container" (`align(0%, 0%)`), or "align this element's anchor point to the _center point_ of the parent container" (`align(50%, 50%)`).
+Pax's layout system also has a notion of `align`ment -- that is: where an element should be mounted on the screen, _relative to its parent container_.  For example: "align this element's anchor point to the _top left_ of the parent container" (`align(0%, 0%)`), or "align this element's anchor point to the _center point_ of the parent container" (`align(50%, 50%)`).
 
 **TODO: insert image illustrating alignment relative to parent container**
 
@@ -75,10 +75,10 @@ A few important notes about matrix multiplication:
 
     1. Order matters — for example `translate() * rotate()` will generally yield different behavior vs. `rotate() * translate()`.
     2. You can combine the same operation multiple times — for example `scale() * scale()` or `rotate() * scale() * rotate()`
-    3. Since these multiplications happen in an `expression` context, you may also use `properties` in these expressions — for example `rotate(self.base_rotation * self.rotation_multiplier)` or `scale(self.scale_mult) * rotate(self.active_rotation)`
+    3. Since these multiplications happen in an `expression` context, you may also use symbolic `properties` in these expressions — for example `rotate(self.base_rotation * self.rotation_multiplier)` or `scale(self.scale_mult) * rotate(self.active_rotation)`
 
 
-Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed transformations.  Finally, the use of layout components (such as `pax-std`'s `Stacker`, or components that you may author yourself) allow you to abstract complex positioning and resizing logic without needing to think too much about it.
+Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed transformations.  Finally, the use of layout components (such as `pax-std`'s `Stacker`, or components that you may author yourself) allow abstraction of complex positioning and resizing logic.
 
 --
 

@@ -33,9 +33,9 @@ pub struct StillEmptyComponent {
 }
 ```
 
-Notice that Pax builds off of Rust's import and namespace resolution features, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
-
 This "components all the way down" pattern may be familiar if you have used a GUI framework like React or Vue.
 
-TODO: document stand-alone .pax files without Rust: ".html" use-case (!!unimplemented!!)
+Notice that Pax builds off of Rust's import and namespace resolution mechanisms, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
+
+<!-- TODO: document stand-alone .pax files without Rust: ".html" use-case -->
 

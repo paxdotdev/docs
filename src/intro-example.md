@@ -4,18 +4,18 @@ This example of Pax covers the basic concepts, suitable for a first look.  You c
 
 ### Clickable square
 _Clickable square_ centers a square in the viewport and animates its rotation when clicked.  It includes:
-  - A [template]() definition
-  - A click [event binding]() and Rust handler
-  - An [expression]() bound to the Rectangle's [transform](/reference-coordinates-and-transforms.html) property (`{...}`)
+  - A [template](./start-key-concepts-templates.md) definition
+  - A click [event binding](./start-key-concepts-event-handlers.md) and Rust handler
+  - An [expression](./start-key-concepts-expressions.md) bound to the Rectangle's [transform](/reference-coordinates-and-transforms.html) property (`{...}`)
 
 ```rust
-use pax::api::{Property, ArgsClick, Transform2D};
+use pax::api::{Property, ArgsClick};
 
 #[pax(
     <Rectangle id=square @click=self.handle_click width=200px height=200px transform={
-        Transform2D::Align(50%, 50%)  *         //Align relative to parent container
-        Transform2D::Anchor(50%, 50%) *         //Origin of transformation, relative to element bounds
-        Transform2D::Rotate(current_rotation)   
+        align(50%, 50%)  *         
+        anchor(50%, 50%) *         
+        rotate(current_rotation)   
     } />
 )]
 pub struct ClickableSquare {

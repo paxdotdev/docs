@@ -11,4 +11,5 @@ Edit content
 
 Use `serve.sh` or `build.sh`
 
-Publish (TODO: script)
+Publish 
+<!--TODO: script deployment-->
