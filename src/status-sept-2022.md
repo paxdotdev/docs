@@ -1,10 +1,10 @@
 # Status - September 2022
 Pax is now available in _alpha preview._  It is not yet fully useful or functional, but will now be developed in the open, in hopes that others may find Pax interesting and choose to help push it forward.  
 
-Much work remains to make Pax a viable app-building tool. [Read this section](./intro-authors-and-contributors.md#how-to-contribute-to-pax) for some ways you can help.
+[Read this section](./intro-authors-and-contributors.md#how-to-contribute-to-pax) for some ideas on how to help.
 
 #### Run demo
-As of this writing, you can run the Pax demo for macOS and Web on master, using the shell scripts `./run.sh` and `./run-web.sh`
+As of this writing, you can run the Pax demo for macOS and Web on master, after following the instructions in README.md, then using the shell scripts `./run.sh` and `./run-web.sh`
 
 <!-- TODO: embed demo video -->
 
@@ -18,9 +18,13 @@ The work for the compiler-finishline is nearly complete, and is happening on the
 Hot on the heels of compiler finish-line work will be _error message_ improvements and a _language server_ for debugging & syntax highlighting, among [other things](https://www.github.com/pax-lang/pax-lang/blob/master/TODO.md).
 
 #### Async
-A common use-case with Pax is expected to be: "load some data from server; update UI."  In the current alpha-preview state of Pax, the method that would "load something from server" would block the UI while awaiting a response.  In other words, if it took one second to receive a response from the server, the Pax UI would freeze for one second.  This is obviously not viable!
+A common use-case with GUIs is: "load some data from server; update GUI."
 
-The solution is to support `async` event handlers in Pax, for example:
+While awaiting a response from the server, a user may reasonably expect that the GUI will continue rendering, animating, or updating.
+
+This is not yet the case for Pax, because it does not yet attach to async Rust code.
+
+The planned approach is to write all future [event handlers](./start-key-concepts-event-handlers.md) as `async`, and to dispatch those methods asynchronously via the Pax runtime.
 
 ```rust
 #[pax(/*...*/)]
@@ -39,6 +43,8 @@ impl MyStruct {
 }
 ```
 
+The above approach will require embedding an async runtime into the engine. In the long run, this will require that the async runtime can be parameterized, or swapped out.  One possible approach is via the `patch` mechanism used already inside `pax build`.
+
 #### Cross-platform++
 Further work remains to run Pax on more screens.  To support a new platform (like Android,) a new `chassis` and `dev harness` must be built.  Thus far, two `(chassis, dev harness)` pairs have been built:  see `pax-chassis-macos/` and `pax-chassis-web/`.
 
@@ -48,7 +54,7 @@ In order to support targeting Linux, Windows, Android, and iOS, a `chassis` and 
  3. keeping each chassis updated over time with the addition of further native rendering elements, like form controls and drawing primitives
 
 #### More primitives, form controls, and layout components
-Pax's component library is just getting started, and to be a truly useful UI and graphics toolkit it requires a more thorough standard library.
+Pax's component library is just getting started, and to be a truly useful GUI and graphics toolkit it requires a more thorough standard library.
 
 Some of the high-priority upcoming pieces:
 

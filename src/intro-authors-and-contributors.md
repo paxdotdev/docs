@@ -24,7 +24,7 @@ Funds received will help cover administrative, service, and development costs. U
  - Help write tests!
  - Create examples
 
-#### Write Content
+#### Create Content
 Help write explanatory articles, demo videos, blog posts, anything that helps Pax become more accessible to more people.
 
 #### Design

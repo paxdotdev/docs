@@ -1,6 +1,6 @@
 # Designability
 
-Pax is designed with a very specific goal in mind.  In fact, Pax wouldn't exist, and certainly wouldn't be its own computer language + runtime, if there were existing compelling solutions that already achieved this goal.
+Pax is designed with a very specific goal in mind.  In fact, Pax wouldn't exist if there were existing compelling solutions that already achieved this goal.
 
 That goal is _designability._  What does that mean?
 

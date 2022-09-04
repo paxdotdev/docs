@@ -1,6 +1,16 @@
 # Compiling & Packaging
 
-Once you have written a Pax program, you may want to package it for distribution to users beyond yourself.
+---
+
+# STATUS: DRAFT
+**The instructions on this page are not expected to work until Pax reaches [alpha]()**
+
+---
+
+<br />
+<br />
+
+Once you have writften a Pax program, you may want to package it for distribution to users beyond yourself.
 
 The [Pax compiler](https://www.github.com/pax-lang/pax-lang/blob/master/src/pax-compiler/) is responsible for the heavy lifting, both for developing Pax projects (`pax run`) and compiling for distribution (`pax build`)
 

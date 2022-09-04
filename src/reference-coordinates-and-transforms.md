@@ -2,7 +2,7 @@
 
 Pax's coordinate system is "top-left origin; right is positive x; down is positive y"
 
-TODO: image illustrating coordinate system
+<!-- TODO: image illustrating coordinate system -->
 
 ### Affine transforms (Transform2D)
 
@@ -23,11 +23,11 @@ In the above example, rectangle `b` will be moved 50px to the right and 50px dow
 ### Anchor & Align
 Pax's coordinate system also has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its centerpoint.  
 
-**TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example**
+<!-- TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example -->
 
 Pax's layout system also has a notion of `align`ment -- that is: where an element should be mounted on the screen, _relative to its parent container_.  For example: "align this element's anchor point to the _top left_ of the parent container" (`align(0%, 0%)`), or "align this element's anchor point to the _center point_ of the parent container" (`align(50%, 50%)`).
 
-**TODO: insert image illustrating alignment relative to parent container**
+<!-- TODO: insert image illustrating alignment relative to parent container -->
 
 The combination of `anchor` and `align` offers powerful, fine-grained positioning, well suited to responsive design for varying screen sizes.
 

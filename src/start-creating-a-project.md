@@ -1,5 +1,13 @@
 # Creating a Project
 
+---
+
+# STATUS: DRAFT
+**The instructions on this page are not expected to work until Pax reaches alpha.  See the [latest status](./status-sept-2022.md).**
+
+---
+<br />
+
 ## First-time Installation
 
 1. Install Rust (>= 1.61.0) and Cargo

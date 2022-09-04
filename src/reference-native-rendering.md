@@ -39,7 +39,7 @@ The native layer clips using an OS-specific clipping mechanism, for example `.cl
 
 The canvas layer also uses an OS-specific clipping mechanism, but at the GPU/drawing level.
 
-Note that further effort will be required to handle certain combinations of stacking, layering, and opacity.  For example, as of Sept 2022, it is expected that a _partially transparent_ canvas element rendered logically on top of a native element will not render correctly.  Such edge cases can be addressed over time.
+Note that further effort will be required to handle certain combinations of stacking, layering, and opacity.  For example, as of Sept 2022, it is expected that a _partially transparent_ drawing element rendered logically on top of a native element will fully occlude the native element.
 
 
 ### Accessibility & SEO
@@ -59,6 +59,3 @@ For reference, this footprint burden is one of the limitations of many cross-pla
 
 [Pax aims](./intro-goals-prior-art.md) to keep its base footprint <100kB.
 
-### Prior art
-
-This composite-layer native rendering mechanism was inspired by a little San Francisco startup called famo.us, which proved the approach's viability in 2014 with its now-abandoned, open source ["mixed mode" JavaScript rendering engine](https://github.com/famous/engine).
