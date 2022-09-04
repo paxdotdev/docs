@@ -1,6 +1,6 @@
 # Example
 
-This colorful example, running in an iframe, covers the basic concepts of Pax[1]  Try resizing your browser horizontally to see responsive resizing.  Also try selecting text, running a screen-reader, and clicking the far-right yellow rectangle.
+This colorful example, running in an iframe, covers the basic concepts of Pax.[1]  Try resizing your browser horizontally to see responsive resizing.  Also try selecting text, running a screen-reader, and clicking the far-right yellow rectangle.
 
 <!-- TODO:  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/) -->
 
