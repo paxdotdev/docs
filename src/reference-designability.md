@@ -12,7 +12,7 @@ Simply put, Pax code should be readable and writable by a machine _as well as_ r
 
 Pax's _templates_, _settings_, and even _expressions_ are just data.  In fact, _expressions_ are the crux of enabling this designability. 
 
-Pax's expressions are constrained to be "Excel-formula-like" — in other words, each expression is a pure function of some tuple of state.
+Recall that an expression can be written anywhere you set a property.  Such expressions are constrained to be "Excel-formula-like" — in more precise words, each expression is a pure function of some tuple of state.
 
 This means no side-effects, no sequencing of operations — essentially, none of the hairy stuff that might break a computer's expectation of reading & writing back to, for example: React JSX templates, SwiftUI views, or Flutter widgets.
 
@@ -25,7 +25,7 @@ Pax's entire format, including Expressions, can be losslessly and deterministica
 
 #### Pax can encode any design file, and any UI
 
-As a thought exercise, imagine what a novel language would look like if designed to encapsulate the union of `design file data` and `GUI declaration data`, with a constraint of _ergonomic authoring._
+<!-- As a thought exercise, imagine what a novel language would look like if designed to encapsulate the union of `design file data` and `GUI declaration data`, with a constraint of ergonomic authoring. -->
 
 Pax is intended to be a suitable language for encoding design data, like the contents of a Figma file or an Illustrator file.  Additionally, Pax is intended to be a suitable language for encoding GUI or interactive graphical scene definitions — like an old Flash source file, a Visual Basic screen, or a modern Web GUI.
 
@@ -45,16 +45,14 @@ In other words, through any future Pax-enabled design tools, alongside the Pax c
 
 #### Shouldn't design live in a separate world vs. code?
 
-Many people believe this way.  Many others do not!  Rather than seek consensus on this matter, Pax seeks simply to exist.
-
-In the end, Pax will support either paradigm:  you can choose to create _pictures or prototypes_ with Pax-enabled design tools, or you can build & ship _production apps_ by collaborating through version control.  It all depends on your team, your tech stack, and your workflow.
+Many people believe this way.  Many others do not.  In the end, Pax will support either paradigm:  you can choose to create _pictures or prototypes_ with Pax-enabled design tools, or you can build & ship _production apps_ by collaborating through version control.  It all depends on your team, your tech stack, and your workflow.
 
 
 #### Isn't code-gen bad? Or limited?
 
 Yes.  Consider the traditional code-generating design tool: most prior art in this space has found workflow limitions due to the "ejecting" nature of codegen.  
 
-In other words, when you generate code from a traditional design tool, you embark on a **one-way bridge** — the moment that code is edited by hand, e.g. by a developer who's responsible for shipping it at the end of the day — that code irrevocably breaks away from the design tool, disallowing further collaboration.
+When you generate code from a traditional design tool, you embark on a **one-way bridge** — the moment that code is edited by hand, e.g. by a developer who's responsible for shipping it at the end of the day — that code irrevocably breaks away from the design tool, disallowing further collaboration.
 
 Pax enables a **two-way bridge** through language-level constraints — there's no way to "break away" because Pax will always be re-parsable by a Pax-enabled design tool, even after it's edited by hand.
 
@@ -62,7 +60,7 @@ One piece of mainstream prior art that achieved this "two-way" bridge was Macrom
 
 #### Pax programs include Rust.  How is that designable?
 
-In short: separation of concerns.  Recall that Pax describes the _content_ and _behavior_ of a UI.  Incidentally, that's exactly what a design tool does.
+In short: separation of concerns.  Recall that Pax describes the content and behavior of a UI.  Incidentally, that's exactly what a design tool does.
 
 When Pax is designed by a Pax-enabled design tool, the attached Rust logic can be either _evaluated_ or _ignored_ while designing, depending on the context.  Separately, you can pop open a code editor and edit that Rust code.  
 

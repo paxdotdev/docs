@@ -6,6 +6,16 @@
 
 Conversely, `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
+<div style="text-align: center; font-style: italic; font-weight: 100;">
+    <br />
+    <img style="width: 400px; border: 10px solid rgb(185,204,204);" src="./DALL·E two illuminated switchboards_ one light one dark..psd.png" />
+    <br />
+    Two illuminated switchboards: one light, one dark
+    <br />
+    <br />
+</div>
+
+
 Though they are two sides of the same idea, defining _properties_ looks quite different from applying _settings_: 
 
 ## Defining Properties

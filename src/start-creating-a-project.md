@@ -1,5 +1,7 @@
 # Creating a Project
 
+<br />
+
 ---
 
 # STATUS: DRAFT

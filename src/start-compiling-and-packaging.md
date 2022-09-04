@@ -1,9 +1,11 @@
 # Compiling & Packaging
 
+<br />
+
 ---
 
 # STATUS: DRAFT
-**The instructions on this page are not expected to work until Pax reaches [alpha]()**
+**The instructions on this page are not expected to work until Pax reaches alpha.  See the [latest status](./status-sept-2022.md).**
 
 ---
 

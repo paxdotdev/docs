@@ -1,4 +1,20 @@
 # Status - September 2022
+
+
+<br />
+
+---
+
+# STATUS: DRAFT
+**Pax is not yet available on Github -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
+
+---
+
+<br />
+<br />
+
+
+
 Pax is now available in _alpha preview._  It is not yet fully useful or functional, but will now be developed in the open, in hopes that others may find Pax interesting and choose to help push it forward.  
 
 [Read this section](./intro-authors-and-contributors.md#how-to-contribute-to-pax) for some ideas on how to help.

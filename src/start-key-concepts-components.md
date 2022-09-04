@@ -2,7 +2,18 @@
 
 The atomic unit of Pax is a `component definition`.  
 
-When you write Pax, you will usually be editing a component definition.  Think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  Inside a component definition, there may be:
+When you write Pax, you will usually be editing a component definition.  Think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
+
+<div style="text-align: center; font-style: italic; font-weight: 100;">
+    <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />
+    <br />
+    A biological cell with computer chips for organelles
+    <br />
+    <br />
+</div>
+
+
+Inside a component definition, there may be:
 
  - A [Template](./start-key-concepts-templates.md)
  - [Settings](./start-key-concepts-properties-settings.md) and [Expressions](./start-key-concepts-expressions.md)

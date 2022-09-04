@@ -1,27 +1,27 @@
 # Goals
 
-#### Free and Open
+#### Be Free and Open
 Permissive free and open source license, free to fork, use commercially, collaborate, and contribute.  Refer to the [License](https://www.github.com/pax-lang/pax-lang/blob/master/LICENSE.md).
 
-#### Portable & Universal
-Run on as many screens and devices as possible.
+#### Be Portable & Universal
+Run on as many screens, devices, and environments as possible.
 
-#### High Performance
+#### Be High-Performance
 Support high-FPS (up to 120fps) rendering & animations and low-latency (<20ms) interactions.
 
-#### Accessible
+#### Be Accessible
 Support accessibility (a11y) at least as well as the target operating system.
 
-#### Lightweight
+#### Be Lightweight
 Do more with less:
- - **Disk**: <100kB wasm / binary baseline
- - **Memory**: <10MB baseline, maybe better
- - **CPU**: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}`
+ - Disk: <100kB wasm / binary baseline
+ - Memory: <10MB baseline, maybe better
+ - CPU: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}`
 
-#### Ergonomic & Familiar
+#### Be Ergonomic & Familiar
 Whenever possible, build off of established conventions and ergonomics — strive to "feel familiar".
 
-#### Designable
+#### Be Designable
 Support mixing & matching _machine editability_ of Pax alongside _hand-editability_.  Read more about this in the chapter [Designability](./reference-designability.md).
 
 <br />

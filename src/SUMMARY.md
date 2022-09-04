@@ -6,7 +6,7 @@
  - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
  
-# Current Status
+# Status
 - [September 2022](./status-sept-2022.md)
 
 # Start Writing Pax    
