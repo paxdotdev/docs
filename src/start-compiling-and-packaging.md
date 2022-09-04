@@ -26,10 +26,10 @@ where `macos` could be any of the supported platforms:
 
  - macos
  - web
- - TODO: android
- - TODO: ios
- - TODO: windows
- - TODO: linux (various)
+ - NOT YET SUPPORTED: android
+ - NOT YET SUPPORTED: ios
+ - NOT YET SUPPORTED: windows
+ - NOT YET SUPPORTED: linux
 
 
 For further reading about the internals of the compiler, see: [Pax's compilation model](/reference-compilation-model.md)

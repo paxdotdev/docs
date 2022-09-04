@@ -21,10 +21,10 @@
 
 3. Optional — to compile for macOS and iOS:
    - Be on a Mac
-   - Install xcode and xcode CLI tools
+   - Install Xcode >= 13.3.0 and Xcode CLI Tools
 
 4. Optional — to compile for Web:
-   - Install node (TODO: >= version) and yarn
+   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) and yarn (recommended >=1.22.x)
 
 
 ## Create a Project
@@ -74,4 +74,4 @@ required-features = ["parser"]
 
 With the preceding additions to your Cargo.toml in place, you can now expose a `#[pax_root()]` component in your codebase at `src/lib.rs` and then use the pax compiler: `pax run` or `pax build`.
 
-TODO: the above modifications to Cargo.toml _should_ be automatable with something like `pax attach`
+<!-- TODO: the above modifications to Cargo.toml _should_ be automatable with something like `pax attach` -->

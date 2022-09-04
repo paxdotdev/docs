@@ -2,9 +2,6 @@
 
 `Properties` and `Settings` are two sides of the same idea, so they share a chapter in this book.
 
-`Properties` could be summarized as _inputs_ to a component — they are the _properties_ of a component that are exposed to consumers.  For example, `Stacker`, the layout component, exposes a property `direction`, which tells `Stacker` whether to lay out its cells horizontally or vertically.
-
-Conversely, `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <br />
@@ -16,9 +13,9 @@ Conversely, `Settings` are _outputs_ — when composing the definition of a comp
 </div>
 
 
-Though they are two sides of the same idea, defining _properties_ looks quite different from applying _settings_: 
+## Properties
 
-## Defining Properties
+`Properties` could be summarized as _inputs_ to a component — they are the _properties_ of a component that are exposed to consumers.  For example, `Stacker`, the layout component, exposes a property `direction`, which dictates whether `Stacker` lays out its cells horizontally or vertically.
 
 Properties are defined on Rust structs, such as:
 
@@ -32,7 +29,9 @@ pub struct MyComponent {
     counter: Property<i64>,
 }
 ```
-In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper.
+
+<!-- appendix?:  In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper. -->
+
 <!--
 #### Property Defaults
 
@@ -56,7 +55,11 @@ pub struct MyComponent {
 ```
 -->
 
-## Applying Settings
+## Settings
+
+If `Properties` are _inputs_, then `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  
+
+Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
 Let's use the above component inside a new component, `AnotherComponent`.
 
@@ -95,7 +98,23 @@ Unlike XML, Pax's inline settings syntax supports values beyond string literals,
 
 #### Settings blocks
 
-TODO: describe CSS-like "settings block" syntax, selectors, identifiers
+As an alternative to inline syntax, settings may be authored in a CSS-like syntax, binding a block of settings to an element by id.  For example:
+
+```rust
+#[pax(
+    <Rectangle id=my_rect>
+
+    @settings {
+        #my_rect {
+            fill: rgb(100%, 100%, 0)
+        }
+    }
+)]
+```
+
+Every property that is available inline is also available in the settings block syntax, and settings can be mixed and matches across syntaxes.
+
+<!-- TODO: document `@linux { ... }` and @{some_exp}{ ... } etc., media-query-like settings sections -->
 
 #### Settings precedence 
 

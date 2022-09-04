@@ -1,8 +1,8 @@
 # Components
 
-The atomic unit of Pax is a `component definition`.  
+The atomic unit of Pax is a `component definition`.  You can create a component by decorating a Rust struct with the `#[pax()]` macro.
 
-When you write Pax, you will usually be editing a component definition.  Think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
+When you edit Pax, you will usually be editing a component definition.  Think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />

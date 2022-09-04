@@ -9,7 +9,7 @@ Declares a Pax component definition, specifically a _non-root_ component that ma
 Declares a Pax component definition, specifically a _root_ component, mounted as the entry-point to a given program
 
  - `pax_file` (Sept '22: not yet implemented)
-Declares a Pax component definition by pointing to a separate `.pax` file instead of requiring an inline declaration (TODO: not yet implemented)
+Declares a Pax component definition by pointing to a separate `.pax` file instead of requiring an inline declaration
 
  - `pax_const` (Sept '22: not yet implemented)
 Allows Pax expressions to refer to a given `const` by symbol
