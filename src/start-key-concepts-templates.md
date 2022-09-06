@@ -1,5 +1,6 @@
 # Templates
 
+A component's _template_ describes that component's _content_ and _hierarchy_.  
 
 Example template:
 ```
@@ -10,7 +11,6 @@ Example template:
 
 Each component declares a template in an XML-like syntax, which describes how its UI should be displayed.  A component's template is made up of other components.
 
-A template describes the _content_ of a scene or GUI.
 
 ## Control flow
 

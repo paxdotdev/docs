@@ -1,11 +1,32 @@
 # Creating a Project
 
+**Pre-alpha**:  you can run the demo project locally, but you cannot yet create new Pax projects from scratch.  
+
+To run the demo:
+
+1. Install Rust (>= 1.61.0) and Cargo
+
+2. Install the Pax CLI
+   ```bash
+   cargo install pax-cli
+   ```
+
+3. Optional — to compile for macOS and iOS:
+   - Be on a Mac
+   - Install Xcode >= 13.3.0 and Xcode CLI Tools
+
+4. Optional — to compile for Web:
+   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) and yarn (recommended >=1.22.x)
+
+5. Run `pax demo --target=web` or `pax demo --target=macos`
+
+
 <br />
 
 ---
 
 # STATUS: DRAFT
-**The instructions on this page are not expected to work until Pax reaches alpha.  See the [latest status](./status-sept-2022.md).**
+**The following instructions are not expected to work until Pax reaches alpha.  See the [latest status](./status-sept-2022.md).**
 
 ---
 <br />

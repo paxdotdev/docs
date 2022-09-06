@@ -19,7 +19,7 @@ Recall that the atomic unit of Pax is the [component](./start-key-concepts-compo
 
 `Properties` could be summarized as _inputs_ to a component — they are the _properties_ of a component that are exposed to consumers.  For example, `Stacker`, the layout component, exposes a property `direction`, which dictates whether `Stacker` lays out its cells horizontally or vertically.
 
-Properties are also used internally within a component as state containers, similar in purpose to `state` in React.  A component's properties may be referred to by any of that component's expressions like: `{self.some_property && self.some_other_property}`
+Properties are also used internally within a component as state containers, similar in purpose to [`state` in React](https://reactjs.org/docs/state-and-lifecycle.html).  A component's properties may be referred to by any of that component's expressions like: `{self.some_property && self.some_other_property}`
 
 Properties are defined on Rust structs, such as `counter` below:
 

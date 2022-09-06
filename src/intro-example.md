@@ -6,7 +6,7 @@ This colorful example, running in an iframe, covers the basic concepts of Pax.[1
 
 <iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax-lang.org/jabberwocky/" ></iframe>
 
-If you like running native executables that you just found on the Web, you can also [download the macOS `.app`]() for this example.
+You can also [run this demo](./start-creating-a-project.md) as a native macOS app if you have a Mac development machine.
 
 Source code:
 
