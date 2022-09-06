@@ -1,10 +1,12 @@
 # Example
 
-This colorful example, running in an iframe, covers the basic concepts of Pax.[1]  Try resizing your browser horizontally to see responsive resizing.  Also try selecting text, running a screen-reader, and clicking the far-right yellow rectangle.
+This colorful example, running in an iframe, covers the basic concepts of Pax.[1]  Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around the screen to see what happens, and firing up a screen reader.
 
 <!-- TODO:  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/) -->
 
 <iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax-lang.org/jabberwocky/" ></iframe>
+
+If you like running native executables that you just found on the Web, you can also [download the macOS `.app`]() for this example.
 
 Source code:
 

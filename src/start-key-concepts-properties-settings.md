@@ -12,23 +12,27 @@
     <br />
 </div>
 
+Recall that the atomic unit of Pax is the [component](./start-key-concepts-components.md).  Components pass data to each other through `properties` and `settings`.[1]  
+
 
 ## Properties
 
 `Properties` could be summarized as _inputs_ to a component — they are the _properties_ of a component that are exposed to consumers.  For example, `Stacker`, the layout component, exposes a property `direction`, which dictates whether `Stacker` lays out its cells horizontally or vertically.
 
-Properties are defined on Rust structs, such as:
+Properties are defined on Rust structs, such as `counter` below:
 
 ```rust
 use pax::api::*;
 
 #[pax(
-    //... some content
+    // ...
 )]
 pub struct MyComponent {
     counter: Property<i64>,
 }
 ```
+
+Notice that `counter` is a member of a Rust struct, with an attached `pax` macro, and a `pax::api::Property<T>` wrapper around its type.
 
 <!-- appendix?:  In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper. -->
 
@@ -143,3 +147,7 @@ TODO !!Not yet implemented!!
 Along with support for `@default` values, these methods will enable reverting / setting / easing to the default value for a property at runtime.
 -->
 
+
+---
+
+[1] The relationship between properties & settings is inspired by [digital circuits.](./reference-hardware-component-model.md).

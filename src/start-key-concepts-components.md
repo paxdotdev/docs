@@ -1,16 +1,28 @@
 # Components
 
-The atomic unit of Pax is a `component definition`.  You can create a component by decorating a Rust struct with the `#[pax()]` macro.
+The atomic unit of Pax is a `component definition`. A component definition for `MyNewComponent` may look like:
 
-When you edit Pax, you will usually be editing a component definition.  Think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
+```rust
+// src/my-new-component.rs
+use pax::api::*;
 
-<div style="text-align: center; font-style: italic; font-weight: 100;">
-    <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />
-    <br />
-    A biological cell with computer chips for organelles
-    <br />
-    <br />
-</div>
+// This #[pax()] macro declares component `MyNewComponent`
+#[pax(
+    <Group>
+        <Stacker cells=2 direction=Vertical>
+            <Text>"I'm feelin' fine as frogs' hair!"</Text>
+            <Rectangle fill={rgb(100%, 0, 0)} />
+        </Stacker>
+    </Group>
+)]     
+pub struct MyNewComponent {
+    pub my_property_a: Property<i64>
+    pub my_property_b: Property<bool>
+}
+```
+
+
+You can think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
 
 
 Inside a component definition, there may be:
@@ -49,4 +61,15 @@ This "components all the way down" pattern may be familiar if you have used a GU
 Notice that Pax builds off of Rust's import and namespace resolution mechanisms, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
 
 <!-- TODO: document stand-alone .pax files without Rust: ".html" use-case -->
+
+<div style="text-align: center; font-style: italic; font-weight: 100;">
+    <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />
+    <br />
+    A biological cell with computer chips for organelles
+    <br />
+    <br />
+</div>
+
+
+You can read more about Pax components in the chapter [Hardware Component Model](./reference-hardware-component-model.md)
 

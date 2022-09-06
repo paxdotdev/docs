@@ -1,5 +1,21 @@
 # Compilation Model
 
+## Strictly Additive
+
+A core technical constraint of Pax is that it is "strictly additive" to existing Rust code.
+
+Pax should never get in the way of compiling your Rust program.  For example, the following should work out of the box:
+ - Cargo commands like `cargo test`
+ - vanilla CI/CD workflows for Rust
+ - Cargo crates, imports & exports
+
+Pax _does_ create different kinds of executables than `rustc`, however:  Pax outputs _application binaries_, for example `.exe` apps for Windows and `.app` for macOS.  While you can still create vanilla Rust executables with a Pax-connected codebase (with `rustc`), you can _additionally_ create app executables (with `pax`).
+
+What do the `pax` macros add to a codebase?  Namely: feature-gated parsing logic & metadata so that the Pax compiler can make sense of _where_ to attach itself and _what_ data to compile.
+
+
+## Nintendo-Like
+
 Pax's compilation model is inspired by the Nintendo Entertainment System.  For illustration, let's divide the Nintendo into four functional parts:
 
  - Television (output)
