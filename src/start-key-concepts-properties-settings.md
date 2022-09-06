@@ -19,20 +19,22 @@ Recall that the atomic unit of Pax is the [component](./start-key-concepts-compo
 
 `Properties` could be summarized as _inputs_ to a component — they are the _properties_ of a component that are exposed to consumers.  For example, `Stacker`, the layout component, exposes a property `direction`, which dictates whether `Stacker` lays out its cells horizontally or vertically.
 
+Properties are also used internally within a component as state containers, similar in purpose to `state` in React.  A component's properties may be referred to by any of that component's expressions like: `{self.some_property && self.some_other_property}`
+
 Properties are defined on Rust structs, such as `counter` below:
 
 ```rust
 use pax::api::*;
 
 #[pax(
-    // ...
+    <Text>{"Current value: " + counter}</Text>
 )]
 pub struct MyComponent {
     counter: Property<i64>,
 }
 ```
 
-Notice that `counter` is a member of a Rust struct, with an attached `pax` macro, and a `pax::api::Property<T>` wrapper around its type.
+Notice that `counter` is a member of a Pax-attached Rust struct, with a `pax::api::Property<T>` wrapper around its type.
 
 <!-- appendix?:  In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper. -->
 
@@ -61,7 +63,7 @@ pub struct MyComponent {
 
 ## Settings
 
-If `Properties` are _inputs_, then `Settings` are _outputs_ — when composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  
+`Settings` are declarations of values.  If `Properties` are _inputs_ to a component, then `Settings` are _outputs_.  When composing the definition of a component or program, you _set_ the properties of any element in order to specify behavior or appearance.  
 
 Building off of the `Stacker` example above, any component that instantiates a `Stacker` in its template has the opportunity to apply a _setting_ to `Stacker`, to _set_ its `direction` property.
 
@@ -79,7 +81,9 @@ pub struct AnotherComponent {
 }
 ```
 
-In this example, `MyComponent` is used inside the template for `AnotherComponent`, then its property `counter` is _set_, in this case bound to an expression `{self.num_clicks * 2}`.
+In this example, `MyComponent`'s `counter` property is _set_ — that declaration of a value, in this case an expression `{self.num_clicks * 2}`, is a _setting_.  
+
+Settings declarations may either be literal values or expressions.  `counter=5` would be another valid setting for the example above.
 
 ### Declarative Settings Syntax
 
