@@ -13,8 +13,6 @@
 <br />
 <br />
 
-
-
 Pax is now available in _alpha preview._  It is not yet fully useful or functional, but will now be developed in the open, in hopes that others may find Pax interesting and choose to help push it forward.  
 
 [Read this section](./intro-authors-and-contributors.md#how-to-contribute-to-pax) for some ideas on how to help.
@@ -64,10 +62,10 @@ The above approach will require embedding an async runtime into the engine. In t
 #### Cross-platform++
 Further work remains to run Pax on more screens.  To support a new platform (like Android,) a new `chassis` and `dev harness` must be built.  Thus far, two `(chassis, dev harness)` pairs have been built:  see `pax-chassis-macos/` and `pax-chassis-web/`.
 
-In order to support targeting Linux, Windows, Android, and iOS, a `chassis` and `dev harness` will need to be written for each platform.  In good news, it's not a crazy amount of work — the bulk is in:
+In order to support targeting Linux, Windows, Android, and iOS, a `chassis` and `dev harness` will need to be written for each platform.  In broad strokes:
  1. writing a low-level bridge in a platform-native language (e.g. Swift on macOS) to accept the C structs that pass over the wire from the Pax engine, and
- 2. interpreting these structs as messages, mapping into CRUD operations for native elements like text and form controls. (search for the method `processNativeMessageQueue` in `pax-chassis-macos` for an example.) In further good news, `pax-chassis-ios` will be able to share about 90% of the logic already written for `pax-chassis-macos`, so iOS support is close at hand.
- 3. keeping each chassis updated over time with the addition of further native rendering elements, like form controls and drawing primitives
+ 2. interpreting these structs as messages, mapping into CRUD operations for native elements like text and form controls. (search for the method `processNativeMessageQueue` in `pax-chassis-macos` for an example.)  `pax-chassis-ios` will be able to share about 90% of the logic already written for `pax-chassis-macos`, so iOS support is close at hand.
+ 3. keeping each chassis' CRUD logic updated over time with the addition of further native rendering elements, like form controls and drawing primitives
 
 #### More primitives, form controls, and layout components
 Pax's component library is just getting started, and to be a truly useful GUI and graphics toolkit it requires a more thorough standard library.
@@ -89,7 +87,6 @@ Some of the high-priority upcoming pieces:
 
 **Layouts & widgets**
  - Scroller (plus native scrolling hookups)
-
 
 #### Interested in helping?
 

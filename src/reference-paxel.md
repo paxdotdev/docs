@@ -26,18 +26,21 @@ See [the source code](https://www.github.com/pax-lang/pax-lang/blob/master/pax-c
 
 PAXEL is compiled by transpiling through Rust.  In practice, this is fairly straight-forward — in many cases, PAXEL and Rust are syntatically identical.
 
-A significant chunk of runtime functionality is required for PAXEL's scoping mechanism — for example, inside a [template `for` loop](./start-key-concepts-templates.md#for), PAXEL can refer to the scoped _predicate declaration_ (e.g. the `i` in `for i in 0..10`).  For example:
+PAXEL's scoping mechanism requires special consideration by Pax's compiler — for example, inside a [template `for` loop](./start-key-concepts-templates.md#for), PAXEL can refer to the scoped _predicate declaration_ (e.g. the `i` in `for i in 0..10`). 
 
 ```
 //template:
 <Group>
     for i in 0..10 {
-        <Rectangle transform={Translate2D::translate(i * 100.0, i * 100.0)} /> //notice that PAXEL can refer to the `i` from the for loop.  This works when nesting `for` loops, too.
+        //notice that PAXEL can refer to the `i` from the for loop.  This works when nesting `for` loops, too.
+        <Rectangle transform={Translate2D::translate(i * 100.0, i * 100.0)} /> 
     }
 </Group>
 ```
 
 PAXEL can also refer to symbols available on the attached Rust stuct, through `self.some_symbol`, and can refer to certain cartridge "prelude imports", a [compiler-hard-encoded list]() of symbols that are imported and available to all Expressions, such as `Transform2D::*` and `Color::*` (which is where `translate()`, `scale()`, `rgba()`, etc. are defined.) .
+
+PAXEL shadows scopes, allowing stacking of scope contexts and overriding previously scoped symbols with newer/more specific references — for example, when nesting `for` loops.
 
 Finally, PAXEL can refer to the symbol representing the type of the Property associated with an expression — for example an expression bound to `some_complex_property: Property<SomeComplexType>` can use `SomeComplexType`:
 ```
@@ -56,8 +59,6 @@ Finally, PAXEL can refer to the symbol representing the type of the Property ass
 ```
 
 With a reasonable and finite amount of work, PAXEL will also be able to refer to "anything within scope" within a Rust file, allowing the import & use of arbitrary symbols & packages.  This approach will build on the `get_fully_qualified_type` work done by the parser to reflect on Property types.  Until that time, using an arbitrary import — for example, calling an imported method — requires re-exposing that method through a method available on `self`.
-
-PAXEL also shadows scopes, allowing stacking of scope contexts and overriding previously scoped symbols with newer/more specific references — for example, when nesting `for` loops.
 
 ---
 

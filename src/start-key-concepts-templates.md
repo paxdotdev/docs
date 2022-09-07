@@ -79,8 +79,7 @@ Internally, Pax handles the `for` range declaration as an Expression, via the pr
 
 For a practical example, consider `<Stacker />`.  When you use a Stacker, you pass children into it, like:
 ```rust
-
-
+//src/slot-example.rs
 #[pax(
     <Stacker>
         <Rectangle id=a />
@@ -91,11 +90,13 @@ For a practical example, consider `<Stacker />`.  When you use a Stacker, you pa
 pub struct SlotExample {}
 ```
 
-Stacker can only render elements that are in its template, but these rectangles are NOT in Stacker's template; they are in `SlotExample`'s template.  How do we teleport these `Rectangle`s from `SlotExample`'s template into `Stacker`?  The answer is `slot`.
+When `Stacker` renders, like any component, it will render the elements declared in its template, from `/pax-std/.../stacker.rs`.  However, the above rectangles are NOT in Stacker's template; they are declared in `SlotExample`'s template in `./slot-example.rs`.  
+
+How do we "teleport" these `Rectangle`s from `SlotExample`'s template into `Stacker`?  The answer is `slot`.
 
 If you pop open the source code for `Stacker`, you will find that it uses the `slot` keyword in its template, along with an index specifying "which indexed child should go in this slot."
 
-If we were to write a new simplified `Stacker` that only accepts three children, it's template might look like:
+If we were to write a new simplified `Stacker` that only accepts three children, its template might look like:
 
 ```rust
 <Frame id=cell_0>
