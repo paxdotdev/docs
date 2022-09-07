@@ -1,6 +1,6 @@
 # Authors & Contributors
 
-The Pax open source project is stewarded by the Pax Language Foundation, a U.S.-based non-profit currently <!--[welcoming members](googleform?) and -->pursuing 501(c)3 status.
+The Pax open source project is stewarded by the Pax Language Foundation, a U.S.-based non-profit currently <!--[welcoming members](googleform?) and -->pursuing 501(c)(3) status.
 
 The initial author of Pax was [Zack Brown](https://www.twitter.com/zackaboo), who designed the language and built the first versions of the compiler and runtimes during a personal sabbatical from 2021-2022.  He also wrote the initial version of this book.
 
@@ -15,7 +15,7 @@ A list of contributors to the Pax project may be found via the repository on [Gi
  - [Pax on Twitter](https://www.twitter.com/pax_lang)
 
 <!-- #### Sponsor
-Funds received will help cover administrative, service, and development costs. Until Pax achieves 501(c)3 status, sponsorships are NOT tax deductible.  TODO: add link to donations page -->
+Funds received will help cover administrative, service, and development costs. Until Pax achieves 501(c)(3) status, sponsorships are NOT tax deductible.  TODO: add link to donations page -->
 
 #### Write Code
  - Check out [the backlog](https://www.github.com/pax-lang/pax-lang/blob/master/TODO.md)

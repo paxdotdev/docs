@@ -16,7 +16,7 @@ Support accessibility (a11y) at least as well as the target operating system.
 Do more with less:
  - Disk: <100kB wasm / binary baseline
  - Memory: <10MB baseline, maybe better
- - CPU: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}`
+ - CPU: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}` ⨯ `set of supported devices`
 
 #### Be Ergonomic & Familiar
 Whenever possible, build off of established conventions and ergonomics — strive to "feel familiar".

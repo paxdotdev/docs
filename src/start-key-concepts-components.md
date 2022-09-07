@@ -61,6 +61,11 @@ This "components all the way down" pattern may be familiar if you have used a GU
 Notice that Pax builds off of Rust's import and namespace resolution mechanisms, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
 
 <!-- TODO: document stand-alone .pax files without Rust: ".html" use-case -->
+You can read more about Pax components in the chapter [Hardware Component Model](./reference-hardware-component-model.md).
+<br />
+<br />
+<br />
+
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />
@@ -69,7 +74,3 @@ Notice that Pax builds off of Rust's import and namespace resolution mechanisms,
     <br />
     <br />
 </div>
-
-
-You can read more about Pax components in the chapter [Hardware Component Model](./reference-hardware-component-model.md)
-

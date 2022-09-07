@@ -1,9 +1,14 @@
 # Primitives
 
 
-Primitives are a special case of `component` — they are "advanced mode" components with direct access to the engine, runtime, and rendering context.  Primitives are authored in pure Rust, without any Pax language sugar: templates, expressions, or settings.
+Primitives are a special case of `component` — with direct access to the engine, runtime, and rendering context.  Primitives are authored in pure Rust, without any Pax language sugar: templates, expressions, or settings.
 
-Most of Pax's included primitives are housed in the standard library (`pax-std`), and include: `<Group />`, `<Rectangle />`, `<Frame />`, and `<Image />`.  The built-in constructs for control flow, like `if` (`Conditional`) and `for` (`Repeat`) are implemented as primitives, too, with special handling by the engine.
+Most of Pax's included primitives are housed in the standard library, including: `<Group />`, `<Rectangle />`, `<Frame />`, and `<Image />`.  
+
+The built-in constructs for control flow, like `if` (`Conditional`) and `for` (`Repeat`) are implemented as primitives, too, with special handling by the engine.
+
+
+## Using & Authoring Primitives
 
 **Using** primitives is easy.  Any place you can use a component in a template, you can use a `primitive` instance in exactly the same way.  For example, `<Stacker />` is a component, but `<Rectangle />` is a primitive.  They are consumed the same way.
 
