@@ -81,7 +81,7 @@ pub struct AnotherComponent {
 }
 ```
 
-In this example, `MyComponent`'s `counter` property is _set_ — that declaration of a value, in this case an expression `{self.num_clicks * 2}`, is a _setting_.  
+In this example, `MyComponent`'s `counter` property gets _set_ — the declaration of a value, in this case an expression `{self.num_clicks * 2}`, is a _setting_.  
 
 Settings declarations may either be literal values or expressions.  `counter=5` would be another valid setting for the example above.
 

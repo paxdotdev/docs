@@ -33,13 +33,13 @@ The messages are sent a C structs via a low-level bridge, using Rust's FFI funct
 
 ### Clipping & Occlusion
 
-When an element is clipped, for example by placing it into a `Frame` element, each of the _native overlay_ and _canvas underlay_ layers are responsible for clipping, by separate mechanisms.
+When an element is clipped, for example by placing it into a `Frame` element, each of the _native overlay_ and _canvas underlay_ layers are responsible for doing their own clipping, by separate mechanisms.
 
 The native layer clips using an OS-specific clipping mechanism, for example `.clipped()` on macOS and `clip-path` on Web.
 
 The canvas layer also uses an OS-specific clipping mechanism, but at the GPU/drawing level.
 
-Note that further effort will be required to handle certain combinations of stacking, layering, and opacity.  For example, as of Sept 2022, it is expected that a _partially transparent_ drawing element rendered logically on top of a native element will fully occlude the native element.
+As of Sept 2022, it is expected that there are missing corner cases surrounding occlusion and stacked transparency — more effort will be required to round these out.
 
 
 ### Accessibility & SEO
@@ -55,7 +55,7 @@ SEO, or _search engine optimization_ a.k.a. Google / DuckDuckGo compatibility, i
 
 Worth noting about this approach is that it _significantly reduces_ the footprint burden of the Pax runtime.  This hybrid native-canvas/native-elements approach allows Pax to render without needing to bundle a fully featured rendering engine like Skia, which would add megabytes to base footprints.  
 
-For reference, this footprint burden is one of the limitations of many cross-platform renderers like Flutter — commonly, such tools require bundling [Skia](https://skia.googlesource.com/skia) and downloading megabytes of data in order to load a single page in a browser.
+For reference, this footprint burden is one of the challenges faced by many cross-platform renderers like Flutter — commonly, such tools require bundling [Skia](https://skia.googlesource.com/skia) and downloading megabytes of data in order to load a single page in a browser.
 
 [Pax aims](./intro-goals-prior-art.md) to keep its base footprint <100kB.
 

@@ -18,7 +18,7 @@ pub struct AndGateLED {
 This `AndGateLED` might be used in some other component's template like:
 
 ```rust
-<AndGateLED input_a=true input_b={self.is_validated && self.is_accepted_by_server} />
+<AndGateLED input_a={self.is_validated} input_b={self.is_accepted_by_server} />
 ```
 
 While contrived, this example may look vaguely familiar if you've used a visual circuit design tool for FPGAs with VHDL or Verilog.  Here's a screenshot from such a tool[1], illustrating how circuit components expose both _inputs_ and _outputs_, and compose with each other for logic flow.
