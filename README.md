@@ -19,4 +19,5 @@ Publish: gain appropriate AWS credentials; run `deploy.sh`
 This project is licensed under either of:
  - [MIT license](LICENSE-MIT)
  - [Apache 2.0 License](LICENSE-APACHE)
+
 at your option.
