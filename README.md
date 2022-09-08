@@ -16,6 +16,8 @@ Publish: gain appropriate AWS credentials; run `deploy.sh`
 
 ## License 
 
+© 2022 The Pax Language Foundation [contact@pax-lang.org].
+
 This project is licensed under either of:
  - [MIT license](LICENSE-MIT)
  - [Apache 2.0 License](LICENSE-APACHE)
