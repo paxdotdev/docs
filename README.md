@@ -11,5 +11,9 @@ Edit content
 
 Use `serve.sh` or `build.sh`
 
-Publish 
-<!--TODO: script deployment-->
+Publish: gain appropriate AWS credentials; run `deploy.sh`
+
+
+## License 
+
+Your choice of the [MIT license](LICENSE-MIT) or the [Apache 2.0 License](LICENSE-APACHE)
