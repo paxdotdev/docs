@@ -1,6 +1,6 @@
 # Creating a Project
 
-**Alpha Preview**:  you can run the Jabberwocky demo project locally, but you cannot yet create new Pax projects from scratch.  
+**Alpha Preview**:  you can run the Jabberwocky demo project locally, but you cannot yet create new Pax projects from scratch unless you [compile manually](./status-sept-2022.md#compiler-finish-line).  
 
 To run the demo:
 

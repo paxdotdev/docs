@@ -25,7 +25,13 @@ As of this writing, you can run the Pax demo for macOS and Web on master, after 
 This has only been tested on macOS!  The Web example should work, perhaps out-of-the-box, on Linux and Windows development machines.  The macOS example will only compile if you are developing on a Mac.
 
 #### Compiler finish-line
-The most fundamental remaining work for Pax to become useful is to finish _automation of the compiler_.  That is: to write a Pax program today, you need to manually "unroll" that Pax code into RIL ("Rust Intermediate Language") and compile the resulting Rust program.  This is not particularly user-friendly: what would be the point of writing C if you had to manually unroll it into assembly before you could run a program?
+The most fundamental remaining work for Pax to become useful is to finish _automation of the compiler_.  Until that automation is complete, here are the manual steps necessary to write a Pax program today:
+ - "unroll" any Pax code into RIL ("Rust Intermediate Language"), in the specific format required by `pax-cartridge`.  This includes creating individual vtable entries for each expression and writing instance factories for each component.
+ - compile the resulting Rust "cartridge" into a library
+ - load that cartridge library into one or more native app chassis (e.g. pax-chassis-macos) and build the chassis/cartridge combo into a single `cdylib`, then
+ - plug that `cdylib` into the appropriate platform "harness", running an external compiler to generate a final executable (.app, .exe, etc.)
+ 
+This is not particularly user-friendly: what would be the point of writing C if you had to manually unroll it into assembly before you could run a program?
 
 The work for the compiler-finishline is nearly complete, and is happening on the now-substantial `compiler-finishline` branch on Github.  Once this is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
 
