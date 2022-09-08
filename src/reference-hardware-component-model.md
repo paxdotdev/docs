@@ -29,7 +29,7 @@ While contrived, this example may look vaguely familiar if you've used a visual 
     <br />
 </div>
 
-Looking at Pax through this lens, _properties_ are component "inputs", while _settings_ are component "outputs".  You can read more in the chapters [Properties & Settings](./start-key-concepts-properties-settings.md) and [Expressions](./start-key-concepts-expressions.md) 
+Looking at Pax through this lens, _properties_ are component "inputs", while _settings_ are component "outputs".  The hierarchy of components is declared through the template of each component, traversed as a single combined tree by the Pax compiler & runtime.  You can read more in the chapters [Properties & Settings](./start-key-concepts-properties-settings.md), [Expressions](./start-key-concepts-expressions.md), and [Templates](./start-key-concepts-templates.md)
 
 ---
 
