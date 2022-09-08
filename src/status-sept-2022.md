@@ -35,7 +35,7 @@ This is not particularly user-friendly: what would be the point of writing C if 
 
 The work for the compiler-finishline is nearly complete, and is happening on the now-substantial `compiler-finishline` branch on Github.  Once this is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
 
-Hot on the heels of compiler finish-line work will be _error message_ improvements and a _language server_ for debugging & syntax highlighting, among [other things](https://www.github.com/pax-lang/pax-lang/blob/master/TODO.md).
+Hot on the heels of compiler finish-line work will be _error message_ improvements and a _language server_ for debugging & syntax highlighting, among [other things](https://www.github.com/pax-lang/pax/blob/master/TODO.md).
 
 #### Async
 A common use-case with GUIs is: "load some data from server; update GUI."

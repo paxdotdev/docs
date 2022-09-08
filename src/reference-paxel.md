@@ -20,7 +20,7 @@ PAXEL is very similar to at least two existing languages: Microsoft's Excel spre
 
 ### PAXEL Grammar
 
-See [the source code](https://www.github.com/pax-lang/pax-lang/blob/master/pax-compiler/src/pax.pest#L101).
+See [the source code](https://www.github.com/pax-lang/pax/blob/master/pax-compiler/src/pax.pest#L101).
 
 ### PAXEL Compilation
 

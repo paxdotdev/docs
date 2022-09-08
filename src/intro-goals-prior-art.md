@@ -1,7 +1,7 @@
 # Goals
 
 #### Be Free and Open
-Permissive free and open source license, free to fork, use commercially, collaborate, and contribute.  Refer to the [License](https://www.github.com/pax-lang/pax-lang/blob/master/LICENSE.md).
+Permissive free and open source license, free to fork, use commercially, collaborate, and contribute.  Refer to the [License](https://www.github.com/pax-lang/pax/blob/master/LICENSE.md).
 
 #### Be Portable & Universal
 Run on as many screens, devices, and environments as possible.
