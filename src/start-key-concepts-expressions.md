@@ -29,7 +29,7 @@ or in a settings block:
 
 Pax expressions are ultimately compiled to machine code (WASM or LLVM), and the Pax runtime manages each expression as its own compiled function in a vtable.
 
-Because Pax Expressions are pure, side-effect free functions, the Pax runtime can (one day) make aggressive optimizations: caching values
+Because Pax Expressions are pure, side-effect-free functions, the Pax runtime can (one day) make aggressive optimizations: caching values
 and only recomputing when one of the stated inputs changes.  Expressions are also readily parallelizable, a prospective future performance optimization.
 
 You can read more about PAXEL, the Pax Expression Language, [in this chapter](./reference-paxel.md).

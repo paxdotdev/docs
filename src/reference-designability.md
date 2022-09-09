@@ -14,7 +14,7 @@ Pax's _templates_, _settings_, and even _expressions_ are just data.  In fact, _
 
 Recall that an expression can be written anywhere you set a property.  Such expressions are constrained to be "Excel-formula-like" — in more precise words, each expression is a pure function of some tuple of state.
 
-This means no side-effects, no sequencing of operations — essentially, none of the hairy stuff that might break a computer's expectation of reading & writing back to, for example: React JSX templates, SwiftUI views, or Flutter widgets.
+This means no side effects, no sequencing of operations — essentially, none of the hairy stuff that might break a computer's expectation of reading & writing back to, for example: React JSX templates, SwiftUI views, or Flutter widgets.
 
 Pax's entire format, including Expressions, can be losslessly and deterministically loaded _into_ and _back out of_ a relational data store like a RDBMS: the same kind of data store used by any modern vector design tool.
 
@@ -33,7 +33,7 @@ Pax is intended to be a suitable language for encoding design data, like the con
 
 This deserves a chapter of its own — or perhaps just the build-out of a design tool for reference — but whereas many compilers have separate targets for `Debug` and `Release`, the Pax compiler (and future language server) abides by a similar boundary, for `Design/Debug` and `Release`.  
 
-When in `Design/Debug` mode, the compiler will be able to listen to changes on disk made by a developer, and reevalute + update the application, i.e. traditional "hot reloading."  At the same time, the compiler + language server can connect to any external tool (like a visual design tool) and listen for incoming changes — then trigger the "hot reloading" mechanism in the same way.  
+When in `Design/Debug` mode, the compiler will be able to listen to changes on disk made by a developer, and re-evalute + update the application, i.e. traditional "hot reloading."  At the same time, the compiler + language server can connect to any external tool (like a visual design tool) and listen for incoming changes — then trigger the "hot reloading" mechanism in the same way.  
 
 Finally, in addition to _reading_ source code changes from disk, the compiler will be able to serialize and _write_ source code changes to disk, as triggered by requests from the external design tool.  
 

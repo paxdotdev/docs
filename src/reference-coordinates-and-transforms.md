@@ -21,7 +21,7 @@ In the above example, rectangle `b` will be moved 50px to the right and 50px dow
 
 
 ### Anchor & Align
-Pax's coordinate system also has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its centerpoint.  
+Pax's coordinate system also has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its center-point.  
 
 <!-- TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example -->
 
@@ -48,7 +48,7 @@ When you transform an element that can contain other elements -- such as a `<Gro
 
 If a `transform` is applied to the group `groo`, such as a translation by 50px to the right, all descendants (in this case, the rectangle `ree`) will also be automatically translated by 50px to the right.  This translation occurs _after_ all of `ree`'s transform logic is calculated, and is handled by Pax's core rendering engine.
 
-This notion of hierarchical transformation may by familiar if you have used the `group` functionality of a vector design tool — specifically the behavior of individual grouped elements when you drag, rotate, or resize the whole group.  As an exercise, try making a nest multiple layers deep of groups in a vector design tool, and observe what happens to individual elements and groups when you transform the whole container.
+This notion of hierarchical transformation may by familiar if you have used the `group` functionality of a vector design tool — specifically the behavior of individual grouped elements when you drag, rotate, or resize the whole group.  As an exercise, try making a nest multiple layers deep of groups in a vector design tool, and observe what happens to individual elements and groups when you transform the entire container.
 
 #### 2. Matrix multiplication
 

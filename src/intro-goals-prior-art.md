@@ -19,7 +19,7 @@ Do more with less:
  - CPU: target benchmark TBD, perhaps `{%core per megapixel}` ⨯ `{active animations, no active animations}` ⨯ `set of supported devices`
 
 #### Be Ergonomic & Familiar
-Whenever possible, build off of established conventions and ergonomics — strive to "feel familiar".
+Whenever possible, build on top of established conventions and ergonomics — strive to "feel familiar".
 
 #### Be Designable
 Support mixing & matching _machine editability_ of Pax alongside _hand-editability_.  Read more about this in the chapter [Designability](./reference-designability.md).

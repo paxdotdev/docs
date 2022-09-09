@@ -5,7 +5,7 @@
 ---
 
 # STATUS: DRAFT
-**Pax is not yet available on Github -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
+**Pax is not yet available on GitHub -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
 
 ---
 

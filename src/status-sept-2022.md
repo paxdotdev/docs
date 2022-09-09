@@ -6,7 +6,7 @@
 ---
 
 # STATUS: DRAFT
-**Pax is not yet available on Github -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
+**Pax is not yet available on GitHub -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
 
 ---
 
@@ -33,7 +33,7 @@ The most fundamental remaining work for Pax to become useful is to finish _autom
  
 This is not particularly user-friendly: what would be the point of writing C if you had to manually unroll it into assembly before you could run a program?
 
-The work for the compiler-finishline is nearly complete, and is happening on the now-substantial `compiler-finishline` branch on Github.  Once this is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
+The work for the compiler finish-line is nearly complete, and is happening on the now-substantial `compiler-finishline` branch on GitHub.  Once this is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
 
 Hot on the heels of compiler finish-line work will be _error message_ improvements and a _language server_ for debugging & syntax highlighting, among [other things](https://www.github.com/pax-lang/pax/blob/master/TODO.md).
 
@@ -76,7 +76,7 @@ In order to support targeting Linux, Windows, Android, and iOS, a `chassis` and 
 #### More primitives, form controls, and layout components
 Pax's component library is just getting started, and to be a truly useful GUI and graphics toolkit it requires a more thorough standard library.
 
-Some of the high-priority upcoming pieces:
+Some high-priority upcoming pieces:
 
 **Form controls:**
  - Dropdown list

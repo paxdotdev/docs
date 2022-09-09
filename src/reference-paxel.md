@@ -24,7 +24,7 @@ See [the source code](https://www.github.com/pax-lang/pax/blob/master/pax-compil
 
 ### PAXEL Compilation
 
-PAXEL is compiled by transpiling through Rust.  In practice, this is fairly straight-forward — in many cases, PAXEL and Rust are syntatically identical.
+PAXEL is compiled by transpiling through Rust.  In practice, this is fairly straight-forward — in many cases, PAXEL and Rust are syntactically identical.
 
 PAXEL's scoping mechanism requires special consideration by Pax's compiler — for example, inside a [template `for` loop](./start-key-concepts-templates.md#for), PAXEL can refer to the scoped _predicate declaration_ (e.g. the `i` in `for i in 0..10`). 
 
@@ -38,7 +38,7 @@ PAXEL's scoping mechanism requires special consideration by Pax's compiler — 
 </Group>
 ```
 
-PAXEL can also refer to symbols available on the attached Rust stuct, through `self.some_symbol`, and can refer to certain cartridge "prelude imports", a [compiler-hard-encoded list]() of symbols that are imported and available to all Expressions, such as `Transform2D::*` and `Color::*` (which is where `translate()`, `scale()`, `rgba()`, etc. are defined.) .
+PAXEL can also refer to symbols available on the attached Rust struct, through `self.some_symbol`, and can refer to certain cartridge "prelude imports", a [compiler-hard-encoded list]() of symbols that are imported and available to all Expressions, such as `Transform2D::*` and `Color::*` (which is where `translate()`, `scale()`, `rgba()`, etc. are defined.) .
 
 PAXEL shadows scopes, allowing stacking of scope contexts and overriding previously scoped symbols with newer/more specific references — for example, when nesting `for` loops.
 

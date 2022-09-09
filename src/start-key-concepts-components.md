@@ -36,7 +36,7 @@ A component definition centers around a _Rust struct_, to which a piece of Pax i
 
 ```rust
 use pax::api::*;
-use pax_std::primitives:Group;
+use pax_std::primitives::Group;
 
 #[pax(<Group />)] //a one-element template, simply an empty Group
 pub struct EmptyComponent {

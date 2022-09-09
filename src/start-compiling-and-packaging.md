@@ -12,7 +12,7 @@
 <br />
 <br />
 
-Once you have writften a Pax program, you may want to package it for distribution to users beyond yourself.
+Once you have written a Pax program, you may want to package it for distribution to users beyond yourself.
 
 The [Pax compiler](https://www.github.com/pax-lang/pax/blob/master/src/pax-compiler/) is responsible for the heavy lifting, both for developing Pax projects (`pax run`) and compiling for distribution (`pax build`)
 

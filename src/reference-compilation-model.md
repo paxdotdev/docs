@@ -33,7 +33,7 @@ Now consider Pax through the lens of those four pieces:
 
  - **Console** — Imagine that instead of a single Nintendo Entertainment System, there were six different kinds of NES, for six different kinds of alien televisions and six different kinds of alien controllers.  Despite the alien nature of the various consoles, however, there's a shared cartridge format, which plugs into each of them.  These alien consoles are roughly the idea of platform-specific `chassis` in Pax (so-called because `console` already has specific meaning to developers.)  Like the Nintendo itself, these `chassis` act as the process entry-point for a given platform.
 
- - **Cartridge** — The cartridge contains compiled userland Pax code, as machine-code.  Anything written in Pax — templates, settings, expressions — get transpiled to Rust, in a specific format internally termed "RIL" or "Rust Intermediate Language".  That "cartridge definition" in RIL, akin to the integrated circuits of ROM and RAM in a Nintendo cartidge, gets compiled into platform-agnostic machine code, with an interface around the idea of "some user input" and "some rendering output."  That slug of machine code — again, the `cartridge` — gets imported as a dependency by the relevant platform `chassis` and compiled together into the final executable.
+ - **Cartridge** — The cartridge contains compiled userland Pax code, as machine-code.  Anything written in Pax — templates, settings, expressions — get transpiled to Rust, in a specific format internally termed "RIL" or "Rust Intermediate Language".  That "cartridge definition" in RIL, akin to the integrated circuits of ROM and RAM in a Nintendo cartridge, gets compiled into platform-agnostic machine code, with an interface around the idea of "some user input" and "some rendering output."  That slug of machine code — again, the `cartridge` — gets imported as a dependency by the relevant platform `chassis` and compiled together into the final executable.
 
 Noteworthy about this approach is its _inversion of dependencies_.  When you write a Pax program, you write a `library` rather than a `binary`.  The Pax compiler is in charge of wrapping your `library` into the containing `binary` for distribution, like plugging a cartridge into a console, then packaging the duo as a native software application.
 
@@ -54,13 +54,13 @@ Any Pax project can be compiled into a special bin target called `parser`.  Pax 
 Roughly, when the parser binary is run, it:
  - Looks for root component definitions (via `pax_root`)
  - For each of those roots, parses the template and discovers which dependencies are invoked, and parses properties to resolve names, types, and import paths
- - Codegens recursive calls into Component dependencies' `parse_to_manifest` methods
+ - Code-gens recursive calls into Component dependencies' `parse_to_manifest` methods
 
 Primarily, this approach solves the problem of "coordinating between macros," given that `rustc` makes no promises about when macros will be evaluated, and in practice evaluates macros seldom.  This model assures that `parse_to_manifest` always exists and is always as up-to-date as its attached Pax + Rust definitions.
 
 ### 1. Run the parser binary
 
-After generating the `parse_to_manifest` logic during the compilation of the parser binary (above,) the Pax compiler calls the resulting executable, which gathers all of the parsed information of a Pax program, packs that data into a `PaxManifest`, then serializes and passes that manifest back to the Pax compiler.
+After generating the `parse_to_manifest` logic during the compilation of the parser binary (above,) the Pax compiler calls the resulting executable, which gathers all the parsed information of a Pax program, packs that data into a `PaxManifest`, then serializes and passes that manifest back to the Pax compiler.
 
 This `PaxManifest` represents the entire definition of the program, in a simple data structure.  Once the `PaxManifest` is populated, the parsing work is done.
 
@@ -82,7 +82,7 @@ Now it's time to put the cartridge into the console — which means we must invo
 
 The `dev harness` is a nearly empty macOS app, built in Swift and Xcode, intended for developing Pax.  The harness + the chassis is collectively our metaphorical console.  Not yet built at the time of this authoring is a `production harness`, which is a separate macOS app (or configuration of the same macOS app) tuned for production builds.
 
-To pass the compiled, codegenned `cartridge` into this compilation chain, the Pax compiler uses the Cargo `patch` directive.  This swaps the "placeholder" definitions, the basic stubs included on Github for `pax-cartridge` and `pax-properties-coproduct`, for example, out for the new, freshly generated `cartridge` content.
+To pass the compiled, code-genned `cartridge` into this compilation chain, the Pax compiler uses the Cargo `patch` directive.  This swaps the "placeholder" definitions, the basic stubs included on GitHub for `pax-cartridge` and `pax-properties-coproduct`, for example, out for the new, freshly generated `cartridge` content.
 
 Now, when compiled through Xcode (for our macOS example,) we have a complete, native executable.
 

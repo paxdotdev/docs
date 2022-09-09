@@ -10,9 +10,9 @@ The standard library includes:
 
 #### Core
 
-**`<Group />`** - Groups its descendents into a single render node, which may be transformed, causing all children to inhereit that hierarchical transformation.  Works intuitively like a `group` in a vector design tool.  Groups do not accept a `size`.
+**`<Group />`** - Groups its descendents into a single render node, which may be transformed, causing all children to inherit that hierarchical transformation.  Works intuitively like a `group` in a vector design tool.  Groups do not accept a `size`.
 
-**`<Frame />`** - Exactly like a Group, except requires a `size`, and introduces a clipping context outside of its rectangular boundaries.  Any element that would be rendered outside of those boundaries gets clipped (hidden from view / uninteractable.)
+**`<Frame />`** - Exactly like a Group, except requires a `size`, and introduces a clipping context outside of its rectangular boundaries.  Any element that would be rendered outside of those boundaries gets clipped (hidden from view / non-interactable.)
 
 **`<Image />`** - !!unimplemented!! allows embedding and rendering a bitmap or vector image
 
