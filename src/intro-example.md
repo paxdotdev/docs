@@ -10,7 +10,7 @@ Try resizing your browser horizontally to see responsive resizing.  You can also
 
 
 
-### Example source code
+### Source code
 
 ```rust
 //src/lib.rs
