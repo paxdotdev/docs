@@ -36,7 +36,7 @@ Try resizing your browser horizontally to see responsive resizing.  You can also
     </Stacker>
 
     @settings {
-        #index_text {
+        ##index_text {
             transform: { align(0%, i * 12.5%) }
             font: {
                 family: "Real Text Pro",
