@@ -46,12 +46,12 @@ Try resizing your browser horizontally to see responsive resizing.  You can also
         }
     }
 )]
-pub struct HelloWorld {
+pub struct Jabberwocky {
     pub num_clicks : Property<i64>,
     pub current_rotation: Property<f64>,
 }
 
-impl HelloWorld {
+impl Jabberwocky {
 
     #[pax_on(WillRender)]
     pub fn handle_will_render(&mut self, args: ArgsRender) {
