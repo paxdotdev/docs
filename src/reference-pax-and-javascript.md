@@ -11,9 +11,9 @@ use pax::std::drawing2D::Rectangle;
 #[pax(
     //On click, update theta and cause this Rectangle to rotate
     <Rectangle @click=self.handle_click transform={
-        Anchor(50%, 50%)   * 
-        Align(50%, 50%)    * 
-        Rotate(self.theta) 
+        anchor(50%, 50%)   * 
+        align(50%, 50%)    * 
+        rotate(self.theta) 
     } />
 )]
 pub struct HelloWorld {
@@ -43,9 +43,9 @@ import {pax, EasingCurve} from '@pax-lang/pax';
 
 @pax(`
     <Rectangle @click=this.handleClick transform={
-        Anchor(50%, 50%) *
-        Align(50%, 50%) *
-        Rotate(this.theta)
+        anchor(50%, 50%) *
+        align(50%, 50%) *
+        rotate(this.theta)
     } />
 `)
 class HelloWorld {
