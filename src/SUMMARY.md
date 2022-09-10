@@ -30,6 +30,7 @@
  - [Native Rendering](./reference-native-rendering.md)
  - [Hardware Component Model](./reference-hardware-component-model.md)
  - [Designability](./reference-designability.md)
+ - [Pax and JavaScript](./reference-pax-and-javascript.md)
  - [Embedding Pax]() <!--//iframe on web; currently entire apps only; future: UI components for e.g. React, SwiftUI-->
  - [Responsive Design with Pax]() <!-- "media query"-style settings blocks, `@windows {}` etc. -->
 
