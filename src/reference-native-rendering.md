@@ -1,6 +1,6 @@
 # Native Rendering
 
-To render both _native UI elements_ and _native 2D drawing_, every running Pax program renders to **two separate layers,** through different rendering contexts, but with a unified coordinate space, clipping context, and event handling mechanism.
+To render both _native UI elements_ and _native 2D drawing_, every running Pax program renders to **two separate layers,** through different rendering contexts, composited with a unified coordinate space, clipping context, and event handling mechanism.
 
 ### Native Overlay
 
@@ -59,3 +59,59 @@ For reference, this footprint burden is one of the challenges faced by many cros
 
 [Pax aims](./intro-goals-prior-art.md) to keep its base footprint <100kB.
 
+
+<!--
+Scrap: ported from old README
+
+## Appendix B: Description of native rendering approach for text, certain other elements
+
+Rather than introduce virtual controls at the canvas layer, Pax orchestrates a layer of native
+controls as part of its rendering process.  This native overlay is used both for form controls like checkboxes
+and drop-downs, as well as for rendering native text.
+
+In the browser, for example, a pool of DOM nodes is created for form control elements and text.
+Those elements are positioned as an overlay on top of any canvas rendering, allowing for a cohesive
+experience that blends dynamic graphics (e.g. vectors, animations) with native familiar UI elements (e.g. text boxes.)
+
+[Visual of DOM "marionette" overlay layer on top of parallaxed graphics layer]
+
+TODO: describe benefits of this approach toward a11y, because e.g. full DOM + content is present in the browser
+
+
+
+
+
+
+
+## Appendix E: Alike and unlike the World Wide Web
+
+
+
+Pax's design draws much inspiration from HTML and CSS. In fact, Pax aims to offer
+a compelling alternative to Web technologies for delivering cross-platform content, graphics, and GUIs.
+
+#### Inspired by the World Wide Web, Pax is:
+
+content-first -- like HTML
+easily machine parsable -- like HTML and CSS
+backwards-compatible -- works with any modern browser
+universal -- compiles to any device as native app
+learnable -- familiar patterns, aims to be easy to pick up
+easily deployed -- wrap any program as a as native app or publish to web (JAM stack friendly)
+
+
+#### What does Pax do differently than the World Wide Web?
+
+built-in expression language -- any property in Pax — like a Rectangle's background color — can be set as an Expression: a spreadsheet-function-like that evaluates dynamically at runtime.  For example, you can react to user inputs or changes in state.
+high performance -- not only are Expressions extremely efficient, Pax programs run as "close-to-the-metal" LLVM or WASM code, without the runtime overhead of a garbage collector or interpreter.  
+predictable layouts -- Pax dreams of being designed. It uses the coordinate system of common design tools as well as predictable rules for alignment and affine transforms.     
+language-agnostic -- built on Rust, can support JS or any other language
+extensible -- built around reusable components, down to the standard library. Rendering targets (2D/3D/etc.) and target platforms (iOS/Android/Windows/etc.)
+compiled -- rather than interpreted.  TODO: describe alternative to `right-click, view source`
+doesn't require a browser or a JavaScript runtime — though Pax is backwards compatible with any modern browser, it can also be packaged as stand-alone native apps for any supported platform.
+designable
+
+
+
+
+ -->

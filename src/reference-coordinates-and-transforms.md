@@ -6,7 +6,7 @@ Pax's coordinate system is "top-left origin; right is positive x; down is positi
 
 ### Affine transforms (Transform2D)
 
-The way elements get positioned, sized, and moved around in Pax is through the powerful `transform` property.  This property is nearly ubiquitous across the landscape of GUI and graphical development tools (such as `matrix3d()` in CSS), but it is more front-and-center in game engines than it is in UI layout systems.
+The way elements get positioned, sized, and moved around in Pax is through the powerful `transform` property.  This property is nearly ubiquitous across the landscape of GUI and graphical development tools (such as `matrix3d()` in CSS), but it tends to be more front-and-center in game engines than it is in UI layout systems.
 
 Perhaps the easiest way to think about Pax's transform model is "design tool coordinates."  That is, when you select an element in a vector design tool like Figma, Sketch, or Illustrator, you can: _drag_ it (`translate`), _resize_ it (`scale`), _rotate_ it, and _shear_ it (with a combination of rotation and scale.)  Each of these operations can be expressed in Pax, as well.
 

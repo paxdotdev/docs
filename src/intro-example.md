@@ -107,3 +107,126 @@ And the mome raths outgrabe.
 ```
 
 
+
+
+<!-- Scrap: old examples:
+
+### Clickable Square
+
+```rust
+use pax::api::{Property, ClickArgs};
+
+#pax[(
+    <Rectangle id=square @click=self.handle_click />
+
+    @settings {
+        #square {
+            width: 200px
+            height: 200px
+            transform: {Align(50%, 50%) * Anchor(50%, 50%) * Rotate(current_rotation)}
+        }
+    }
+)]
+pub struct ClickableSquare {
+    current_rotation : Property<f64>
+}
+
+impl ClickableSquare {
+  pub fn handle_click(&mut self, args: ArgsClick) {
+    let old_current_rotation = self.current_rotation.get();
+
+    //instead of an `ease_to` animation, could set value immediately with `self.theta.set(...)`
+    self.current_rotation.ease_to(
+      old_current_rotation + f64::PI() * 3.0, //new value
+      240,                         //duration of transition, frames
+      EasingCurve::OutBack,        //curve to use for interpolation 
+    );
+  }
+}
+```
+
+### UI Forms
+(speculative API)
+```rust
+//!! NOTE: UI form controls are not yet built; this API is speculative !!
+use pax_std::forms::{TextBox, Button, ButtonPushArgs, CheckBox};
+use pax_std::layouts::{Stacker, StackerDirection};
+use pax_std::primitives::{Text};
+
+use internal_http_submit; //imagined for brevity
+
+#[pax(
+    <Stacker direction=Vertical cells=4 >
+    
+        <Stacker direction=Horizontal cells=2>
+            <Text>"First Name:"</Text>
+            <TextBox bind=first_name />
+        </Stacker>
+    
+        <Stacker direction=Horizontal cells=2>
+            <Text>"Last Name:"</Text>
+            <TextBox bind=last_name />
+        </Stacker>
+    
+        <Stacker direction=Horizontal cells=2>
+            <Text>"Age:"</Text>
+            <TextBox bind=age format=numeric />
+        </Stacker>
+    
+        <Button @push=self.handle_submit>"Submit"</Button>
+    
+    </Stacker>
+)]
+pub struct HelloForms {
+    first_name: Property<String>,
+    last_name: Property<String>,
+    age: Property<i32>,
+}
+
+impl HelloForms {
+    pub async fn handle_submit(&mut async_self: Channel<Self>, args: ButtonPushArgs) {
+        internal_http_submit(
+          async_self.first_name.get(),
+          async_self.last_name.get(),
+          async_self.age.get()
+        ).await;
+    }
+}
+
+```
+
+More desired examples:
+  - Modularity: creating, importing, and reusing a component — perhaps across crates
+  - 
+
+
+
+
+
+## Appendix D: Tic-tac-toe example
+
+```
+//Tic-tac-toe example
+<Stacker direction=Horizontal cell_count=3 >
+  for i in 0..3 {
+    <Stacker direction=Vertical cell_count=3 >
+      for j in 0..3 {
+        <Group on_jab=handle_jab with (i, j)>
+          if self.cells[i][j] == Cell::Empty {
+            <image src="blank.png">
+          }else if self.cells[i][j] == Cell:X {
+            <Image src="x.png" />
+          }else if self.cells[i][j] == Cell::O {
+            <Image src="o.png" />
+          }
+        </Group>
+      }
+    </Stacker>
+  }
+</Stacker>
+```
+
+
+
+
+-->

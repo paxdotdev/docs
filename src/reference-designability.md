@@ -67,3 +67,30 @@ When Pax is designed by a Pax-enabled design tool, the attached Rust logic can b
 Rust code (and future other supported languages, like JavaScript) are not intended to be designed with Pax; they're intended to be coded.  If you ever authored a program in Flash, you will find this model familiar.  
 
 Pax's major departure from Flash's design+code model is Pax's addition of `expressions`, which are intended to be authored by coding them into a design tool — anywhere you might enter a literal value into a text box in a design tool, e.g. to write a hex color by hand, or set the width of a vector rectangle, you can alternatively write an expression. Think: spreadsheet formula.
+
+
+
+<!-- Scrap, ported from old README
+
+
+
+
+## Appendix C: Declarative and designable
+
+At first glance, Pax templates look quite a bit like familiar templating languages like React/JSX.
+
+On closer inspection, you may notice an important distinction: _Pax's templates are not evaluated within a closure_ — they are declared statically and evaluated entirely at compile time.  
+Symbols in expressions that refer to a component's properties, like `color=self.active_bg_color`, are handled via special runtime lookups
+in the expression vtable — again, specifically _not_ a direct reference to some `self` in the scope of some closure.
+
+Because the template is evaluated entirely at compile-time, the template is exactly what it is described to
+be in the code — or in other words, it is both _code_ and _data_, in the same sense as Lisp.  Expressions themselves, given their functional constraints,
+are roughly equivalent to formulas in spreadsheets: declarative, easy to isolate, easy to hack.
+
+The reason _all of that_ matters is because Pax was **designed to be designed** — in the sense of "design tools" that can read and write Pax code as a comprehensive
+description of any visual content, design, prototype, document, production GUI, or scene.
+
+
+
+
+-->
