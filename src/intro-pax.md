@@ -1,4 +1,4 @@
-# The Pax Language
+# Introduction to Pax
 
 <br />
 

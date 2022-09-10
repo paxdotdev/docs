@@ -1,7 +1,7 @@
 # Summary
 
 # Introduction
- - [The Pax Language](./intro-the-pax-language.md)
+ - [Introduction to Pax](./intro-pax.md)
  - [Example](./intro-example.md)
  - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
