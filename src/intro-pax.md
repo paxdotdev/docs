@@ -1,19 +1,7 @@
 # Introduction to Pax
 
-<br />
 
----
-
-# STATUS: DRAFT
-**Pax is not yet available on GitHub -- these docs are drafted in preparation for release and are not yet intended for broad publication.**
-
----
-
-<br />
-<br />
-
-
-Pax is a Rust-based language for interactive graphics & GUIs.  As of September 2022, Pax is [in alpha preview](./status-sept-2022.md).  
+Pax is a Rust-based language for interactive graphics & GUIs.  As of September 2022, Pax is being developed in the open, [in alpha preview](./status-sept-2022.md).  
 
 Pax works as a companion language to Rust.  Here's a simple example:
 
