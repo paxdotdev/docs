@@ -5,7 +5,7 @@ Pax is now available in _alpha preview._  It is not yet fully useful or function
 [Read this section](./intro-authors-and-contributors.md#how-to-contribute-to-pax) for some ideas on how to help.
 
 #### Run demo
-As of this writing, you can run the Pax demo for macOS and Web on master, after following the instructions in README.md, then using the shell scripts `./run.sh` and `./run-web.sh`
+As of this writing, you can run the Pax demo for macOS and Web on the `jabberwocky-demo` branch, after following the instructions in README.md, then using the shell scripts `./run.sh` and `./run-web.sh`
 
 <!-- TODO: embed demo video -->
 
@@ -20,7 +20,7 @@ The most fundamental remaining work for Pax to become useful is to finish _autom
  
 This is not particularly user-friendly: what would be the point of writing C if you had to manually unroll it into assembly before you could run a program?
 
-The work for the compiler finish-line is nearly complete, and is happening on the now-substantial `compiler-finishline` branch on GitHub.  Once this is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
+The work for the compiler finish-line is happening on the `master` branch on GitHub.  Once this work is done — and you can write + automatically compile basic Pax programs — Pax can progress from `alpha preview` to `alpha`.
 
 Hot on the heels of compiler finish-line work will be _error message_ improvements and a _language server_ for debugging & syntax highlighting, among [other things](https://www.github.com/pax-lang/pax/blob/master/TODO.md).
 
