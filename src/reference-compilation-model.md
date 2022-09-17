@@ -25,6 +25,7 @@ Pax's compilation model is inspired by the Nintendo Entertainment System.  For i
 
 The NES did not have an operating system, _per se_ — the console was half of a circuit, awaiting the cartridge to be inserted and complete that circuit.  Once connected and powered on, the four pieces together represent a single _application_ (in the NES's case, a game), similar to opening a .exe on Windows or a .apk on Android today.
 
+
 Now consider Pax through the lens of those four pieces:
 
  - **Screen & audio / Output** — in Pax, rendering to the screen happens through a native rendering context, e.g. CoreGraphics on macOS and iOS, Direct2D on Windows, and Canvas2D in the browser.
@@ -37,16 +38,36 @@ Now consider Pax through the lens of those four pieces:
 
 Noteworthy about this approach is its _inversion of dependencies_.  When you write a Pax program, you write a `library` rather than a `binary`.  The Pax compiler is in charge of wrapping your `library` into the containing `binary` for distribution, like plugging a cartridge into a console, then packaging the duo as a native software application.
 
-#### Recap
+
+
+<div style="text-align: center; font-style: italic; font-weight: 100;">
+    <br />
+    <a href="./runtime-arch.png" target="_blank"><img style="width: 100%; border: 10px solid rgb(0,0,0);" src="./runtime-arch.png" /></a>
+    <br />
+    Diagram of Pax's runtime dependency graph, illustrating the "Nintendo" model
+    <br />
+    <br />
+</div>
+
+
 When you write a Pax program, you are authoring a `cartridge`, like an NES game.  When you compile a Pax program, the Pax compiler takes care of plugging that `cartridge` into a platform-specific `chassis`, compiling the whole thing, and producing a syndication-ready executable for the target platform, like an .exe for Windows or a .apk for Android.  
 
 At runtime, the `chassis` maps user inputs into Pax events, and maps Pax rendering commands to an operating system-native drawing context.
 
 
+
 # Compiler Sequence
 
-When you run `pax build` or `pax run`, the following sequence occurs:
+<div style="text-align: center; font-style: italic; font-weight: 100;">
+    <br />
+    <a href="./compiler-sequence.png" target="_blank"><img style="width: 100%; border: 10px solid #C1272D;" src="./compiler-sequence.png" /></a>
+    <br />
+    Sequence diagram for the Pax compiler
+    <br />
+    <br />
+</div>
 
+When you run `pax build` or `pax run`, the following sequence occurs: 
 ### 0. Build the parser binary
 
 Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic evaluation of Rust logic to finish parsing.  The parsing code is generated as part of the `pax` macros. 

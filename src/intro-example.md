@@ -1,6 +1,6 @@
 # Example
 
-Following is a simple example of Pax, compiled for Web, running in an iframe.  You can also [run this example](./start-creating-a-project.md) as a native macOS app.
+Following is a simple example of Pax, compiled for Web, running in an iframe.  You can also [run this example](./start-creating-a-project.md) as a native macOS app or [watch a video](https://www.youtube.com/watch?v=xrN5nd9hjDw&t=2s) of the two apps running side-by-side.
 
 Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around until you find the animated click handler, and opening browser dev tools to inspect the HTML and CSS.  The text is readable by screen readers and web crawlers.
 
