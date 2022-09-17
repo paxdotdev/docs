@@ -31,8 +31,9 @@ impl IncrementMe {
 
 ```
 
-In addition to responsive layouts, form controls, and GUIs, Pax supports [high-performance](./intro-goals-prior-art.md) 2D vector drawing and 120fps rendering with fine-grained, creativity-friendly animation APIs.  
+In addition to responsive layouts, form controls, and GUIs, Pax supports [high-performance](./intro-goals-prior-art.md) 2D vector drawing and 120fps rendering with fine-grained, creativity-friendly animation APIs.
 
-The Pax compiler builds platform-specific application executables, for example `.app`s for macOS or `.wasm`-powered webpages for browsers.  Today, Pax only runs in browsers and as native macOS apps, though native support will be extended to: iOS, Android, Windows, and Linux.
+Pax runs in browsers via WebAssembly and as native macOS apps via LLVM. Native support will be extended to: iOS, Android, Windows, and Linux.
+
 
 This book will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.
