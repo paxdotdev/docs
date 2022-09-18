@@ -31,15 +31,10 @@ impl IncrementMe {
 }
 
 ```
-<br />
-And a wireframe of its rendering:
-<br /><br />
-<img src="https://static.pax-lang.org/increment-me-wf.png" />
-<br />
 
 In addition to responsive layouts, form controls, and GUIs, Pax [aims to maintain](./intro-goals-prior-art.md) high-performance 2D vector drawing and 120fps rendering with fine-grained, creativity-friendly animation APIs.
 
-Pax runs as native macOS apps via LLVM and in browsers via WebAssembly. Native support will be extended to: iOS, Android, Windows, and Linux.
+Pax compiles across platforms: as native macOS apps via LLVM and in browsers via WebAssembly. Native targets will be extended to: iOS, Android, Windows, and Linux.
 
 
 This book will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.
