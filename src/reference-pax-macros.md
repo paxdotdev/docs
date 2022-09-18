@@ -5,7 +5,7 @@ Rust macros are the way that information gets exposed from Rust to Pax.
  - `pax`
 Declares a Pax component definition, specifically a _non-root_ component that may be imported and instantiated in other components' templates.
 
- - `pax_root`
+ - `pax_app`
 Declares a Pax component definition, specifically a _root_ component, mounted as the entry-point to a given program
 
  - `pax_file` (Sept '22: not yet implemented)

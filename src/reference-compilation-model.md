@@ -73,7 +73,7 @@ When you run `pax build` or `pax run`, the following sequence occurs:
 Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic evaluation of Rust logic to finish parsing.  The parsing code is generated as part of the `pax` macros. 
 
 Roughly, when the parser binary is run, it:
- - Looks for root component definitions (via `pax_root`)
+ - Looks for root component definitions (via `pax_app`)
  - For each of those roots, parses the template and discovers which dependencies are invoked, and parses properties to resolve names, types, and import paths
  - Code-gens recursive calls into Component dependencies' `parse_to_manifest` methods
 

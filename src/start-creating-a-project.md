@@ -87,6 +87,6 @@ path = "src/lib.rs"
 required-features = ["parser"]
 ```
 
-With the preceding additions to your Cargo.toml in place, you can now expose a `#[pax_root()]` component in your codebase at `src/lib.rs` and then use the pax compiler: `pax run` or `pax build`.
+With the preceding additions to your Cargo.toml in place, you can now expose a `#[pax_app()]` root component in your codebase at `src/lib.rs` and then use the pax compiler: `pax run` or `pax build`.
 
 <!-- TODO: the above modifications to Cargo.toml _should_ be automatable with something like `pax attach` -->

@@ -32,7 +32,7 @@ Inside a component definition, there may be:
  - [Property Definitions](./start-key-concepts-properties-settings.md)
  - [Event Handlers](./start-key-concepts-event-handlers.md)
 
-A component definition centers around a _Rust struct_, to which a piece of Pax is attached to through the macro `pax` or `pax_root`.  For example, the following defines an empty component called `EmptyComponent`:
+A component definition centers around a _Rust struct_, to which a piece of Pax is attached to through the macro `pax` or `pax_app`.  For example, the following defines an empty component called `EmptyComponent`:
 
 ```rust
 use pax::api::*;

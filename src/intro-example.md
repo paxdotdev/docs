@@ -14,7 +14,7 @@ Try resizing your browser horizontally to see responsive resizing.  You can also
 
 ```rust
 //src/lib.rs
-#[pax_root(
+#[pax_app(
     <Stacker cells=10 >
         <Stacker cells=5 direction=Vertical >
             for i in 0..5 {
