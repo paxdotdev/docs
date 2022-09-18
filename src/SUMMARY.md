@@ -5,6 +5,7 @@
  - [Example](./intro-example.md)
  - [Goals & Prior Art](./intro-goals-prior-art.md)
  - [Authors & Contributors](./intro-authors-and-contributors.md)
+ - [Links](./intro-links.md)
  
 # Status
 - [September 2022](./status-sept-2022.md)

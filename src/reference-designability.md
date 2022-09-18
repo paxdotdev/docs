@@ -29,16 +29,6 @@ Pax's entire format, including Expressions, can be losslessly and deterministica
 
 Pax is intended to be a suitable language for encoding design data, like the contents of a Figma file or an Illustrator file.  Additionally, Pax is intended to be a suitable language for encoding GUI or interactive graphical scene definitions — like an old Flash source file, a Visual Basic screen, or a modern Web GUI.
 
-#### The Pax compiler is designed with design tools in mind
-
-This deserves a chapter of its own — or perhaps just the build-out of a design tool for reference — but whereas many compilers have separate targets for `Debug` and `Release`, the Pax compiler (and future language server) abides by a similar boundary, for `Design/Debug` and `Release`.  
-
-When in `Design/Debug` mode, the compiler will be able to listen to changes on disk made by a developer, and re-evalute + update the application, i.e. traditional "hot reloading."  At the same time, the compiler + language server can connect to any external tool (like a visual design tool) and listen for incoming changes — then trigger the "hot reloading" mechanism in the same way.  
-
-Finally, in addition to _reading_ source code changes from disk, the compiler will be able to serialize and _write_ source code changes to disk, as triggered by requests from the external design tool.  
-
-In other words, through any future Pax-enabled design tools, alongside the Pax compiler, you will be able to create Pax graphics & GUIs visually alongside coding them by hand.
-
 
 
 ### FAQ
