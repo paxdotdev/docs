@@ -2,13 +2,11 @@
 
 Following is a simple example of Pax, compiled for Web, running in an iframe.  You can also [run this example](./start-creating-a-project.md) as a native macOS app or [watch a video](https://www.youtube.com/watch?v=xrN5nd9hjDw&t=2s) of the two apps running side-by-side.
 
-Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around until you find the animated click handler, and opening browser dev tools to inspect the HTML and CSS.  The text is readable by screen readers and web crawlers.
-
 <!-- TODO:  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/) -->
 
 <iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax-lang.org/jabberwocky/" ></iframe>
 
-
+Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around until you find the animated click handler, and opening browser dev tools to inspect the HTML and CSS.  The text is readable by screen readers and web crawlers.
 
 ### Source code
 
@@ -54,14 +52,14 @@ pub struct Jabberwocky {
 impl Jabberwocky {
 
     #[pax_on(WillRender)]
-    pub fn handle_will_render(&mut self, args: ArgsRender) {
+    pub async fn handle_will_render(&mut self, args: ArgsRender) {
         if args.frames_elapsed % 180 == 0 {
             //every 3s
             pax::log(&format!("pax::log from frame {}", args.frames_elapsed));
         }
     }
 
-    pub fn handle_click(&mut self, args: ArgsClick) {
+    pub async fn handle_click(&mut self, args: ArgsClick) {
         let new_rotation = self.current_rotation.get() + (2.0 * std::f64::consts::PI);
         self.current_rotation.ease_to(new_rotation, 120, EasingCurve::InOutBack );
         self.current_rotation.ease_to_later(0.0, 40, EasingCurve::OutBack );

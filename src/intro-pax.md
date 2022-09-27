@@ -1,6 +1,10 @@
 # Introduction to Pax
 
-Pax extends the Rust programming language with a syntax for declarative component-based GUIs.
+Pax is a cross-platform graphical app runtime and [declarative](https://docs.pax-lang.org/reference-designability.html) authoring language.  
+
+Pax aims to render any GUI or interactive 2D graphics you could imagine, offering fine-grained control over 2D vector drawing and animations.
+
+Pax is authored alongside Rust, and compiles through Rust into lightweight native executables or WebAssembly-powered Web apps.
 
 As of September 2022, Pax is being developed in the open, [in alpha preview](./status-sept-2022.md).  
 
@@ -31,10 +35,5 @@ impl IncrementMe {
 }
 
 ```
-
-In addition to responsive layouts, form controls, and GUIs, Pax [aims to maintain](./intro-goals-prior-art.md) high-performance 2D vector drawing and 120fps rendering with fine-grained, creativity-friendly animation APIs.
-
-Pax compiles across platforms: as native macOS apps via LLVM and in browsers via WebAssembly. Native targets will be extended to: iOS, Android, Windows, and Linux.
-
 
 This book will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.
