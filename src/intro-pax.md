@@ -1,8 +1,8 @@
 # Introduction to Pax
 
-Pax is a cross-platform graphical app runtime and [declarative](https://docs.pax-lang.org/reference-designability.html) authoring language.  
+Pax is a Rust-based language and runtime for cross-platform app development.
 
-Pax aims to render any GUI or interactive 2D graphics you could imagine, offering fine-grained control over layout as well as vector drawing and animations.
+Pax aims to render any GUI or interactive 2D graphics you can imagine, offering fine-grained control over layout as well as vector drawing and animations.
 
 Pax is authored alongside Rust, and compiles through Rust into lightweight native executables or WebAssembly-powered Web apps.
 
