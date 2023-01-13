@@ -1,8 +1,6 @@
 # Authors & Contributors
 
-The Pax open source project is stewarded by the Pax Foundation, a U.S.-based nonprofit currently <!--[welcoming members](googleform?) and -->pursuing 501(c)(3) status.
-
-The initial author of Pax was [Zack Brown](https://www.twitter.com/zackaboo), who designed the language and built the first versions of the compiler and runtimes during a personal sabbatical from 2021-2022.  He also wrote the initial version of this book.
+The initial author of Pax was [Zack Brown](https://www.linkedin.com/in/zack-brown), who designed the language and built the first versions of the compiler and runtimes during an independent research sabbatical from 2021-2023.  He also wrote the initial version of this book.
 
 A list of contributors to the Pax project may be found via the repository on [GitHub.](https://www.github.com/pax-lang/pax/)
 
