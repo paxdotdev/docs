@@ -4,7 +4,7 @@ Following is a simple example of Pax, compiled for Web, running in an iframe.  Y
 
 <!-- TODO:  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/) -->
 
-<iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax-lang.org/jabberwocky/" ></iframe>
+<iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax.rs/jabberwocky/" ></iframe>
 
 Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around until you find the animated click handler, and opening browser dev tools to inspect the HTML and CSS.  The text is readable by screen readers and web crawlers.
 
