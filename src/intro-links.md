@@ -1,6 +1,6 @@
 # Links
 
-Website: [https://www.pax.rs/](https://www.pax.rs/)
+Website: [https://pax.rs/](https://pax.rs/)
 <br />
 GitHub: [https://www.github.com/pax-lang/pax](https://www.github.com/pax-lang/pax)
 <br />
