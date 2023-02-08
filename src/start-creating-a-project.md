@@ -65,7 +65,7 @@ Modify your `Cargo.toml` to include the following four dependencies, with the sp
 
 ```toml
 [dependencies]
-pax = {package="pax-lang", features=["parser"]}
+pax = {package="pax-lang"}
 pax-std = {features=["parser"]}
 pax-compiler = {optional = true}
 serde_json = {version = "1", optional = true}
