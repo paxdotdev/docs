@@ -9,7 +9,7 @@ As of September 2022, Pax is being developed in the open, [in alpha preview](./s
 
 ## Example
 
-Writing Pax is intended to feel familiar, and the language borrows many ideas from [prior art](./intro-goals-prior-art.md).
+Writing Pax is intended to feel familiar, and the language borrows many ideas from [prior art](./intro-goals-prior-art.md#prior-art--inspiration).
 
 Following is a simple Pax component called `IncrementMe`:
 
