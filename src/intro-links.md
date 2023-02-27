@@ -11,3 +11,5 @@ Twitter: [https://www.twitter.com/pax_lang](https://www.twitter.com/pax_lang)
 Discord: [https://discord.gg/5zXsskAzRB](https://discord.gg/5zXsskAzRB)
 <br />
 Email: [contact@pax.rs](mailto:contact@pax.rs) 
+<br />
+Blog: [https://developing.pax.rs](https://developing.pax.rs)
