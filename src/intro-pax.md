@@ -1,6 +1,6 @@
 # Introduction to Pax
 
-Pax is a user interface language and rendering engine.  Use Pax to build GUIs and interactive 2D graphics with Rust.
+Pax is a user interface language and 2D layout engine.  Use Pax to develop cross-platform apps with Rust.
 
 Pax compiles through Rust into native Mac apps (LLVM) or Web apps (WebAssembly). Support for more platforms is planned, at least: Linux, Windows, iOS, and Android.
 
