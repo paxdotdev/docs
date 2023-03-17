@@ -8,7 +8,7 @@ Reddit: [https://www.reddit.com/r/paxlang](https://www.reddit.com/r/paxlang)
 <br />
 Twitter: [https://www.twitter.com/pax_lang](https://www.twitter.com/pax_lang)
 <br />
-Discord: [https://discord.gg/5zXsskAzRB](https://discord.gg/5zXsskAzRB)
+Discord: [https://discord.gg/Eq8KWAUc6b](https://discord.gg/Eq8KWAUc6b)
 <br />
 Email: [contact@pax.rs](mailto:contact@pax.rs) 
 <br />
