@@ -73,7 +73,7 @@ When you run `pax build` or `pax run`, the following sequence occurs:
 Any Pax project can be compiled into a special bin target called `parser`.  Pax relies on building and executing this `parser` independently of your actual program, and it is through this special binary that Pax executes dynamic evaluation of Rust logic to finish parsing.  The parsing code is generated as part of the `pax` macros. 
 
 Roughly, when the parser binary is run, it:
- - Looks for root component definitions (via `pax_app`)
+ - Looks for a root/main component definition (via `#[root]` underneath a `#[derive(Pax)]`)
  - For each of those roots, parses the template and discovers which dependencies are invoked, and parses properties to resolve names, types, and import paths
  - Code-gens recursive calls into Component dependencies' `parse_to_manifest` methods
 
@@ -92,7 +92,7 @@ From the `PaxManifest` obtained by parsing, Pax generates "Rust Intermediate Lan
  - The `TypesCoproduct` — data strucure representing the disjoint union of all Property types, used by the runtime to enable polymorphic management of expression vtable entries, expression parameters, and expression return types
  - The `cartridge definition` — two major components:
    - a vtable containing every compiled Expression and
-   - instance factories for components & primitives, invoked recursively underneath `get_root_component_instance`
+   - instance factories for components & primitives, invoked recursively underneath `get_main_component_instance`
 
 
 ### 3. Chassis Compilation

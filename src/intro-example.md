@@ -52,7 +52,7 @@ pub struct Jabberwocky {
 impl Jabberwocky {
 
     #[pax_on(WillRender)]
-    pub async fn handle_will_render(&mut self, args: ArgsRender) {
+    pub async fn handle_will_render(&mut self, ctx: NodeContext) {
         if args.frames_elapsed % 180 == 0 {
             //every 3s
             pax::log(&format!("pax::log from frame {}", args.frames_elapsed));
