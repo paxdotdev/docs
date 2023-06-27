@@ -4,7 +4,7 @@ The atomic unit of Pax is a `component definition`. A component definition for `
 
 ```rust
 // src/my-new-component.rs
-use pax::api::*;
+use pax_lang::api::*;
 
 // This #[pax()] macro declares component `MyNewComponent`
 #[pax(
@@ -35,7 +35,7 @@ Inside a component definition, there may be:
 A component definition centers around a _Rust struct_, to which a piece of Pax is attached to through the macro `pax` or `pax_app`.  For example, the following defines an empty component called `EmptyComponent`:
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 use pax_std::primitives::Group;
 
 #[pax(<Group />)] //a one-element template, simply an empty Group
@@ -47,7 +47,7 @@ pub struct EmptyComponent {
 Any component created in Pax can be used inside other components — for example, `EmptyComponent` can be imported and used in another component's template like:
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 use crate::EmptyComponent;
 
 #[pax(<EmptyComponent />)] //another one-element template, ultimately still not rendering anything

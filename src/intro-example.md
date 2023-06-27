@@ -4,7 +4,7 @@ Following is a simple example of Pax, compiled for Web, running in an iframe.  Y
 
 <!-- TODO:  You can find more examples [in the GitHub repository.](https://www.github.com/pax-lang/examples/) -->
 
-<iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax.rs/jabberwocky/" ></iframe>
+<iframe style="width: calc(100%); height: 450px; border: none;" src="https://static.pax.dev/jabberwocky/" ></iframe>
 
 Try resizing your browser horizontally to see responsive resizing.  You can also try selecting text, clicking around until you find the animated click handler, and opening browser dev tools to inspect the HTML and CSS.  The text is readable by screen readers and web crawlers.
 
@@ -55,7 +55,7 @@ impl Jabberwocky {
     pub async fn handle_will_render(&mut self, ctx: NodeContext) {
         if args.frames_elapsed % 180 == 0 {
             //every 3s
-            pax::log(&format!("pax::log from frame {}", args.frames_elapsed));
+            pax_lang::log(&format!("pax_lang::log from frame {}", args.frames_elapsed));
         }
     }
 
@@ -112,7 +112,7 @@ And the mome raths outgrabe.
 ### Clickable Square
 
 ```rust
-use pax::api::{Property, ClickArgs};
+use pax_lang::api::{Property, ClickArgs};
 
 #pax[(
     <Rectangle id=square @click=self.handle_click />

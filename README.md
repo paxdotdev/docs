@@ -1,6 +1,6 @@
 # Pax Docs
 
-Source code for the [Pax docs](https://docs.pax.rs), powered by `mdbook`.
+Source code for the [Pax docs](https://docs.pax.dev), powered by `mdbook`.
 
 
 ## Development
@@ -16,7 +16,7 @@ Publish: gain appropriate AWS credentials; run `deploy.sh`
 
 ## License 
 
-© 2023 Zachary Brown [contact@pax.rs].
+© 2023 Zachary Brown [contact@pax.dev].
 
 This project is licensed under either of:
  - [MIT license](LICENSE-MIT)

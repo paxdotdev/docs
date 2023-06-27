@@ -24,7 +24,7 @@ Properties are also used internally within a component as state containers, simi
 Properties are defined on Rust structs, such as `counter` below:
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 
 #[pax(
     <Text>{"Current value: " + counter}</Text>
@@ -34,7 +34,7 @@ pub struct MyComponent {
 }
 ```
 
-Notice that `counter` is a member of a Pax-attached Rust struct, with a `pax::api::Property<T>` wrapper around its type.
+Notice that `counter` is a member of a Pax-attached Rust struct, with a `pax_lang::api::Property<T>` wrapper around its type.
 
 <!-- appendix?:  In the above example, the component `MyComponent` will expose the property `counter`.  Note that the `Property<T>` wrapper type is not necessary for compilation, but `Property<T>` _is_ necessary for Pax to be able to access that property through Expressions, Settings, and Defaults.  In other words, you can make a struct property "private" from Pax by omitting the `Property<T>` wrapper. -->
 
@@ -45,7 +45,7 @@ TODO: !!Not yet implemented!! Defaults can be set for a component by declaring a
 
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 
 #[pax(
     //... some content
@@ -70,7 +70,7 @@ Building off of the `Stacker` example above, any component that instantiates a `
 Let's use the above component inside a new component, `AnotherComponent`.
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 use crate::MyComponent;
 
 #[pax(

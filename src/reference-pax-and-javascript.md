@@ -5,8 +5,8 @@ Recall Pax's model as a "companion language" to Rust.  Pax definitions "snap on"
 ```rust
 // Pax with a Rust host codebase
 // src/hello-world.rs
-use pax::*;
-use pax::std::drawing2D::Rectangle;
+use pax_lang::*;
+use pax_lang::std::drawing2D::Rectangle;
 
 #[pax(
     //On click, update theta and cause this Rectangle to rotate

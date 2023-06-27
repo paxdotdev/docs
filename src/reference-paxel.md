@@ -58,7 +58,7 @@ Finally, PAXEL can refer to the symbol representing the type of the Property ass
 }
 ```
 
-With a reasonable and finite amount of work, PAXEL will also be able to refer to "anything within scope" within a Rust file, allowing the import & use of arbitrary symbols & packages.  This approach will build on the `get_fully_qualified_type` work done by the parser to reflect on Property types.  Until that time, using an arbitrary import — for example, calling an imported method — requires re-exposing that method through a method available on `self`.
+With a reasonable and finite amount of work, PAXEL will also be able to refer to "anything within scope" within a Rust file, allowing the import & use of arbitrary symbols & packages.  This approach will build on the `get_type_id` work done by the parser to reflect on Property types.  Until that time, using an arbitrary import — for example, calling an imported method — requires re-exposing that method through a method available on `self`.
 
 ---
 

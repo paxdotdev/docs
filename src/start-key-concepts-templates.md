@@ -22,7 +22,7 @@ Templates are not just static -- they allow three kinds of control-flow, affecti
 
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 use crate::{DetailsView, SummaryView};
 
 #[pax(
@@ -50,7 +50,7 @@ For example:
 
 
 ```rust
-use pax::api::*;
+use pax_lang::api::*;
 use pax_std::layout::{Stacker, StackerDirection};
 use crate::DeviceRecord;
 
