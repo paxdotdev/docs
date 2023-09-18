@@ -11,7 +11,7 @@ To run the demo:
    - Install Xcode >= 13.3.0 and Xcode CLI Tools
 
 3. Optional — to compile to Web:
-   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) and yarn (recommended >=1.22.x)
+   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) 
 
 4. Clone the [`pax` repo](https://www.github.com/pax-lang/pax/) and run `./run.sh` for the macOS demo and `./run-web.sh` for the Web demo.
 
@@ -39,7 +39,7 @@ To run the demo:
    - Install Xcode >= 13.3.0 and Xcode CLI Tools
 
 4. Optional — to compile to Web:
-   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) and yarn (recommended >=1.22.x)
+   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm))
 
 
 ## Create a Project
