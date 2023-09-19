@@ -25,7 +25,9 @@ Pax's coordinate system also has a notion of `anchor` — letting you set the an
 
 <!-- TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example -->
 
-Pax's layout system also has a notion of `align`ment -- that is: where an element should be mounted on the screen, _relative to its parent container_.  For example: "align this element's anchor point to the _top left_ of the parent container" (`align(0%, 0%)`), or "align this element's anchor point to the _center point_ of the parent container" (`align(50%, 50%)`).
+Pax's layout system also allows positions (`x` and `y`) to be expressed as pixel values, as percentage values of their container for responsive alignment, or as a combination of multiple pixel / percent values (via PAXEL expressions.)
+
+For example, `<SomeElement x=50% y=50% />` will position an element's anchor at the center of its container.  `<SomeElement x=5px y={50% + 5px}>` shows both a literal pixel value for x and a combination of multiple units using PAXEL (50% of container's width, plus an additional 5px).
 
 <!-- TODO: insert image illustrating alignment relative to parent container -->
 

@@ -35,7 +35,8 @@ Try resizing your browser horizontally to see responsive resizing.  You can also
 
     @settings {
         ##index_text {
-            transform: { align(0%, i * 12.5%) }
+            x: 0%,
+            y: { i * 12.5% },
             font: {
                 family: "Real Text Pro",
                 variant: "Demibold",

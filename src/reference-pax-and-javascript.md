@@ -12,7 +12,7 @@ use pax_lang::std::drawing2D::Rectangle;
     //On click, update theta and cause this Rectangle to rotate
     <Rectangle @click=self.handle_click transform={
         anchor(50%, 50%)   * 
-        align(50%, 50%)    * 
+        translate(50%, 50%)    * 
         rotate(self.theta) 
     } />
 )]
