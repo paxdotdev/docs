@@ -26,8 +26,9 @@ Properties are defined on Rust structs, such as `counter` below:
 ```rust
 use pax_lang::api::*;
 
-#[pax(
-    <Text>{"Current value: " + counter}</Text>
+#[derive(Pax)]
+#[inlined(
+    <Text text={counter}></Text>
 )]
 pub struct MyComponent {
     counter: Property<i64>,

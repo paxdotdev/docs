@@ -25,7 +25,8 @@ Templates are not just static -- they allow three kinds of control-flow, affecti
 use pax_lang::api::*;
 use crate::{DetailsView, SummaryView};
 
-#[pax(
+#[derive(Pax)]
+#[inlined(
     <Group>
         if self.should_show_details {
             <DetailsView />
@@ -55,13 +56,14 @@ use pax_std::layout::{Stacker, StackerDirection};
 use crate::DeviceRecord;
 
 
-#[pax(
+#[derive(Pax)]
+#[inlined(
     <Stacker>
         for device_record in self.connected_devices {
             <Stacker direction=StackerDirection::Vertical cells=3>
-                <Text>{device_record.id}</Text>
-                <Text>{device_record.name}</Text>
-                <Text>{device_record.load_capacity}</Text>
+                <Text text={device_record.id}></Text>
+                <Text text={device_record.name}></Text>
+                <Text text={device_record.load_capacity}></Text>
             </Stacker>
         }
     </Stacker>
@@ -80,7 +82,8 @@ Internally, Pax handles the `for` range declaration as an Expression, via the pr
 For a practical example, consider `<Stacker />`.  When you use a Stacker, you pass children into it, like:
 ```rust
 //src/slot-example.rs
-#[pax(
+#[derive(Pax)]
+#[inlined(
     <Stacker>
         <Rectangle id=a />
         <Rectangle id=b />
@@ -114,7 +117,7 @@ Because `slot`, like `if` and `repeat`, is evaluated as an expression, you can a
 
 ```rust
 for (elem, i) in self.computed_layout_spec {
-    <Frame transform={Translate(elem.x_px, elem.y_px)} size={Size(elem.width_px, elem.height_px)}>
+    <Frame x={elem.x_px} y={elem.y_px} width={elem.width_px} height={elem.height_px}>
         slot(i)
     </Frame>
 }

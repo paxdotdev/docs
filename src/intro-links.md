@@ -12,4 +12,4 @@ Discord: [https://discord.gg/Eq8KWAUc6b](https://discord.gg/Eq8KWAUc6b)
 <br />
 Email: [contact@pax.dev](mailto:contact@pax.dev) 
 <br />
-Blog: [https://developing.pax.rs](https://developing.pax.rs)
+Blog: [https://developing.pax.dev](https://developing.pax.dev)

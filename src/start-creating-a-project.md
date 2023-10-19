@@ -1,92 +1,85 @@
-# Creating a Project
+# Getting Started
+## Installation
 
-**Alpha Preview**:  you can run the Jabberwocky demo project locally, but you cannot yet create new Pax projects from scratch unless you [compile manually](./status-sept-2022.md#compiler-finish-line).  
+### Setup, macOS workstation
 
-To run the demo:
+ - Install `rustc` 1.70.0 via `rustup`
+ - Install the Pax CLI: `cargo install pax-cli`
+ - Follow instructions to build for [WebAssembly](#to-build-pax-projects-for-webassembly) or [macOS](#to-build-pax-projects-as-native-macos-apps) below
+ - Create a new project `pax-cli new my-first-project`
 
-1. Install Rust (>= 1.61.0) and Cargo
+### Setup, Linux (Debian / Ubuntu) workstation
 
-2. Optional — to compile to macOS and iOS:
-   - Be on a Mac
-   - Install Xcode >= 13.3.0 and Xcode CLI Tools
+ - Install `rustc` 1.70.0 via `rustup`
+ - Install development dependencies: `apt install pkg-config libssl-dev`
+ - Install the Pax CLI: `cargo install pax-cli`
+ - Follow instructions to build for [WebAssembly](#to-build-pax-projects-for-webassembly) below
+ - Create a new project `pax-cli new my-first-project`
 
-3. Optional — to compile to Web:
-   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm)) 
+### Setup, Windows workstation
 
-4. Clone the [`pax` repo](https://www.github.com/pax-lang/pax/) and run `./run.sh` for the macOS demo and `./run-web.sh` for the Web demo.
+ - Install `rustc` via installer
+ - Install the Pax CLI: `cargo install pax-cli`
+ - Follow instructions to build for [WebAssembly](#to-build-pax-projects-for-webassembly) below
+ - Create a new project `pax-cli new my-first-project`
 
-<br />
+### To build Pax projects for WebAssembly
 
----
+- Install 'wasm-pack' via:
+   ```shell
+    curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+   ```
+  For Windows, follow instructions to use installer [here.](https://rustwasm.github.io/wasm-pack/installer/)
 
-# STATUS: DRAFT
-**The following instructions are not expected to work until Pax reaches alpha.  See the [latest status](./status-sept-2022.md).**
+- Install `node` v20 LTS, recommended via [`nvm`](https://github.com/nvm-sh/nvm#installing-and-updating)
+  ```shell
+  # For macOS / Linux:  first install nvm
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  # After restarting terminal:
+  nvm install 20
+  nvm use 20 --default
+  ```
+  For Windows, install [`nvm-windows`](https://github.com/coreybutler/nvm-windows) and install Node v20 LTS.
 
----
-<br />
+### To build Pax projects as native macOS apps
 
-## First-time Installation
+- Building macOS apps requires running a Mac with macOS.  This is a constraint enforced technically and legally by Apple.
+- Install xcode `>=15.0` and Xcode command line utils: `xcode-select --install`
+- Make sure to accept Xcode's license agreement (prompted during Xcode startup for the first time)
+- SDK Version `macosx13.3`, Xcode version `>=15.0`
+- Current Minimum Deployment `13.0`
+- Install all necessary build architectures for Rust, so that binaries can be built for both Intel and Apple Silicon macs
+  ```
+  rustup target add aarch64-apple-darwin x86_64-apple-darwin
+  ```
 
-1. Install Rust (>= 1.61.0) and Cargo
+### To build Pax projects as native iOS apps
 
-2. Install the Pax CLI
-   ```bash
+- Follow instructions for building native macOS apps, above
+- Install all necessary build architectures for Rust, so that binaries can be built for iOS and simulator targets:
+  ```
+  rustup target add aarch64-apple-ios x86_64-apple-ios aarch64-apple-ios-sim
+  ```
+- Install [ios simulator through Xcode](https://developer.apple.com/documentation/safari-developer-tools/adding-additional-simulators)
+
+## Creating & Running a Pax Project
+
+- Install  `pax-cli`
+   ```
    cargo install pax-cli
    ```
+- To create the project run:
+   ```
+   pax-cli create hello-world
+   ```
+- To run the project:
+   ```
+   pax-cli run --target=web
+   ```
+   - Note: pax-cli run currently accepts 3 targets: web , macos, ios
 
-3. Optional — to compile to macOS and iOS:
-   - Be on a Mac
-   - Install Xcode >= 13.3.0 and Xcode CLI Tools
+## Writing Pax
 
-4. Optional — to compile to Web:
-   - Install node (recommended 14.19.x via [nvm](https://github.com/nvm-sh/nvm))
+Currently Pax's best supported editor is [Visual Studio Code](https://code.visualstudio.com/). We offer language authoring features (like syntax highlighting and auto-complete) through our [extension](https://marketplace.visualstudio.com/items?itemName=Pax.pax-vscode-extension) (available in the marketplace). We highly recommend installing both the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) and [Pax extension](https://marketplace.visualstudio.com/items?itemName=Pax.pax-vscode-extension)
 
-
-## Create a Project
-
-When starting a new Pax project, you have two choices: either use `pax` via CLI to generate a new Rust + Pax project, or manually add dependencies to an existing Rust project.
-
-#### A. Generate a new Pax project with the Pax CLI
-
-Using the CLI-generated project is the easiest way to start a Pax project
-
-```bash
-pax create new_pax_project
-cd new_pax_project && pax run
-```
-
-#### B. Add Pax to an existing Rust codebase
-
-This approach is more complex than using the generator, but it will sometimes be necessary to add Pax manually to an existing codebase.
-
-Note that Pax must be authored in a `lib` crate, rather than a `bin` crate. 
-
-Modify your `Cargo.toml` to include the following four dependencies, with the specified attributes:
-
-```toml
-[dependencies]
-pax = {package="pax-lang"}
-pax-std = {features=["parser"]}
-pax-compiler = {optional = true}
-serde_json = {version = "1", optional = true}
-```
-
-Also add the following feature:
-
-```toml
-[features]
-parser = ["pax-std/parser", "dep:pax-compiler", "dep:serde_json"]
-```
-
-And the following target, which enables running the parser:
-
-```toml
-[[bin]]
-name = "parser"
-path = "src/lib.rs"
-required-features = ["parser"]
-```
-
-With the preceding additions to your Cargo.toml in place, you can now expose a `#[pax_app()]` root component in your codebase at `src/lib.rs` and then use the pax compiler: `pax run` or `pax build`.
-
-<!-- TODO: the above modifications to Cargo.toml _should_ be automatable with something like `pax attach` -->
+[Let's continue and explain how Pax works](./start-key-concepts-components.md).
