@@ -53,7 +53,7 @@ pub struct Jabberwocky {
 impl Jabberwocky {
 
     #[pax_on(WillRender)]
-    pub async fn handle_will_render(&mut self, ctx: NodeContext) {
+    pub async fn handle_pre_render(&mut self, ctx: NodeContext) {
         if args.frames_elapsed % 180 == 0 {
             //every 3s
             pax_lang::log(&format!("pax_lang::log from frame {}", args.frames_elapsed));
@@ -210,7 +210,7 @@ More desired examples:
   for i in 0..3 {
     <Stacker direction=Vertical cell_count=3 >
       for j in 0..3 {
-        <Group on_jab=handle_jab with (i, j)>
+        <Group on_clap=handle_clap with (i, j)>
           if self.cells[i][j] == Cell::Empty {
             <image src="blank.png">
           }else if self.cells[i][j] == Cell:X {
