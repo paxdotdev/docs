@@ -2,9 +2,11 @@
 
 # Introduction
  - [Introduction to Pax](./intro-pax.md)
- - [Why build Pax?](./why-pax.md)
+ - [Why Pax?](./why-pax.md)
+ - [Priorities & Prior Art](./intro-priorities-and-prior-art.md)
 # Start Writing Pax    
  - [Getting Started](./start-creating-a-project.md)
+ - [VSCode and IntelliJ Plugins](./start-vscode-and-intellij-plugins.md)
  - [Key Concepts](./start-key-concepts.md)
    - [Components](./start-key-concepts-components.md)
    - [Templates](./start-key-concepts-templates.md)
@@ -16,7 +18,6 @@
 # Reference 
  - [Authors & Contributors](./intro-authors-and-contributors.md)
  - [Links](./intro-links.md)
- - [Other Goals & Prior Art](./intro-goals-prior-art.md)
  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
  - [Pax Standard Library](./reference-pax-std.md)
  - [Pax Macros](./reference-pax-macros.md)

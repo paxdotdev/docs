@@ -6,41 +6,13 @@ Pax compiles through Rust into native Mac apps (LLVM) or Web apps (WebAssembly).
 
 ## Example
 
-Writing Pax is intended to feel familiar, and the language borrows many ideas from [prior art](./intro-goals-prior-art.md#prior-art--inspiration).
+Writing Pax is intended to feel familiar, and the language borrows many ideas from [prior art](./intro-priorities-and-prior-art#prior-art--inspiration).
 
 Following is a simple Pax component called `IncrementMe`:
 
-```rust
-//File: lib.rs
-use pax_lang::*;
-use pax_lang::api::*;
-use pax_std::primitives::*;
-use pax_std::types::*;
-use pax_std::types::text::*;
-use pax_std::components::Stacker;
+<iframe style="width: calc(100%); height: 200px; border: none;" src="https://static.pax.dev/increment/"></iframe>
 
-/// Defines the Pax component `IncrementMe`, with template & settings specified in `increment-me.pax`.
-#[derive(Pax)]
-#[main]
-#[file("increment-me.pax")]
-pub struct IncrementMe {
-    pub num_clicks: Property<u32>,
-    pub message: Property<String>,
-}
 
-impl IncrementMe {
-    pub fn handle_did_mount(&mut self, ctx: RuntimeContext) {
-        self.num_clicks.set(0);
-        self.message.set("Click here".to_string());
-    }
-    pub fn increment(&mut self, ctx: RuntimeContext, args: ArgsClick){
-        let old_num_clicks = self.num_clicks.get();
-        self.num_clicks.set(old_num_clicks + 1);
-        self.message.set(format!("{} clicks", self.num_clicks.get()));
-    }
-
-} 
-```
 ```rust
 //increment-me.pax
 <Text text={self.message} class=centered class=small id=text />
@@ -76,6 +48,39 @@ impl IncrementMe {
     }
 }
 ```
+
+```rust
+//File: lib.rs
+use pax_lang::*;
+use pax_lang::api::*;
+use pax_std::primitives::*;
+use pax_std::types::*;
+use pax_std::types::text::*;
+use pax_std::components::Stacker;
+
+/// Defines the Pax component `IncrementMe`, with template & settings specified in `increment-me.pax`.
+#[derive(Pax)]
+#[main]
+#[file("increment-me.pax")]
+pub struct IncrementMe {
+    pub num_clicks: Property<u32>,
+    pub message: Property<String>,
+}
+
+impl IncrementMe {
+    pub fn handle_did_mount(&mut self, ctx: RuntimeContext) {
+        self.num_clicks.set(0);
+        self.message.set("Click here".to_string());
+    }
+    pub fn increment(&mut self, ctx: RuntimeContext, args: ArgsClick){
+        let old_num_clicks = self.num_clicks.get();
+        self.num_clicks.set(old_num_clicks + 1);
+        self.message.set(format!("{} clicks", self.num_clicks.get()));
+    }
+
+} 
+```
+
 The above `IncrementMe` component could be mounted as its own app, or could be composed into other Pax components.
 
 This book will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.

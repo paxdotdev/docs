@@ -57,7 +57,7 @@ Worth noting about this approach is that it _significantly reduces_ the footprin
 
 For reference, this footprint burden is one of the challenges faced by many cross-platform renderers like Flutter — commonly, such tools require bundling [Skia](https://skia.googlesource.com/skia) and downloading megabytes of data in order to load a single page in a browser.
 
-[Pax aims](./intro-goals-prior-art.md) to keep its base footprint <100kB.
+[Pax aims](./intro-priorities-and-prior-art) to keep its base footprint <100kB.
 
 
 <!--

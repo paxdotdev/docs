@@ -62,24 +62,3 @@
   ```
 - Install [ios simulator through Xcode](https://developer.apple.com/documentation/safari-developer-tools/adding-additional-simulators)
 
-## Creating & Running a Pax Project
-
-- Install  `pax-cli`
-   ```
-   cargo install pax-cli
-   ```
-- To create the project run:
-   ```
-   pax-cli create hello-world
-   ```
-- To run the project:
-   ```
-   pax-cli run --target=web
-   ```
-   - Note: pax-cli run currently accepts 3 targets: web , macos, ios
-
-## Writing Pax
-
-Currently Pax's best supported editor is [Visual Studio Code](https://code.visualstudio.com/). We offer language authoring features (like syntax highlighting and auto-complete) through our [extension](https://marketplace.visualstudio.com/items?itemName=Pax.pax-vscode-extension) (available in the marketplace). We highly recommend installing both the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) and [Pax extension](https://marketplace.visualstudio.com/items?itemName=Pax.pax-vscode-extension)
-
-[Let's continue and explain how Pax works](./start-key-concepts-components.md).

@@ -1,6 +1,8 @@
 # Authors & Contributors
 
-The initial author of Pax was [Zack Brown](https://www.linkedin.com/in/zack-brown), who designed the language and built the first versions of the compiler and runtimes during an independent research sabbatical from 2021-2023.  He also wrote the initial version of this book.
+The initial author of Pax was [Zack Brown](https://www.linkedin.com/in/zack-brown), who designed the language and built the first versions of the compiler and runtimes during an independent research sabbatical from late 2021 to early 2023.
+
+[Warfa Jibril](https://www.linkedin.com/in/warfa-jibril) joined & elevated the effort full-time in early 2023.  [Samuel Selleck](https://github.com/samuelselleck/) joined in December 2023.  Pax's full-time development is now funded by a commercial entity, PaxCorp Inc. 
 
 A list of contributors to the Pax project may be found via the repository on [GitHub.](https://www.github.com/pax-lang/pax/)
 

@@ -40,6 +40,4 @@ Pax aims to acheive both:
 2) It can attaches to any host language, thus supporting anything that language can do.
 3) It's both free and open-source.
 
-Our vision is that *anyone* can use Pax to easily put their ideas on-screen and improve them endlessly as their goals change. Read more about our goals [here](./intro-goals-prior-art.md).
-
-Enough opining, [let's get started!](./start-creating-a-project.md)
+Our vision is that *anyone* can use Pax to easily put their ideas on-screen and improve them endlessly as their goals change. Read more about our goals & priorities [here](./intro-priorities-and-prior-art).
