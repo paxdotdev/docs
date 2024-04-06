@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="{{ language }}" class="sidebar-visible no-js {{ default_theme }}">
+<html lang="{{ language }}" class="no-js {{ default_theme }}">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXC82Z07SY"></script>
@@ -111,7 +111,7 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script type="text/javascript">
-            var html = document.querySelector('html');
+            var html = document.querySelector('body');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
