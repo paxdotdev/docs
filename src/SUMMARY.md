@@ -1,11 +1,20 @@
 # Summary
 
 # Introduction
- - [Introduction to Pax](./intro-pax.md)
- - [Why Pax?](./why-pax.md)
- - [Priorities & Prior Art](./intro-priorities-and-prior-art.md)
+ - [Introduction to Pax](./introduction/intro-pax.md)
+ - [Why Pax?](./introduction/why-pax.md)
+ - [Priorities & Prior Art](./introduction/intro-priorities-and-prior-art.md)
 # Start Writing Pax    
- - [Getting Started](./start-creating-a-project.md)
+ - [Getting Started](./getting-started/start-creating-a-project.md)
+    - [Workstation](./getting-started/workstations.md)
+      - [macOS](./getting-started/macos-getting-started.md)
+      - [Windows](./getting-started/windows-getting-started.md)
+      - [Linux](./getting-started/linux-getting-started.md)
+    - [App Type](./getting-started/app-types.md)
+      - [Web](./getting-started/web-target.md)
+      - [Desktop](./getting-started/desktop-target.md)
+      - [Mobile](./getting-started/mobile-target.md)
+ - [Quick Start](./quick-start.md)
  - [VSCode and IntelliJ Plugins](./start-vscode-and-intellij-plugins.md)
  - [Key Concepts](./start-key-concepts.md)
    - [Components](./start-key-concepts-components.md)
