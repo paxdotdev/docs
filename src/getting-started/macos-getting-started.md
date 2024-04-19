@@ -1,6 +1,10 @@
 # macOS workstation
 
- - Install `rustc` 1.70.0 via `rustup`
+ - Get rust: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` (if already installed, ensure rustc version 1.73.0 or higher)
+ - If not already installed, install xcode build tools: `xcode-select --install`
  - Install the Pax CLI: `cargo install pax-cli`
- - Follow instructions to build for [WebAssembly](#to-build-pax-projects-for-webassembly) or [macOS](#to-build-pax-projects-as-native-macos-apps) below
+ - For the web build, wasm-pack is needed: `cargo install wasm-pack`
  - Create a new project `pax-cli new my-first-project`
+ - And run: `cd my-first-project && pax-cli run --target=web`
+
+NOTE: `cargo install pax-cli` and first run of `pax-cli run` take some time.
