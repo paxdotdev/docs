@@ -42,7 +42,7 @@ Noteworthy about this approach is its _inversion of dependencies_.  When you wri
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <br />
-    <a href="./runtime-arch.png" target="_blank"><img style="width: 100%; border: 10px solid rgb(0,0,0);" src="./runtime-arch.png" /></a>
+    <a href="./runtime-arch.png" target="_blank"><img style="width: 100%; border: 10px solid rgb(0,0,0);" src="./images/runtime-arch.png" /></a>
     <br />
     Diagram of Pax's runtime dependency graph, illustrating the "Nintendo" model
     <br />
@@ -60,7 +60,7 @@ At runtime, the `chassis` maps user inputs into Pax events, and maps Pax renderi
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <br />
-    <a href="./compiler-sequence.png" target="_blank"><img style="width: 100%; border: 10px solid #C1272D;" src="./compiler-sequence.png" /></a>
+    <a href="./compiler-sequence.png" target="_blank"><img style="width: 100%; border: 10px solid #C1272D;" src="./images/compiler-sequence.png" /></a>
     <br />
     Sequence diagram for the Pax compiler
     <br />

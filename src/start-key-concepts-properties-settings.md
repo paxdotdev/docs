@@ -5,7 +5,7 @@
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <br />
-    <img style="width: 400px; border: 10px solid rgb(185,204,204);" src="./DALL·E two illuminated switchboards_ one light one dark..psd.png" />
+    <img style="width: 400px; border: 10px solid rgb(185,204,204);" src="./images/DALL·E two illuminated switchboards_ one light one dark..psd.png" />
     <br />
     Two illuminated switchboards: one light, one dark
     <br />
