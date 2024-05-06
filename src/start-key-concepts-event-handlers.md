@@ -73,7 +73,7 @@ Pre-render runs every frame like tick but right before the component is rendered
 
 Input events run when user's interact with the Pax UI.
 
-They have the following signature: 
+Here's an example of adding click handler to the HelloEvents component: 
 
 ```rust
 #[pax(

@@ -15,23 +15,19 @@
       - [Desktop](./getting-started/desktop-target.md)
       - [Mobile](./getting-started/mobile-target.md)
  - [VSCode and IntelliJ Plugins](./start-vscode-and-intellij-plugins.md)
- # Quick Start
 
  # Learn Pax
   - [Components](./start-key-concepts-components.md)
   - [Templates](./start-key-concepts-templates.md)
   - [Properties & Settings](./start-key-concepts-properties-settings.md)
   - [Expressions](./start-key-concepts-expressions.md)
+  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
   - [Event Handlers](./start-key-concepts-event-handlers.md)
   - [Primitives](./start-key-concepts-primitives.md)
-  - [Layout System](./layout-system.md)
-  - [Coordinate System & Transforms](./reference-coordinates-and-transforms.md)
+
  
 # Reference 
  - [Authors & Contributors](./intro-authors-and-contributors.md)
- - [Pax Standard Library](./reference-pax-std.md)
- - [Pax Macros](./reference-pax-macros.md)
- - [Grammar](./reference-grammar.md)
  - [Compilation Model](./reference-compilation-model.md)
  - [PAXEL](./reference-paxel.md)
  - [Native Rendering](./reference-native-rendering.md)

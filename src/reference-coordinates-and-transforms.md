@@ -20,8 +20,39 @@ Perhaps the easiest way to think about Pax's transform model is "design tool coo
 In the above example, rectangle `b` will be moved 50px to the right and 50px down.  The rectangle `c` will be 150% the width & height of its default values.  And the group `a` will be rotated 150 degrees — which, in fact, ends up rotating both of the rectangles as well.  Read more about this below in [combining transformations.](#combining-transformations)
 
 
+### Common Properties
+
+In most cases when you don't need to sequence a bunch of transforms in a specific way, you can set the property directly on the template node. 
+
+There are a set of 13 properties on every template node. 
+
+1. **`id`**: A unique identifier for an element, used to reference it within scripts or CSS-like stylesheets.
+
+2. **`x`**: The x-coordinate of the element's anchor point in pixels or percentage relative to its container. Determines the horizontal position.
+
+3. **`y`**: Similar to `x`, this sets the y-coordinate of the element's anchor point, determining the vertical position.
+
+4. **`scale_x`**: Controls the width scaling factor of the element. A value of 1 means no scaling, less than 1 means a reduction, and greater than 1 means an enlargement.
+
+5. **`scale_y`**: Controls the height scaling factor of the element. Works similarly to `scale_x`, affecting vertical dimensions.
+
+6. **`skew_x`**: Applies a horizontal skew transformation to the element, distorting it along the x-axis. The skew angle is specified in degrees.
+
+7. **`skew_y`**: Applies a vertical skew transformation to the element, distorting it along the y-axis. Like `skew_x`, the angle is specified in degrees.
+
+8. **`anchor_x`**: Sets the horizontal part of the element's anchor point, which affects transformations like rotation and scaling. It can be defined in pixels or as a percentage of the element’s width.
+
+9. **`anchor_y`**: Sets the vertical part of the element's anchor point. Similar to `anchor_x`, but for the vertical dimension.
+
+10. **`rotate`**: Specifies the rotation of the element around its anchor point, in degrees. Positive values rotate clockwise, while negative values rotate counterclockwise.
+
+11. **`transform`**: A powerful property that allows for a combination of transformations—translate, scale, rotate, and skew—applied in a specific order to the element.
+
+12. **`width`**: Sets the width of the element, either in pixels or as a percentage of the container's width, allowing for responsive design.
+
+
 ### Anchor & Align
-Pax's coordinate system also has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its center-point.  
+Pax's coordinate system has a notion of `anchor` — letting you set the anchored origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its center-point.  
 
 <!-- TODO: insert image of an Anchor UI, e.g. from Flash/AI/Figma -- or animated example -->
 
@@ -32,6 +63,7 @@ For example, `<SomeElement x=50% y=50% />` will position an element's anchor at 
 <!-- TODO: insert image illustrating alignment relative to parent container -->
 
 The combination of `anchor` and `align` offers powerful, fine-grained positioning, well suited to responsive design for varying screen sizes.
+
 
 
 ### Combining transformations
