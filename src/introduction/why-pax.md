@@ -5,7 +5,7 @@ We're developing Pax as an answer to a question:
 What would an ideal tool for crafting user interfaces look like? 
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
-    <img style="width: 50%; border: 5px solid rgb(224,220,219);" src="./future-tool.png" />
+    <img style="width: 50%; border: 5px solid rgb(224,220,219);" src="../images/future-tool.png" />
     <br />
     <br />
 </div>

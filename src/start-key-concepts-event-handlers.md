@@ -2,7 +2,7 @@
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
     <br />
-    <img style="width: 400px; border: 10px solid rgb(242,242,207);" src="./DALL·E finger on a touch-screen emitting lightning where it touches.png" />
+    <img style="width: 400px; border: 10px solid rgb(242,242,207);" src="./images/DALL·E finger on a touch-screen emitting lightning where it touches.png" />
     <br />
     A finger on a touch-screen, emitting lightning where it touches
     <br />
@@ -15,11 +15,10 @@
 )]
 pub struct HelloEvents {}
 impl HelloEvents {
-    pub fn handle_click(&mut self, args: ArgsClick) {
+    pub fn handle_click(&mut self, _ctx: &NodeContext, args: Event<Click>) {
 
     }
 }
-
 ```
 
 In the above example, `on_click=self.handle_click` binds a the `handle_click` method defined in the host codebase to the built-in `click` event which Pax fires when a user clicks the mouse on this element.
@@ -30,8 +29,88 @@ It is inside event handlers that you will normally [change property values](./st
 
 Pax includes a number of built-in user interaction events like `@click` and `@tap`.  These can all be bound and handled in the same manner.
 
+There are two types of events in Pax:
+
+## Lifecycle Events
+
+Lifecycle events run at the various points of the lifecycle a component. 
+
+Lifecycle events are registered in a settings block on a Pax Template:
+
+```rust
+#[pax(
+    <Rectangle>
+    
+    @settings {
+        @tick: handle_tick
+    }
+)]
+pub struct HelloEvents {}
+impl HelloEvents {
+    pub fn handle_tick(&mut self, _ctx: &NodeContext) {
+
+    }
+}
+
+```
+
+Pax exposes three lifecycle events:
+
+### Tick
+
+Tick is a fundamental unit of pax-engine, similar to a clock cycle. If you want a computation to happen every frame, you likely want to put it in the tick method. 
+
+### Mount
+
+Mount runs whenever a component is placed in the scene. It should run once per component. 
+
+### Pre-render
+
+Pre-render runs every frame like tick but right before the component is rendered. 
 
 
+## Input Events
 
-<!-- TODO: describe how to create & bind custom events -->
+Input events run when user's interact with the Pax UI.
+
+Here's an example of adding click handler to the HelloEvents component: 
+
+```rust
+#[pax(
+    <Rectangle @click=self.handle_click>
+)]
+pub struct HelloEvents {}
+impl HelloEvents {
+    pub fn handle_click(&mut self, _ctx: &NodeContext, args: Event<Click>) {
+
+    }
+}
+```
+
+You can attach an input event handler to any node in a template with an inline binding (`@name_of_event=name_of_function`) on the tag. The associated function is implemented in the Component's impl block as seen above. The arguments for all events can be found [here](https://github.com/paxengine/pax/blob/51ed9d6be8e497f6e6eb54e93c9f0c983b283924/pax-runtime-api/src/lib.rs#L86). 
+
+Pax supports the following input events:
+- Scroll (@scroll)
+- Clap (@clap)
+- TouchStart (@touch_start)
+- TouchMove (@touch_move)
+- TouchEnd (@touch_end)
+- KeyDown (@key_down)
+- KeyUp (@key_up)
+- KeyPress (@key_press)
+- CheckboxChange (@checkbox_change)
+- ButtonClick (@button_click)
+- TextboxChange (@textbox_change)
+- TextInput (@text_input)
+- TextboxInput (@textbox_input)
+- Click (@click)
+- MouseDown (@mouse_down)
+- MouseUp (@mouse_up)
+- MouseMove (@mouse_move)
+- MouseOver (@mouse_over)
+- MouseOut (@mouse_out)
+- DoubleClick (@double_click)
+- ContextMenu (@context_menu)
+- Wheel (@wheel)
+
 

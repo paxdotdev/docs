@@ -68,7 +68,7 @@ impl IncrementMe {
 ```
 
 
-You can think of the component definition as a package for a number of different interconnected pieces, or perhaps a cell with a number of different organelles.  
+You can think of the component definition as a package for a number of different interconnected pieces.
 
 
 Inside a component definition, there may be:
@@ -110,7 +110,6 @@ This is essentially how you define a Pax Component. The only exception is the ro
 
 Notice that Pax builds off of Rust's import and namespace resolution mechanisms, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
 
-<!-- TODO: document stand-alone .pax files without Rust: ".html" use-case -->
 You can read more about Pax components in the chapter [Hardware Component Model](./reference-hardware-component-model.md).
 <br />
 <br />
@@ -118,7 +117,7 @@ You can read more about Pax components in the chapter [Hardware Component Model]
 
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
-    <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./DALL·E a biological cell with computer chips for organelles.png" />
+    <img style="width: 400px; border: 10px solid rgb(224,220,219);" src="./images/DALL·E a biological cell with computer chips for organelles.png" />
     <br />
     A biological cell with computer chips for organelles
     <br />

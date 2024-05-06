@@ -40,7 +40,7 @@ Following is a simple Pax component called `IncrementMe`:
         style: {
                 font: {Font::system("Times New Roman", FontStyle::Normal, FontWeight::Bold)},
                 font_size: 32px,
-                fill: {Color::rgba(1.0, 1.0, 1.0, 1.0)},
+                fill: rgb(1.0, 1.0, 1.0, 1.0),
                 align_vertical: TextAlignVertical::Center,
                 align_horizontal: TextAlignHorizontal::Center,
                 align_multiline: TextAlignHorizontal::Center
