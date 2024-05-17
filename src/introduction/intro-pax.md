@@ -17,7 +17,7 @@ Following is a simple Pax component called `IncrementMe`:
 
 ```rust
 //increment-me.pax
-<Group x=50% y=50% width=10% height=10% @click=self.increment >
+<Group x=50% y=50% width=120px height=120px @click=self.increment >
     <Text text={self.num_clicks + " clicks"} id=text />
     <Rectangle
         fill={rgb(ticks, 75, 150)}
