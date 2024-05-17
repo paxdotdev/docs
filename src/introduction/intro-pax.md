@@ -17,32 +17,21 @@ Following is a simple Pax component called `IncrementMe`:
 
 ```rust
 //increment-me.pax
-<Text text={self.message} class=centered class=small id=text />
-<Rectangle class=centered class=small @click=self.increment
-    fill={Fill::Solid(Color::rgba(0.0,0.0,0.0,1.0))} 
-    corner_radii={RectangleCornerRadii::radii(10.0,10.0,10.0,10.0)}
-/>
-
-@handlers{
-     did_mount:handle_did_mount
-}
+<Group x=50% y=50% width=10% height=10% @click=self.increment >
+    <Text text={self.num_clicks + " clicks"} id=text />
+    <Rectangle
+        fill={rgb(ticks, 75, 150)}
+        corner_radii={RectangleCornerRadii::radii(10.0,10.0,10.0,10.0)}
+    />
+</Group>
 
 @settings {
-     .centered {
-        x: 50%
-        y: 50%
-        anchor_x: 50%
-        anchor_y: 50%
-    } 
-    .small {
-        width: 120px
-        height: 120px
-    }
+    @pre_render: handle_pre_render,
     #text {
         style: {
                 font: {Font::system("Times New Roman", FontStyle::Normal, FontWeight::Bold)},
-                font_size: 32px,
-                fill: rgb(1.0, 1.0, 1.0, 1.0),
+                font_size: 22px,
+                fill: WHITE,
                 align_vertical: TextAlignVertical::Center,
                 align_horizontal: TextAlignHorizontal::Center,
                 align_multiline: TextAlignHorizontal::Center
@@ -53,34 +42,35 @@ Following is a simple Pax component called `IncrementMe`:
 
 ```rust
 //File: lib.rs
-use pax_lang::*;
-use pax_lang::api::*;
-use pax_std::primitives::*;
-use pax_std::types::*;
-use pax_std::types::text::*;
-use pax_std::components::Stacker;
+#![allow(unused_imports)]
 
-/// Defines the Pax component `IncrementMe`, with template & settings specified in `increment-me.pax`.
-#[derive(Pax)]
+use pax_engine::api::*;
+use pax_engine::*;
+use pax_std::components::Stacker;
+use pax_std::components::*;
+use pax_std::primitives::*;
+use pax_std::types::text::*;
+use pax_std::types::*;
+
+#[pax]
 #[main]
-#[file("increment-me.pax")]
-pub struct IncrementMe {
-    pub num_clicks: Property<u32>,
-    pub message: Property<String>,
+#[file("lib.pax")]
+pub struct Example {
+    pub ticks: Property<usize>,
+    pub num_clicks: Property<usize>,
 }
 
-impl IncrementMe {
-    pub fn handle_did_mount(&mut self, ctx: RuntimeContext) {
-        self.num_clicks.set(0);
-        self.message.set("Click here".to_string());
-    }
-    pub fn increment(&mut self, ctx: RuntimeContext, args: ArgsClick){
-        let old_num_clicks = self.num_clicks.get();
-        self.num_clicks.set(old_num_clicks + 1);
-        self.message.set(format!("{} clicks", self.num_clicks.get()));
+impl Example {
+    pub fn handle_pre_render(&mut self, ctx: &NodeContext) {
+        let old_ticks = self.ticks.get();
+        self.ticks.set((old_ticks + 1) % 255);
     }
 
-} 
+    pub fn increment(&mut self, ctx: &NodeContext, args: Event<Click>) {
+        let old_num_clicks = self.num_clicks.get();
+        self.num_clicks.set(old_num_clicks + 1);
+    }
+}
 ```
 
 The above `IncrementMe` component could be mounted as its own app, or could be composed into other Pax components.
