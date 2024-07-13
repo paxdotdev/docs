@@ -15,7 +15,7 @@ Following is a simple Pax component called `IncrementMe`:
 <iframe style="width: calc(100%); height: 200px; border: none;" src="https://static.pax.dev/increment/"></iframe>
 
 
-```rust
+```pax
 //increment-me.pax
 <Group x=50% y=50% width=120px height=120px @click=self.increment >
     <Text text={self.num_clicks + " clicks"} id=text />

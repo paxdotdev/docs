@@ -1,25 +1,23 @@
-# Pax Docs
+# Nextra Docs Template 
 
-Source code for the [Pax docs](https://docs.pax.dev), powered by `mdbook`.
+This is a template for creating documentation with [Nextra](https://nextra.site).
 
+[**Live Demo →**](https://nextra-docs-template.vercel.app)
 
-## Development
+[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
 
-[Install `mdbook`](https://rust-lang.github.io/mdBook/guide/installation.html)
+## Quick Start
 
-Edit content
+Click the button to clone this repository and deploy it on Vercel:
 
-Use `serve.sh` or `build.sh`
+[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
 
-Publish: gain appropriate AWS credentials; run `deploy.sh`
+## Local Development
 
+First, run `pnpm i` to install the dependencies.
 
-## License 
+Then, run `pnpm dev` to start the development server and visit localhost:3000.
 
-© 2023 Zachary Brown [contact@pax.dev].
+## License
 
-This project is licensed under either of:
- - [MIT license](LICENSE-MIT)
- - [Apache 2.0 License](LICENSE-APACHE)
-
-at your option.
+This project is licensed under the MIT License.
