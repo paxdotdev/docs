@@ -24,7 +24,7 @@ This `AndGateLED` might be used in some other component's template like:
 While contrived, this example may look vaguely familiar if you've used a visual circuit design tool for FPGAs with VHDL or Verilog.  Here's a screenshot from such a tool[1], illustrating how circuit components expose both _inputs_ and _outputs_, and compose with each other for logic flow.
 
 <div style="text-align: center; font-style: italic; font-weight: 100;">
-    <img style="width: 95%; border: 10px solid rgb(224,220,219);" src="../images/aldec-visual-block-designer.png" />
+    <img style="width: 95%; border: 10px solid rgb(224,220,219);" src="/images/aldec-visual-block-designer.png" />
     <br />
     <br />
 </div>
