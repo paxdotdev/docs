@@ -1,11 +1,114 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+# Introduction to Pax
 
-## What is Nextra?
+Pax is a library for building web & native applications alongside visual creative tools
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## A quick tour
+<div style={{ padding: '20px 0' }}>
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/crI_raloHgo"
+    title="Pax Introduction Video"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+    style={{
+      maxWidth: '560px',  // You can adjust this value
+      display: 'block',
+      margin: '0 auto'
+    }}
+  ></iframe>
+</div>
 
-## Documentation
+## How it works 
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+Pax is made up of two pieces:
+
+1) The interface declaration: `.pax` file
+2) The application logic: `.rs` file
+
+
+The interface declaration (or template for short) is a declarative way to specify the visual components of the user interface. Pax's _templates_ can be created/edited via our design tool or by hand. See [Designability](./Installation/app-types.mdx) to learn more about how it works. 
+
+Application logic is written in an accompanying Rust file (or Typescript, coming soon). This logic is triggered via handlers that are specified in _templates_ and can set state that flows into _templates_. 
+
+## Example
+
+Writing Pax is intended to feel familiar, and the language borrows many ideas from [prior art](./intro-priorities-and-prior-art#prior-art--inspiration).
+
+Following is a simple Pax component called `IncrementMe`:
+
+
+```pax filename="increment-me.pax" copy
+<Group x=50% y=50% width=120px height=120px @click=self.increment >
+    <Text text={self.num_clicks + " clicks"} id=text />
+    <Rectangle
+        fill={rgb(ticks, 75, 150)}
+        corner_radii={RectangleCornerRadii::radii(10.0,10.0,10.0,10.0)}
+    />
+</Group>
+
+@settings {
+    @pre_render: handle_pre_render,
+    #text {
+        style: {
+                font: {Font::system("Times New Roman", FontStyle::Normal, FontWeight::Bold)},
+                font_size: 22px,
+                fill: WHITE,
+                align_vertical: TextAlignVertical::Center,
+                align_horizontal: TextAlignHorizontal::Center,
+                align_multiline: TextAlignHorizontal::Center
+        }
+    }
+}
+```
+
+In this _template_ we define a button that contains text and a rectangle. We use a group to combine them into an entity and attach a click handler to it. The text reads state `self.num_clicks` and we set the fill (color) of the rectangles using `self.ticks` as the red parameter of `rgb(r,g,b)`. The last piece to note is the lifecycle handler we enabled in the settings block. 
+
+Based on this template our application logic must define the state of this component (`num_clicks`, `ticks`), the `increment` function, and the `handle_pre_render` function. 
+
+```rust filename="lib.rs"  copy
+//File: lib.rs
+#![allow(unused_imports)]
+
+use pax_engine::api::*;
+use pax_engine::*;
+use pax_std::components::Stacker;
+use pax_std::components::*;
+use pax_std::primitives::*;
+use pax_std::types::text::*;
+use pax_std::types::*;
+
+#[pax]
+#[main]
+#[file("lib.pax")]
+pub struct Example {
+    pub ticks: Property<usize>,
+    pub num_clicks: Property<usize>,
+}
+
+impl Example {
+    pub fn handle_pre_render(&mut self, ctx: &NodeContext) {
+        let old_ticks = self.ticks.get();
+        self.ticks.set((old_ticks + 1) % 255);
+    }
+
+    pub fn increment(&mut self, ctx: &NodeContext, args: Event<Click>) {
+        let old_num_clicks = self.num_clicks.get();
+        self.num_clicks.set(old_num_clicks + 1);
+    }
+}
+```
+
+In the accompanying rust file, we define the state struct and it's associated functions that we use in the _template_. 
+
+Here's the example component running:
+
+<iframe 
+  style={{width: 'calc(100%)', height: '200px', border: 'none'}} 
+  src="https://static.pax.dev/increment/">
+</iframe>
+
+The above `IncrementMe` component could be mounted as its own app, or could be composed into other Pax components.
+
+We will give a brief introduction to Pax: its goals, how to use it, and details of is design and implementation.

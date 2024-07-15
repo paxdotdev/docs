@@ -1,15 +1,16 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
+  "intro-priorities-and-prior-art": "Priorities and Prior Art",
+  "installation": "Installation",
+  "key-concepts": "Key Concepts",
+  "examples": "Examples",
+  "reference": "Reference",
+  "authors-contributors": "Contributors",
+  
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://x.com/DevelopingPax",
     "newWindow": true
   }
 }

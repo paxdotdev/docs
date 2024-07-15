@@ -64,6 +64,20 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'Pax Corp Inc.',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s'
+    }
+  },
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content="Pax Docs" />
+      <meta property="og:description" content="Documentation for Pax" />
+      <link rel="icon" href="./favicon.svg" type="image/svg+xml"></link>
+    </>
+  )
 }
 
 export default config
+
