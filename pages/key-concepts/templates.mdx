@@ -25,7 +25,8 @@ Templates are not just static -- they allow three kinds of control-flow, affecti
 use pax_lang::api::*;
 use crate::{DetailsView, SummaryView};
 
-#[derive(Pax)]
+#[pax]
+#[main]
 #[inlined(
     <Group>
         if self.should_show_details {
@@ -56,7 +57,8 @@ use pax_std::layout::{Stacker, StackerDirection};
 use crate::DeviceRecord;
 
 
-#[derive(Pax)]
+#[pax]
+#[main]
 #[inlined(
     <Stacker>
         for device_record in self.connected_devices {
@@ -82,7 +84,8 @@ Internally, Pax handles the `for` range declaration as an Expression, via the pr
 For a practical example, consider `<Stacker />`.  When you use a Stacker, you pass children into it, like:
 ```rust
 //src/slot-example.rs
-#[derive(Pax)]
+#[pax]
+#[main]
 #[inlined(
     <Stacker>
         <Rectangle id=a />

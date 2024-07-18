@@ -2,7 +2,7 @@
 
 Rust macros are the way that information gets exposed from Rust to Pax.
 
- - `derive(Pax)`
+ - `#[pax]`
 Declares a Pax component definition, specifically a _non-root_ component that may be imported and instantiated in other components' templates.
 
  - `#[main]`
