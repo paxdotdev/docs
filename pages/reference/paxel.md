@@ -24,6 +24,8 @@ See [the source code](https://github.com/paxengine/pax/blob/master/pax-lang/src/
 
 ### PAXEL Compilation
 
+[//]: # (62e3c3e1ceb61335e83d631afbbb5080:start)
+
 PAXEL is compiled by transpiling through Rust.  In practice, this is fairly straight-forward — in many cases, PAXEL and Rust are syntactically identical.
 
 PAXEL's scoping mechanism requires special consideration by Pax's compiler — for example, inside a [template `for` loop](../key-concepts/templates.mdx#for), PAXEL can refer to the scoped _predicate declaration_ (e.g. the `i` in `for i in 0..10`). 
@@ -57,6 +59,8 @@ Finally, PAXEL can refer to the symbol representing the type of the Property ass
     }
 }
 ```
+
+[//]: # (62e3c3e1ceb61335e83d631afbbb5080:stop)
 
 With a reasonable and finite amount of work, PAXEL will also be able to refer to "anything within scope" within a Rust file, allowing the import & use of arbitrary symbols & packages.  This approach will build on the `get_type_id` work done by the parser to reflect on Property types.  Until that time, using an arbitrary import — for example, calling an imported method — requires re-exposing that method through a method available on `self`.
 

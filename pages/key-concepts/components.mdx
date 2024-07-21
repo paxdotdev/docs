@@ -1,5 +1,7 @@
 # Components
 
+[//]: # (359630593ac547b4459c5e7bcd7a65c3:start)
+
 The atomic unit of Pax is a `component definition`. A component definition for `MyNewComponent` may look like:
 
 ```rust filename="lib.rs"  copy
@@ -101,6 +103,8 @@ This "components all the way down" pattern may be familiar if you have used a GU
 This is essentially how you define a Pax Component. The only exception is the root component which is signified with the `main` attribute and lives in the root `lib.rs`.
 
 Notice that Pax builds off of Rust's import and namespace resolution mechanisms, so importing `crate::EmptyComponent` to a `.rs` file means that you can use `<EmptyComponent />` inside a template in that file.
+
+[//]: # (359630593ac547b4459c5e7bcd7a65c3:stop)
 
 You can read more about Pax components in the chapter [Hardware Component Model](../reference/hardware-component-model.md).
 <br />

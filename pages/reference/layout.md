@@ -1,5 +1,7 @@
 # Coordinate System & Transforms
 
+[//]: # (9732c66d1335615593249a6e623479a8:start)
+
 Pax's coordinate system is "top-left origin; right is positive x; down is positive y"
 
 <!-- TODO: image illustrating coordinate system -->
@@ -113,6 +115,8 @@ A few important notes about matrix multiplication:
 
 
 Organizationally, you may find that it is useful to combine hierarchical grouping with matrix multiplication in different ways.  You may also make use of helper methods which can return dynamic or pre-computed transformations.  Finally, the use of layout components (such as `pax-std`'s `Stacker`, or components that you may author yourself) allow abstraction of complex positioning and resizing logic.
+
+[//]: # (9732c66d1335615593249a6e623479a8:stop)
 
 --
 
