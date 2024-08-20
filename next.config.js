@@ -1,4 +1,6 @@
 const { getHighlighter, BUNDLED_LANGUAGES } = require('shiki')
+const path = require('path');
+
 
 const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
@@ -15,7 +17,7 @@ const withNextra = require('nextra')({
               id: 'pax',
               scopeName: 'source.pax',
               aliases: ['paxel'], // Along with id, aliases will be included in the allowed names you can use when writing markdown.
-              path: '../../public/grammar/pax.tmLanguage.json'
+              path: path.resolve(__dirname, 'public/grammar/pax.tmLanguage.json') // Use absolute path
             }
           ]
         })

@@ -22,47 +22,73 @@ PAXEL is very similar to at least two existing languages: Microsoft's Excel spre
 
 See [the source code](https://github.com/paxengine/pax/blob/master/pax-lang/src/pax.pest#L169).
 
-### PAXEL Compilation
+### Symbolic Identifiers in PAXEL
 
-[//]: # (62e3c3e1ceb61335e83d631afbbb5080:start)
+The following are valid symbolic identifiers in PAXEL:
 
-PAXEL is compiled by transpiling through Rust.  In practice, this is fairly straight-forward — in many cases, PAXEL and Rust are syntactically identical.
+ - properties from the attached Rust struct, such as `self.some_symbol` from `#[pax] pub struct Foo {some_symbol: Property<usize>}`
+ - temporaries created by for loops (like `i` in `for i in 0..10`)
+ - functions exposed as *helpers* on Pax structs
+ - certain grammar built-ins like color constants (RED, BLUE, etc.)
 
-PAXEL's scoping mechanism requires special consideration by Pax's compiler — for example, inside a [template `for` loop](../key-concepts/templates.mdx#for), PAXEL can refer to the scoped _predicate declaration_ (e.g. the `i` in `for i in 0..10`). 
+If a PAXEL expression refers to `self.some_symbol`, it will be reactively subscribed to changes in `self.some_symbol`, updating via the Pax runtime similarly to how a spreadsheet updates.
 
-```pax
-//template:
-<Group>
-    for i in 0..10 {
-        //notice that PAXEL can refer to the `i` from the for loop.  This works when nesting `for` loops, too.
-        <Rectangle transform={Translate2D::translate(i * 100.0, i * 100.0)} /> 
-    }
-</Group>
+### Helpers
+
+Helpers are functions exposed on a struct and available in PAXEL.  See the following example of helpers as exposed by PathElement in pax-std:
+
 ```
+#[pax]
+#[has_helpers]
+pub enum PathElement {
+    #[default]
+    Empty,
+    Point(Size, Size),
+    Line,
+    Curve(Size, Size),
+    Close,
+}
 
-PAXEL can also refer to symbols available on the attached Rust struct, through `self.some_symbol`, and can refer to certain cartridge "prelude imports", a [compiler-hard-encoded list]() of symbols that are imported and available to all Expressions, such as `Transform2D::*` and `Color::*` (which is where `translate()`, `scale()`, `rgba()`, etc. are defined.) .
-
-PAXEL shadows scopes, allowing stacking of scope contexts and overriding previously scoped symbols with newer/more specific references — for example, when nesting `for` loops.
-
-Finally, PAXEL can refer to the symbol representing the type of the Property associated with an expression — for example an expression bound to `some_complex_property: Property<SomeComplexType>` can use `SomeComplexType`:
-```jsx
-#some_id {
-    some_complex_property: {
-        // The following returns a new instance of SomeComplexType.
-        // The symbol `SomeComplexType` may be used here because the Pax compiler + runtime knows
-        // that `some_complex_property`'s type is `Property<SomeComplexType>`.
-        SomeComplexType {
-            a: self.num_clicks + 5,
-            b: self.active_width,
-            c: "Hello"
-        }
+#[helpers]
+impl PathElement {
+    pub fn line() -> Self {
+        Self::Line
+    }
+    pub fn close() -> Self {
+        Self::Close
+    }
+    pub fn point(x: Size, y: Size) -> Self {
+        Self::Point(x, y)
+    }
+    pub fn curve(x: Size, y: Size) -> Self {
+        Self::Curve(x, y)
     }
 }
 ```
 
-[//]: # (62e3c3e1ceb61335e83d631afbbb5080:stop)
+Example usage of the above in Pax:
 
-With a reasonable and finite amount of work, PAXEL will also be able to refer to "anything within scope" within a Rust file, allowing the import & use of arbitrary symbols & packages.  This approach will build on the `get_type_id` work done by the parser to reflect on Property types.  Until that time, using an arbitrary import — for example, calling an imported method — requires re-exposing that method through a method available on `self`.
+```
+<Path class=hr />
+@settings {
+    .hr {
+        elements: {[
+            PathElement::point(0%, 0%),
+            PathElement::line(),
+            PathElement::point(100%, 0%),
+        ]},
+        stroke: {
+            color: rgb(40, 48, 54),
+            width: 1px,
+        },
+        fill: NONE
+    }
+}
+```
+
+### Shadowing
+
+PAXEL supports shadowed nested symbol declarations, for example you can redeclare `i` across two nested for loops.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Components in Pax are inspired by components on a digital circuit board — namely: they are signal-driven, encapsulated, and composable.
 
-Though you wouldn't want to describe an actual circuit with Pax, we can illustrate this parallel with a virtual `AndGateLED` and two signal inputs (`Property<T>`), outputting to a `VirtualLED` component that lights up when the inputs are both true.
+We can illustrate this parallel with a virtual `AndGateLED` and two signal inputs (`Property<T>`), outputting to a `VirtualLED` component that lights up when the inputs are both true.
 
 ```rust
 //and_gate.rs

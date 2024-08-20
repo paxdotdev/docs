@@ -1,0 +1,35 @@
+# Designability
+
+Pax's primary goal is to enable *designability* — to enable a vector design tool to read & write code, updating user interface definitions visually.
+
+Our canonical implementation of such a vector design tool is [Pax Designer](https://github.com/paxengine/pax/tree/dev/pax-designer)
+
+Pax Designer opens and edits .pax files within a codebase, offers a vector design tool experience for making those changes, and persists changes as code.
+
+
+## Language
+
+To achieve this goal, we designed Pax's user interface language as a description language, inspired by hardware description languages like Verilog.  A defining characteristic of these languages is being 100% declarative, just data.
+
+Because it's just data, pax-lang can be freely read from and written to deterministically by computer programs, like Pax Designer or an LLM.  
+
+pax-lang is not a programming language.  Think of it as "fancy JSON" or just a good old-fashioned domain-specific language.
+
+## Separation of concerns
+
+pax-lang attaches to a programming language, starting with Rust and following with JavaScript.  The programming langauge handles all things Turing-complete, while pax-lang handles the declaration of *content*, *behavior*, and *event bindings*.
+
+<img src="/images/separation-of-concerns.png" alt="diagram showing separation of concerns between .pax declarations and Turing-complete Rust (or JavaScript)" />
+
+
+## Rendering
+
+The final piece of the designability puzzle is the coordinate system + rendering vocabulary.
+
+Pax's core building blocks are the same ones you find in a vector design tool, like `<Group />`, and `<Rectangle />` and `<Text />` and `<Path />`.
+
+Further, Pax renders in "design tool coordinates", where the top-left is (0,0); positive-x is right and positive-y is down, with the addition of both `px` and `%` as primitive units for responsive layouts.
+
+Finally, Pax exposes a user interface toolkit on top of all the above, so you can `<Group />` buttons with drawing elements, and create custom layout components like `<Stacker />`.
+
+The result: you can express "anything you might draw in Figma" and "anything you might build in React" in the same language, and design that language visually while iterating on the code surrounding it.

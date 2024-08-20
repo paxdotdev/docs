@@ -1,12 +1,11 @@
 {
   "designability": "Designability",
   "layout": "Layout & Transforms",
-  "pax-std": "Pax Std",
-  "paxel": "Paxel",
-  "compilation-model": "Compilation Model",
-  "macros": "Macros",
+  "pax-std": "Pax Standard Library",
+  "paxel": "PAXEL (Pax Expression Language)",
+  "macros": "Macros and Configuration",
   "hardware-component-model": "Hardware Component Model",
-  "native-rendering": "Native Rendering",
+  "native-rendering": "Rendering & Compositing",
   "grammar": "DSL Grammar",
   "javascript": "Pax & Javascript"
 }

@@ -1,0 +1,69 @@
+# Coordinate System & Transforms
+
+[//]: # (9732c66d1335615593249a6e623479a8:start)
+
+Pax renders in the same coordinate space as a vector design tool — "top-left origin; right is positive x; down is positive y"
+
+
+### Affine transforms (Transform2D)
+
+The way elements get positioned and sized in Pax is through the transform properties `x`, `y`, `rotation`, `scale`, and , `skew`, as well as `width` and `height`.  See a full list below in [Common Properties](#common-properties).
+
+```pax
+<Group id=a transform=rotate(150deg)>
+    <Rectangle id=b transform=translate(50px, 50px) />
+    <Rectangle id=c transform=scale(150%, 150%) />
+</Group>
+```
+
+In the above example, rectangle `b` will be moved 50px to the right and 50px down.  The rectangle `c` will be 150% the width & height of its default values.  And the group `a` will be rotated 150 degrees — which, in fact, ends up rotating both of the rectangles as well.  Read more about this below in [combining transformations.](#combining-transformations)
+
+Note that `px`, `%`, and `deg` (as well as `rad`) are all primitive symbols in Pax, and are handled intuitively and performantly by the runtime and renderer.
+
+
+### Common Properties
+
+Certain properties, the "common properties," are available on every node.  
+
+1. **`id`**: A unique identifier for an element, used to reference it within scripts or CSS-like stylesheets.
+
+2. **`x`**: The x-coordinate of the element's anchor point in pixels or percentage relative to its container. Determines the horizontal position.
+
+3. **`y`**: Similar to `x`, this sets the y-coordinate of the element's anchor point, determining the vertical position.
+
+4. **`scale_x`**: Controls the width scaling factor of the element. A value of 1 means no scaling, less than 1 means a reduction, and greater than 1 means an enlargement.
+
+5. **`scale_y`**: Controls the height scaling factor of the element. Works similarly to `scale_x`, affecting vertical dimensions.
+
+6. **`skew_x`**: Applies a horizontal skew transformation to the element, distorting it along the x-axis. The skew angle is specified in degrees.
+
+7. **`skew_y`**: Applies a vertical skew transformation to the element, distorting it along the y-axis. Like `skew_x`, the angle is specified in degrees.
+
+8. **`anchor_x`**: Sets the horizontal part of the element's anchor point, which affects transformations like rotation and scaling. It can be defined in pixels or as a percentage of the element’s width.
+
+9. **`anchor_y`**: Sets the vertical part of the element's anchor point. Similar to `anchor_x`, but for the vertical dimension.
+
+10. **`rotate`**: Specifies the rotation of the element around its anchor point, in degrees. Positive values rotate clockwise, while negative values rotate counterclockwise.
+
+11. **`transform`**: A powerful property that allows for a combination of transformations—translate, scale, rotate, and skew—applied in a specific order to the element.
+
+12. **`width`**: Sets the width of the element, either in pixels or as a percentage of the container's width, allowing for responsive design.
+
+
+### Anchor
+
+`anchor` lets you set the origin point for transformations.  For example, using `anchor` you can cause a rectangle to be rotated around its top-left corner, vs. rotated around its center-point.  
+
+<img src="/images/origin-of-rotation.gif" alt="animation showing rotation about top-left anchor and rotation about center anchor" />
+
+Scale and positioning (`x`, `y`) are also calculated with respect to this anchor point.
+
+**Auto-anchor:** As an ergonomic boost for responsive layouts, Pax applies an automatic default anchor in certain situations.  If (1) you don't specify an anchor value, and (2) you specify an `x` or `y` position using `%` units, the anchor value for that axis will default to the same % value.  
+
+For example, setting `x=50% y=50%` implicitly makes `anchor_x=50% anchor_y=50%` as well, i.e. completely centered on the screen, regardless of viewport size. In most cases, when using % sizes, anchor % are desired as well.  
+
+You can override this behavior by setting an explicit `anchor_x` and/or `anchor_y` value.
+
+
+
+
