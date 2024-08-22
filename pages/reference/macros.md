@@ -70,3 +70,4 @@ impl Default for SomeComponent {
 Supported `#[custom()]` symbols include: `Clone`, `Default`, `Serialize`, `Deserialize`, `Debug` and `Interpolatable`
 
 
+
