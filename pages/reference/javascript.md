@@ -6,3 +6,4 @@ For native builds, we intend Pax JavaScript to work similarly to React Native â€
 
 Pax Engine will remain built in Rust, as will the standard library (pax-std) â€” Pax JavaScript will simply offer another choice of programming language for
 building Pax apps.
+
