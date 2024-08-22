@@ -1,5 +1,5 @@
 {
   "operating-systems": "Your Workstation",
   "app-targets": "Build Targets",
-  "plugins": "Plugins"
+  "editor-plugins": "Editor Plugins"
 }

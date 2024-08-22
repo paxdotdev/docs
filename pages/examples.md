@@ -19,3 +19,4 @@ Here is one of the examples (`space-game`). How high of a score can you get?
 ### Controls:
 - Movement: W-A-S-D
 - Shooting: Spacebar
+

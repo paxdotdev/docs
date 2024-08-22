@@ -1,7 +1,8 @@
 {
   "index": "Introduction",
   "intro-priorities-and-prior-art": "Priorities and Prior Art",
-  "installation": "Installation",
+  "get-started": "Get Started",
+  "installation": "Toolchain",
   "key-concepts": "Key Concepts",
   "examples": "Examples",
   "reference": "Reference",
@@ -14,3 +15,4 @@
     "newWindow": true
   }
 }
+

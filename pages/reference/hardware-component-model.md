@@ -34,3 +34,4 @@ Looking at Pax through this lens, _properties_ are component "inputs", while _se
 ---
 
 [1] Image credit: Aldec, Inc. https://www.aldec.com/en/products/fpga_simulation/designeredition
+
