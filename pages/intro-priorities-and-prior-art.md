@@ -30,7 +30,7 @@ Pax the language is just data — declarative markup and expressions.  Turing-co
 
 Further, Pax’s layout engine renders in “design tool coordinates,” the same coordinate space as a tool like Photoshop or Figma.  You can imagine a visual tool statically opening a Pax codebase, performing visual edits, and persisting those edits as source code — all while offering a Figma-like (or Flash-like) creative experience.
 
-We call this principle “designability.”[1]
+We call this principle “designability.”  [Read more about designability](/reference/designability).
 
 <br />
 <br />
@@ -39,7 +39,7 @@ We call this principle “designability.”[1]
 # Prior Art & Inspiration
 
 #### Verilog, VHDL
-For highly functional & highly declarative logic, and for [designable](./reference-designability.md) logic, teaching that it is possible for visual tooling to read & write code that can also be read & written by hand.
+For highly functional & highly declarative logic, and for [designable](/reference/designability) logic, teaching that it is possible for visual tooling to read & write code that can also be read & written by hand.
 
 #### Macromedia Flash, Dreamweaver
 For instilling the paradigm of _design tools that create software_ (contrast with: _design tools that create pictures._)
