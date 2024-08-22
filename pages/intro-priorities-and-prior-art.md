@@ -32,8 +32,6 @@ Further, Pax’s layout engine renders in “design tool coordinates,” the sam
 
 We call this principle “designability.”[1]
 
-Our team is building a commercial, collaborative visual designer for Pax, so people who don’t write code can build software hand-in-hand with those who do. [JOIN THE EARLY ACCESS LIST](https://jeaattwds6e.typeform.com/to/aDG3OH7k)
-
 <br />
 <br />
 <br />
