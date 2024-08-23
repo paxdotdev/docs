@@ -2,52 +2,30 @@
 
 ## 1. Install toolchains
 
-- Get rust (if already installed, ensure rustc version 1.73.0 or higher):
+  The following commands will install necessary dependencies:
 
-  ```bash copy
+  ```bash
+  # Install Rust (if already installed, ensure rustc version 1.73.0 or higher):
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
-
-- Download required packages:
-
-  ```bash copy
+  
+  # Download required packages:
   apt update && apt install pkg-config libglib2.0-dev libssl-dev libpango1.0-dev
-  ```
-
-- Web build requires wasm-pack: 
-
-  ```bash copy
+  
+  # Install wasm-pack for web builds
   cargo install wasm-pack
-  ```
 
-## 2. Install pax-cli
-
-  ```bash copy
+  # Install the Pax CLI 
   cargo install pax-cli
   ```
 
-  NOTE: `cargo install pax-cli` and first run of `pax-cli run` might take some time.  Subsequent builds are faster.
+## 2. Run
 
-## 3. Run
-
-You can either **run the examples in the Pax repo** (recommended while the project is in [Alpha](https://github.com/paxengine/pax?tab=readme-ov-file#status), or you can **create a project from scratch.**
-
-### Running examples in the Pax repo (recommended)
-[Follow the instructions in the GitHub README](https://github.com/paxengine/pax?tab=readme-ov-file#examples)
-
-### Creating a project from scratch
-
-- Create a new project:
+  Create a new project and run it:
 
   ```bash copy
-  pax-cli new my-first-project
+  pax-cli new my-first-project && cd my-first-project && pax-cli run
   ```
 
-- Run: 
-
-  ```bash copy
-  cd my-first-project && pax-cli run --target=web
-  ```
 
 
 
