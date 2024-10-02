@@ -58,7 +58,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/paxengine/pax',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.com/invite/Eq8KWAUc6b',
   },
   docsRepositoryBase: 'https://github.com/paxengine/docs',
   footer: {

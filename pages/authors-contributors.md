@@ -10,9 +10,8 @@ A list of contributors to the Pax project may be found via the repository on [Gi
 
 #### Join the Conversation 
 
- - [Pax on Discord](https://discord.gg/5zXsskAzRB)
- - [Pax on Reddit](https://www.reddit.com/r/paxlang)
- - [Pax on Twitter](https://www.twitter.com/pax_lang)
+ - [Pax on Discord](https://discord.com/invite/Eq8KWAUc6b)
+ - [Pax on Twitter](https://www.twitter.com/DevelopingPax)
 
 <!-- #### Sponsor
 Funds received will help cover administrative, service, and development costs. Until Pax achieves 501(c)(3) status, sponsorships are NOT tax-deductible.  TODO: add link to donations page -->
